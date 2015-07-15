@@ -976,8 +976,6 @@ class UserController extends Controller{
 		
 		if(!defined(NAVNAME)) define('NAVNAME', "我的邀请");
 		$this->set('rt',$rt);
-		$this->template('myshare');
-		
 		$mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
 		$this->template($mb.'/myshare');
 	}

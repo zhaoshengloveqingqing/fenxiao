@@ -73,6 +73,7 @@ class ProductController extends Controller{
 		$this->action('common','checkjump');
 		$this->css("flexslider.css");
 		$this->js(array("jquery.flexslider-min.js","main.js"));
+		//$this->layout('product');
 		if(!($gid>0)){
 			$this->action('common','show404tpl');
 		} 
