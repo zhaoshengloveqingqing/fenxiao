@@ -1,0 +1,49 @@
+#header .back {
+	display: none;
+}
+.login_main {
+	border-top: 10px solid #F3F3F3;
+}
+#login {
+	width: 92%;
+	margin: 20px auto 0;
+}
+.am-form-group {
+	height: 48px;
+	line-height: 48px;
+	border-bottom: 1px solid #E6E6E6;
+}
+.am-form-group label {
+	color:#242424;
+	font-size: 14px;
+}
+.am-form-group input {
+	color:#CBCBCB;
+	font-size: 14px;
+	padding-left: 50px;
+}
+.other {
+	margin-top: 40px;
+	margin-bottom: 60px;
+
+}
+a {
+	font-size: 14px;
+}
+a.retrieve{
+	color:#242424;
+
+}
+a.registration {
+	color:#E5253B;
+	float: right;
+}
+#submit {
+	background: #EB5566;
+	width: 100%;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 15px 0;
+
+}
+

@@ -1,24 +1,16 @@
-body{font-family:Verdana, Arial; min-height:500px;}
+body{
+	font-family:"Lantinghei TC";
+	min-height:500px;
+	background: #ffffff;
+}
 #home {
-width: 100%;
-/*background: #f1f1f1;*/
-/*border-bottom:1px solid #ededed;*/
+	width: 100%;
 }
 #header {
-width: 100%;
-height: 46px;
-/*background-color: #FEFEFE;*/
-border-bottom: 1px solid #456f9a;
-background: #5e87b0;
-color: #fff;
-font-weight: 700;
-text-shadow: 0 1px 0 #3e6790;
-background-image: -webkit-gradient(linear,left top,left bottom,from(#6facd5),to(#497bae));
-background-image: -webkit-linear-gradient(#6facd5,#497bae);
-background-image: -moz-linear-gradient(#6facd5,#497bae);
-background-image: -ms-linear-gradient(#6facd5,#497bae);
-background-image: -o-linear-gradient(#6facd5,#497bae);
-background-image: linear-gradient(#6facd5,#497bae);
+	width: 100%;
+	height: 57px;
+	background: #EB5664;
+	color: #fff;
 }
 /*#header {
 width: 100%;

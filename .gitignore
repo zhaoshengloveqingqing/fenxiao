@@ -1,3 +1,4 @@
+npm-debug.log
 .buildpath
 .project
 .settings/
@@ -6,4 +7,7 @@ sess/
 cache/
 photos/
 data/basic_config.php
+
+sync.sh
+
 
