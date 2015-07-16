@@ -2,6 +2,7 @@ npm-debug.log
 .buildpath
 .project
 .settings/
+.idea/
 
 sess/
 cache/
