@@ -12,7 +12,7 @@
 			<input type="password" class="" id="doc-ipt-email-1" placeholder="输入密码">
 		</div>
 		<div class="other">
-			 <a href="" class="retrieve">找回密码</a><a class="registration" href="<?php echo ADMIN_URL;?>user.php?act=register">新用户注册</a>
+			<a class="registration" href="<?php echo ADMIN_URL;?>user.php?act=register">新用户注册</a>
 		</div>
 		<input value="提交" type="button" id="submit">
 	</form>
