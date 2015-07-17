@@ -8,7 +8,7 @@
 	float: left;
 }
 #main .user .focus {
-	display: none;
+	/*display: none;*/
 }
 #main .user .user_info img {
 	float: left;

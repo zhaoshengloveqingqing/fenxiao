@@ -1,0 +1,66 @@
+#search {
+	height: 60px;
+	line-height: 60px;
+	width: 96%;
+	margin: 0 auto;
+	position: relative;
+}
+#search input[type='text']{
+	border: 1px solid #D3D3D3;
+	height: 35px;
+	margin: 0 auto;
+	width: 96%;
+	padding-left: 8px;
+	color: #A4A4A4;
+	font-size: 13px;
+}
+#search input.submit {
+	background:url(../images/search_icon.png)  no-repeat;
+	width: 21px;
+	height: 21px;
+	color: transparent;
+	position: absolute;
+	right:12px;
+	top:18px;
+}
+.catalog_list{
+	border-top:10px solid #F3F3F3;
+}
+.catalog_list .catalog {
+	text-align: center;
+}
+.catalog_list .catalog li{
+	width: 45%;
+	margin: 8px 1.5%;
+	display: inline-block;
+	border: 1px solid #E2E2E2;
+}
+.catalog_list .catalog li a img {
+	width: 100%;
+}
+.catalog_list .catalog li a h3 {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	width: 94%;
+}
+.catalog_list .catalog li p{
+	text-align: left;
+	padding-left: 3%;
+}
+.catalog_list .catalog li p .price{
+	font-size: 26px;
+	color: #FF5200;
+	line-height: 36px;
+}
+.catalog_list .catalog li p .discount_price {
+	font-size: 16px;
+	color: #919191;
+	line-height: 22px;
+	text-decoration: line-through;
+	font-style: normal;
+	padding-left: 6px;
+
+}
+
