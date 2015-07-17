@@ -1,5 +1,4 @@
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css.css" media="all" />
-<?php $this->element('10/top',array('lang'=>$lang)); ?>
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css" media="all" />
 <?php $this->element('guanzhu',array('shareinfo'=>$lang['shareinfo']));?>
 <div id="main">
 <style type="text/css">
