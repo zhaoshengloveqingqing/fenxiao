@@ -39,7 +39,7 @@
 			</div>
 			<div class="product_detail">
 				<img src="<?php echo ADMIN_URL;?>tpl/10/images/good.png"/>
-				<p><span class="names">特级武夷特级武夷大红袍特级武夷大红袍特级武夷大红袍大红袍</span><span class="price">48元<i class="discount_price">86元</i></span</p>
+				<p><span class="names">特级武夷特级武夷大红袍特级武夷大红袍特级武夷大红袍大红袍</span><span class="price">48元<i class="discount_price">86元</i></span></p>
 			</div>
 		</div>
 		<div class="product">
@@ -51,7 +51,7 @@
 			</div>
 			<div class="product_detail">
 				<img src="<?php echo ADMIN_URL;?>tpl/10/images/good.png"/>
-				<p><span class="names">特级武夷大红袍</span><span class="price">48元<i class="discount_price">86元</i></span</p>
+				<p><span class="names">特级武夷大红袍</span><span class="price">48元<i class="discount_price">86元</i></span></p>
 			</div>
 		</div>
 		<div class="product">
@@ -63,7 +63,7 @@
 			</div>
 			<div class="product_detail">
 				<img src="<?php echo ADMIN_URL;?>tpl/10/images/good.png"/>
-				<p><span class="names">特级武夷大红袍</span><span class="price">48元<i class="discount_price">86元</i></span</p>
+				<p><span class="names">特级武夷大红袍</span><span class="price">48元<i class="discount_price">86元</i></span></p>
 			</div>
 		</div>
 	</div>
