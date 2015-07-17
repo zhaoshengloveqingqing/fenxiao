@@ -1,0 +1,149 @@
+#main .user {
+	background: #EB5566;
+	height: 80px;
+	padding: 0 2%;
+}
+#main .user .user_info {
+	width: 70%;
+	float: left;
+}
+#main .user .user_info img {
+	float: left;
+	padding-top: 8px;
+	margin-right: 6px;
+	vertical-align: middle;
+}
+#main .user .user_info p {
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 22px;
+	padding-top: 20px;
+
+}
+#main .user .user_info p em {
+	color: #FFF310;
+	font-style: normal;
+}
+#main .user a {
+	margin-top:15px;
+	background: #FF9514;
+	float: right;
+	border-radius: 4px;
+	box-shadow: 0 4px 0 #D63547;
+	display: inline-block;
+	font-size: 15px;
+	height: 50px;
+	color: #ffffff;
+	width: 29%;
+	text-align: center;
+}
+#main .user a span {
+	vertical-align: top;
+	line-height: 56px;
+}
+#main .user a i.select {
+	display:inline-block;
+	background:url(../images/select.png) 5px 15px no-repeat;
+	width: 26px;
+	height: 36px;
+}
+#main .menu {
+	background: #ffffff;
+	margin: 15px 0;
+}
+
+#main .menu ul {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 2%;
+}
+#main .menu ul li {
+	width: 32%;
+	display: inline-block;
+}
+#main .menu ul li a{
+	color:#1E1E1E;
+	font-size: 12px;
+}
+#main .menu ul li a i {
+	display:block;
+	border-radius: 50%;
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+}
+#main .menu ul li a i img{
+	vertical-align: middle;
+}
+#main .menu ul li a i.order {
+	background:#EB5566;
+}
+#main .menu ul li a label {
+	display: inline-block;
+	margin-left: 4px;
+}
+#main .menu ul li a i.qr {
+	background:#636363;
+}
+#main .menu ul li a i.distribution {
+	background:#FF9A1F;
+	color: #ffffff;
+	font-style: normal;
+	font-size: 22px;
+}
+#main .product_list {
+	border-top: 10px solid #F3F3F3;
+}
+#main .product_list h3 {
+	height: 26px;
+	padding-left: 12px;
+	margin:12px 0;
+	color: #E84658;
+	font-size: 18px;
+	border-left:8px solid #EB5566;
+}
+#main .product_list .product {
+	width: 100%;
+}
+#main .product_list .product img{
+	width: 100%;
+}
+#main .product_list .product .product_detail p{
+	background: #E5E5E5;
+	height: 60px;
+	line-height: 60px;
+	font-size: 18px;
+	width: 100%;
+	position: relative;
+	/*margin-top: -5px;*/
+}
+
+#main .product_list .product .product_detail p span.names{
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	width: 58%;
+}
+#main .product_list .product .product_detail p span {
+	padding: 0 10px;
+}
+#main .product_list .product .product_detail p span.price{
+	font-size: 26px;
+	color: #FF5200;
+	position: absolute;
+	top:0;
+	right:10px;
+	height: 60px;
+}
+#main .product_list .product .product_detail p i.discount_price{
+	font-size: 16px;
+	color: #919191;
+	text-decoration: line-through;
+	font-style: normal;
+	margin-left: 15px;
+}
