@@ -2,7 +2,7 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/user_register.css<?php echo '?'.time();?>" media="all" />
 <?php $this->element('10/top',array('lang'=>$lang)); ?>
 <div class="register_main">
-	<form id="REGISTER1" name="REGISTER1" >
+	<form id="register" name="REGISTER1" >
 		<div class="am-form-group">
 			<label for="doc-ipt-email-1">手机帐号:</label>
 			<input type="text" class="" id="doc-ipt-email-1" placeholder="11位手机号码"  name="mobile_phone">
