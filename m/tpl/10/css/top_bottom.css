@@ -54,6 +54,9 @@ body{
 	color: #000000;
 	font-size: 13px;
 }
+#footer ul li a:hover {
+	color: #EB5566;
+}
 #footer ul li a{
 	display:block;
 	height:76px;
@@ -66,9 +69,19 @@ body{
 	background:url(../images/home_icon.png) center 10px no-repeat;
 	height: 35px;
 }
+#footer ul li a:hover i.home{
+	display:block;
+	background:url(../images/home_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
 #footer ul li a i.category{
 	display:block;
 	background:url(../images/category_icon.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a:hover i.category{
+	display:block;
+	background:url(../images/category_icon_hover.png) center 10px no-repeat;
 	height: 35px;
 }
 #footer ul li a i.user{
@@ -76,9 +89,19 @@ body{
 	background:url(../images/user_icon.png) center 10px no-repeat;
 	height: 35px;
 }
+#footer ul li a:hover i.user{
+	display:block;
+	background:url(../images/user_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
 #footer ul li a i.shopping{
 	display:block;
 	background:url(../images/shopping_icon.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a:hover i.shopping{
+	display:block;
+	background:url(../images/shopping_icon_hover.png) center 10px no-repeat;
 	height: 35px;
 }
 #footer ul li a span{
