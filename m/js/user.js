@@ -34,9 +34,11 @@ function clearloginmes(){
 
 function submit_login_data(){
 		//if(checkloginvar()==false) return false;
-		
 		names = $('input[name="username"]').val();
-
+		if(!isMobile(names)){
+			 alert("请输入11位手机号码！");
+			 return;
+		};
 		pas = $('input[name="password"]').val();
 
 /*		jumpurl = $('input[name="returnurl"]').val(); //跳转到购物车标记
@@ -64,6 +66,10 @@ function submit_login_data(){
 ///////////用户注册/////////////
 function checkregistervar(){
 		user = $('.content input[name="username"]').val();
+		if(!isMobile(user)){
+			 alert("请输入11位手机号码！");
+			 return;
+		};
 
 		pass = $('.content input[name="password"]').val();
 		
@@ -175,6 +181,23 @@ function submit_register_data(na){
 			alert("检查是否存在表单REGISTER");
 			return false;
 	   }
+	   
+	   var username = $('input[name="mobile_phone"]').val();
+		if(!isMobile(username)){
+			 alert("请输入11位手机号码！");
+			 return;
+		};
+		 var pwd = $('input[name="password"]').val();
+		 var confirm_pwd = $('input[name="rp_pass"]').val();
+		 if(pwd.length<6||pwd.length>16){
+			alert("密码长度必须6-16！");
+			return false;
+		}
+		if(pwd != confirm_pwd){	
+			alert("密码与确认密码不一致！");
+			return false;
+		}
+	   
 		//$('.register_mes').html('正在注册，请耐心等待。。。');
 		createwindow();
 		
