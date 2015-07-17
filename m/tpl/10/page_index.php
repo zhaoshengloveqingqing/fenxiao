@@ -20,6 +20,7 @@
 				立即关注，将享更多惊喜</p>
 		</div>
 		<a><i class="select"></i><span>进入选购</span></a>
+		<a class="focus"><span>进入关注</span></a>
 	</div>
 	<div class="menu">
 		<ul>
