@@ -6,7 +6,7 @@ class UserController extends Controller{
 	
  	function  __construct() {
 		$this->css(array('jquery_dialog.css','user2015.css'));
-		$this->js(array('jquery.json-1.3.js','jquery_dialog.js','common.js','user.js?v=v1'));
+		$this->js(array('jquery.json-1.3.js','jquery_dialog.js', 'user.js?v=v1'));
 	}
 	
 	/*************/
@@ -322,20 +322,21 @@ class UserController extends Controller{
 	
 	//用户登录
 	function login(){
-		$this->css('login.css');
-		if(($this->is_login())){ $this->jump(ADMIN_URL.'user.php'); exit;} //
+		//$this->css('login.css');  //remark
+		if(($this->is_login())){ $this->jump(ADMIN_URL.'user.php'); exit;} 
 		$this->title("用户登录".' - '.$GLOBALS['LANG']['site_name']);
 	
 		$rt['hear'][] = '<a href="'.ADMIN_URL.'">首页</a>&nbsp;&gt;&nbsp;';
 		$rt['hear'][] = '用户登录';
-			
+		
 		//地区
 		$sql = "SELECT * FROM `{$this->App->prefix()}region` WHERE parent_id='76' AND region_type='3' ORDER BY region_id ASC";
 		$rt['diqucate'] = $this->App->find($sql);
-		
+
 		//店铺分类
 		$sql = "SELECT * FROM `{$this->App->prefix()}user_cate` WHERE parent_id='0' AND is_show='1' ORDER BY sort_order ASC,cat_id ASC";
 		$rt['shopcate'] = $this->App->find($sql);
+		
 			
 		if(!defined(NAVNAME)) define('NAVNAME', "用户登录");
 		$this->set('rt',$rt);
