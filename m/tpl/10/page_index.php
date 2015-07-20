@@ -32,9 +32,9 @@
 	<?php } ?>
 	<div class="menu">
 		<ul>
-			<li><a href="<?php echo ADMIN_URL;?>user.php?act=orderlist"><i class="order"><img src="<?php echo ADMIN_URL;?>tpl/10/images/order_icon.png"/></i><label>我的订单</label></a></li>
-			<li><a href="<?php echo ADMIN_URL;?>user.php?act=myerweima"><i class="qr"><img src="<?php echo ADMIN_URL;?>tpl/10/images/qr_icon.png"/></i><label>我的二维码</label></a></li>
-			<li><a href="<?php echo ADMIN_URL;?>user.php?act=dailicenter"><i class="distribution">分</i><label>我的分销</label></a></li>
+			<li><a href="<?php echo ADMIN_URL;?>user.php?act=orderlist"><img src="<?php echo ADMIN_URL;?>tpl/10/images/order_icon.png"/><label>我的订单</label></a></li>
+			<li><a href="<?php echo ADMIN_URL;?>user.php?act=myerweima"><img src="<?php echo ADMIN_URL;?>tpl/10/images/qr_icon.png"/><label>我的二维码</label></a></li>
+			<li><a href="<?php echo ADMIN_URL;?>user.php?act=dailicenter"><img src="<?php echo ADMIN_URL;?>tpl/10/images/distribution_icon.png"/><label>我的分销</label></a></li>
 		</ul>
 	</div>
 	<div class="product_list">
@@ -44,8 +44,8 @@
 				<a href="<?php echo ADMIN_URL.'catalog.php?cid='.$row['cat_id'];?>"><?php echo $row['cat_name'];?></a>
 			</h3>
 			<?php if(!empty($row['cat_img'])&&file_exists(SYS_PATH.$row['cat_img'])){?>
-			<div class="product">
-				<a href="<?php echo $row['cat_url'];?>"><img src="<?php echo SITE_URL.$row['cat_img'];?>" /></a>
+			<div class="product_img">
+				<a href="<?php echo $row['cat_url'];?>"><img    src="<?php echo SITE_URL.$row['cat_img'];?>" /></a>
 			</div>
 			<?php } ?>
 			<?php if(!empty($rt['goods'][$row['cat_id']]))foreach($rt['goods'][$row['cat_id']] as $k=>$rows){?>
@@ -58,5 +58,45 @@
 			<?php } ?>
 		</div>
 		<?php } ?>
+		<div class="product points">
+			<h3 class="title">
+				<a href="#">积分兑换</a>
+			</h3>
+			<div class="points_list">
+				<ul class="points">
+					<li>
+						<a href="#">
+							<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
+							<h3>特级武夷山金骏眉红k茶</h3>
+						</a>
+						<p>所需积分<span class="points_light">48</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
+							<h3>特级武夷山金骏眉红k茶</h3>
+						</a>
+						<p>所需积分<span class="points_light">48</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
+							<h3>特级武夷山金骏眉红k茶</h3>
+						</a>
+						<p>所需积分<span class="points_light">48</span></p>
+					</li>
+					<li>
+						<a href="#">
+							<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
+							<h3>特级武夷山金骏眉红k茶</h3>
+						</a>
+						<p>所需积分<span class="points_light">48</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
+</div>
+<div class="copyright">
+	©2015 苏州派尔网络科技有限公司
 </div>

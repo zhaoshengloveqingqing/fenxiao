@@ -2,6 +2,7 @@ body{
 	background:#ffffff;
 	font-size:13px;
 	font-family: "Lantinghei TC";
+	overflow-x: hidden;
 }
 #home {
 	position: relative;

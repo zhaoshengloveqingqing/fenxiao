@@ -58,49 +58,29 @@
 #main .menu ul {
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 2%;
 }
 #main .menu ul li {
 	width: 32%;
 	display: inline-block;
+	text-align: center;
 }
 #main .menu ul li a{
 	color:#1E1E1E;
 	font-size: 12px;
 }
-#main .menu ul li a i {
-	display:block;
-	border-radius: 50%;
+
+#main .menu ul li a img{
+	vertical-align: middle;
 	width: 38px;
-	height: 38px;
-	line-height: 38px;
-	text-align: center;
-	display: inline-block;
-	vertical-align: middle;
-}
-#main .menu ul li a i img{
-	vertical-align: middle;
-}
-#main .menu ul li a i.order {
-	background:#EB5566;
 }
 #main .menu ul li a label {
 	display: inline-block;
 	margin-left: 4px;
 }
-#main .menu ul li a i.qr {
-	background:#636363;
-}
-#main .menu ul li a i.distribution {
-	background:#FF9A1F;
-	color: #ffffff;
-	font-style: normal;
-	font-size: 22px;
-}
 #main .product_list {
 	border-top: 10px solid #F3F3F3;
 }
-#main .product_list h3 {
+#main .product_list h3.title{
 	height: 26px;
 	padding-left: 12px;
 	margin:12px 0;
@@ -113,6 +93,8 @@
 }
 #main .product_list .product img{
 	width: 100%;
+	height: 100%;
+	display: block;
 }
 #main .product_list .product .product_detail p{
 	background: #E5E5E5;
@@ -121,7 +103,6 @@
 	font-size: 18px;
 	width: 100%;
 	position: relative;
-	/*margin-top: -5px;*/
 }
 
 #main .product_list .product .product_detail p span.names{
@@ -149,4 +130,41 @@
 	text-decoration: line-through;
 	font-style: normal;
 	margin-left: 15px;
+}
+.points_list .points {
+	text-align: center;
+}
+.points_list .points li{
+	width: 47%;
+	margin: 8px 0.5%;
+	display: inline-block;
+	border: 1px solid #E2E2E2;
+}
+.points_list .points li a img {
+	width: 100%;
+}
+.points_list .points li a h3 {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	margin: 5px;
+}
+.points_list .points li p{
+	text-align: center;
+	background: #E5E5E5;
+}
+.points_list .points li p .points_light{
+	font-size: 14px;
+	color: #FF5200;
+	line-height: 36px;
+}
+.copyright {
+	background: #F7F7F7;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-top: 8px;
 }
