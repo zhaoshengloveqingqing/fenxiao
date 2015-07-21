@@ -52,51 +52,69 @@
 			<div class="product_detail">
 				<a href="<?php echo ADMIN_URL.($row['is_jifen']=='1'?'exchange':'product').'.php?id='.$rows['goods_id'];?>" style="cursor:pointer;">
 				<img src="<?php echo SITE_URL.$rows['goods_img'];?>"/>
-				<p><span class="names"><?php echo $rows['goods_name'];?></span><span class="price"><?php echo str_replace('.00','',$rows['pifa_price']);?><i class="discount_price"><?php echo str_replace('.00','',$rows['shop_price']);?></i></span></p>
+				<p><span class="names"><?php echo $rows['goods_name'];?></span><span class="price"><?php echo str_replace('.00','',$rows['pifa_price']);?>元<i class="discount_price"><?php echo str_replace('.00','',$rows['shop_price']);?>元</i></span></p>
 				</a>
 			</div>
 			<?php } ?>
 		</div>
 		<?php } ?>
+		<?php if(!empty($rt['listsjf'])){?>
 		<div class="product points">
 			<h3 class="title">
-				<a href="#">积分兑换</a>
+				<a href="<?php echo ADMIN_URL.'exchange.php';?>">积分兑换</a>
 			</h3>
 			<div class="points_list">
 				<ul class="points">
+					<?php foreach($rt['listsjf'] as $k=>$row){?>
 					<li>
-						<a href="#">
-							<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
-							<h3>特级武夷山金骏眉红k茶</h3>
+						<a href="<?php echo ADMIN_URL.'exchange.php?id='.$row['goods_id'];?>">
+							<img src="<?php echo SITE_URL.$row['goods_img'];?>"/>
+							<h3><?php echo $row['goods_name'];?></h3>
 						</a>
-						<p>所需积分<span class="points_light">48</span></p>
+						<p>所需积分<span class="points_light"><?php echo $row['need_jifen'];?></span></p>
 					</li>
-					<li>
-						<a href="#">
-							<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
-							<h3>特级武夷山金骏眉红k茶</h3>
-						</a>
-						<p>所需积分<span class="points_light">48</span></p>
-					</li>
-					<li>
-						<a href="#">
-							<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
-							<h3>特级武夷山金骏眉红k茶</h3>
-						</a>
-						<p>所需积分<span class="points_light">48</span></p>
-					</li>
-					<li>
-						<a href="#">
-							<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
-							<h3>特级武夷山金骏眉红k茶</h3>
-						</a>
-						<p>所需积分<span class="points_light">48</span></p>
-					</li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>
+		<?php } ?>
 	</div>
 </div>
 <div class="copyright">
-	©2015 苏州派尔网络科技有限公司
+	<?php echo $lang['copyright'];?>
 </div>
+<?php
+ $thisurl1 = Import::basic()->thisurl();
+ $rr = explode('?',$thisurl1);
+ $t2 = isset($rr[1])&&!empty($rr[1]) ? $rr[1] : "";
+ $dd = array();
+ if(!empty($t2)){
+ 	$rr2 = explode('&',$t2);
+	if(!empty($rr2))foreach($rr2 as $v){
+		$rr2 = explode('=',$v);
+		if($rr2[0]=='from' || $rr2[0]=='isappinstalled'|| $rr2[0]=='code'|| $rr2[0]=='state') continue;
+		$dd[] = $v;
+	}
+ }
+ $thisurl = $rr[0].'?'.(!empty($dd) ? implode('&',$dd) : 'tid=0');
+?>
+<?php 
+	$imgurl =  !empty($lang['site_logo'])? SITE_URL.$lang['site_logo'] : $this->img('logo.jpg');
+	$title =  $lang['metatitle'];
+	$params = array(
+		'title' => $title,
+		'action' => 'ajax_share',
+		'thisurl' => $thisurl,
+		'imgurl' => $imgurl
+	);
+	$wxshare = array(
+		'title' => $title,
+		'imgUrl' =>  $imgurl,
+		'desc' =>  $title,
+		'link' => $thisurl,
+		'is_record' => 1,
+		'ajax_url' => ADMIN_URL.'product.php',
+		'ajax_params' => $params,
+	);
+   $this->element('10/wxshare',array('lang' =>  array_merge($lang, $wxshare) )); 
+ ?>
