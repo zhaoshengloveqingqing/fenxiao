@@ -144,4 +144,7 @@ body{
 	left:58%;
 	top:5px;
 }
+.mb {
+	margin-bottom: 0 !important;
+}
 

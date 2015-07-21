@@ -1,5 +1,6 @@
 body{
 	margin-bottom: 75px !important;
+	position: relative;
 }
 #search {
 	height: 60px;
