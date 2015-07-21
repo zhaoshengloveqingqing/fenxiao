@@ -34,7 +34,7 @@
 			<div class="clear"></div>
 			<?php } ?>
 </div>
-</div>
+<?php $this->element('10/footer',array('lang'=>$lang)); ?>
 <?php
 $title = !empty($rt['cateinfo']['cat_title']) ? $rt['cateinfo']['cat_title'] : $rt['cateinfo']['cat_name'];
 $imgs = $imgs[rand(0,count($imgs)-1)];
