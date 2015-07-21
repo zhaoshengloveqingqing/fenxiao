@@ -1,7 +1,30 @@
 #main {
 	width: 100%;
 	margin: 0 auto;
+	text-align: center;
+	background-image: linear-gradient(0, #FFFFFF 43%, #E6E6E6 99%);
+	padding-top: 100px;
 }
 .ctop {
-	background:url(../images/noshoppong_icon.png) 5px 15px no-repeat;
+	background:url(../images/gouwuche_icon.png) center center no-repeat;
+	margin: 0 auto 40px;
+	width: 207px;
+	height: 210px;
+}
+p {
+	font-size: 18px;
+	color: #1A1A1A;
+	line-height: 30px;
+}
+p.action {
+	margin-top:30px;
+}
+a.button {
+	background: #EB5566;
+	border: 1px solid #D3394A;
+	border-radius: 3px;
+	font-size: 20px;
+	color: #FFFFFF;
+	line-height: 31px;
+	padding: 7px 50px;
 }
