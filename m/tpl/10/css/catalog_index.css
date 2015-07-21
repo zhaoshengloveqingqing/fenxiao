@@ -37,9 +37,19 @@ body{
 	margin: 8px 1.5%;
 	display: inline-block;
 	border: 1px solid #E2E2E2;
+	vertical-align: top;
+	height: 212px;
+}
+.catalog_list .catalog li a .product_img{
+	min-width: 144px;
+	min-height: 144px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
 }
 .catalog_list .catalog li a img {
 	width: 100%;
+	max-height: 144px;
 }
 .catalog_list .catalog li a h3 {
 	text-overflow: ellipsis;

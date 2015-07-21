@@ -10,7 +10,7 @@
 			<?php $imgs = array(); if(!empty($rt['categoodslist']))foreach($rt['categoodslist'] as $k=>$row){ $imgs[] = $row['goods_img'];?>
 			<li>
 				<a href="<?php echo ADMIN_URL.($row['is_jifen']=='1'?'exchange':'product').'.php?id='.$row['goods_id'];?>">
-					<img src="<?php echo $row['goods_img'];?>"  alt="<?php echo $row['goods_name'];?>"/>
+					<div class="product_img"><img src="<?php echo $row['goods_img'];?>"  alt="<?php echo $row['goods_name'];?>"/></div>
 					<h3><?php echo $row['goods_name'];?></h3>
 				</a>
 				<p><span class="price"><?php echo str_replace('.00','',$row['pifa_price']);?>元<i class="discount_price">￥<?php echo str_replace('.00','',$row['shop_price']);?>元</i></span></p>
