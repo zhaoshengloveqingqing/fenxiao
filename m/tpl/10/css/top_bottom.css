@@ -3,6 +3,7 @@ body{
 	font-size:13px;
 	font-family: "Lantinghei TC";
 	overflow-x: hidden;
+	margin-bottom: 80px !important;
 }
 #home {
 	position: relative;
