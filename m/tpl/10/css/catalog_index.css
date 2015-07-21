@@ -27,7 +27,7 @@
 	border-top:10px solid #F3F3F3;
 }
 .catalog_list .catalog {
-	text-align: center;
+	text-align: left;
 }
 .catalog_list .catalog li{
 	width: 45%;
