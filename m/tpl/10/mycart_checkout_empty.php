@@ -7,3 +7,8 @@
 		<a class="button" href="<?php echo ADMIN_URL;?>">去逛逛</a>
 	</p>
 </div>
+
+
+
+
+
