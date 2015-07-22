@@ -903,7 +903,7 @@ class Basic{
     /*
      * 带"？"的分页函数
      */
-    function getpage($tt = 0, $list = 500, $page = 1,$p='?page=',$ts=false){
+    function getpage($tt = 0, $list = 500, $page = 1,$p='?page=',$ts=false, $type=''){
 		if ($tt <= 0) {
             /* $rt['showmes'] = '<a href="javascript:;">当前第'.$page.'/'.($tpn<1? $tpn+1 : $tpn).'页</a>';
              $rt['first']='<a href="javascript:;">首页</a>';
@@ -930,7 +930,7 @@ class Basic{
            $p=@eregi_replace('page='.$_GET['page'],'page=',$get);
         }else{
            $ss=$_SERVER["QUERY_STRING"];
-           $p= (empty($ss)) ? $get.'?page=' : $get.'&page=';
+           $p= (empty($ss)) ? $get.'?page=' : ($type ? $get.'&type='.$type.'&page=' : $get.'&page=');
         }
 
         $fpage=($page-5 > 0 )? $page-5 : 1;
