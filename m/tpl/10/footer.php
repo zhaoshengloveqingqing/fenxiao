@@ -3,66 +3,19 @@
 	<div>
 		<h2>商品分类</h2>
 		<ul class="menu">
+			<?php if(!empty($lang['menu']))foreach($lang['menu'] as $row){?>
 			<li>
-				<a href="#">
-					积分兑换
+				<a href="<?php echo ADMIN_URL.'catalog.php?cid='.$row['id'];?>">
+					<?php echo $row['name'];?>
+					<?php if(!empty($row['cat_id'])){?>
 					<ul class="sub-menu">
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">兑换积分积分</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
+						<?php foreach($row['cat_id'] as $rows){?>
+						<li><a href="<?php echo ADMIN_URL.'catalog.php?cid='.$rows['id'];?>"><?php echo $rows['name'];?></a></li>
+						<?php } ?>
 					</ul>
+					<?php } } ?>
 				</a>
 			</li>
-			<li><a href="#">梦想绿茶</a></li>
-			<li><a href="#">梦想绿茶v</a></li>
-			<li><a href="#">梦想绿茶vvv</a></li>
-			<li>
-				<a href="#">
-					积分兑换
-					<ul class="sub-menu">
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">兑换积分积分</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-					</ul>
-				</a>
-			</li>
-			<li><a href="#">梦想绿茶</a></li>
-			<li><a href="#">梦想绿茶v</a></li>
-			<li><a href="#">梦想绿茶vvv</a></li>
-			<li>
-				<a href="#">
-					积分兑换
-					<ul class="sub-menu">
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">兑换积分积分</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">兑换</a></li>
-						<li><a href="#">积分兑换</a></li>
-						<li><a href="#">兑换</a></li>
-					</ul>
-				</a>
-			</li>
-			<li><a href="#">梦想绿茶</a></li>
-			<li><a href="#">梦想绿茶v</a></li>
-			<li><a href="#">梦想绿茶vvv</a></li>
 		</ul>
 	</div>
 </div>
