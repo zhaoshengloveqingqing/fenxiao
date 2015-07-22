@@ -1,5 +1,43 @@
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
-<?php $this->element('15/top',array('lang'=>$lang)); ?>
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css" media="all" />
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/user_orderlist.css" media="all" />
+<?php $this->element('10/top',array('lang'=>$lang)); ?>
+<div class="main">
+	<nav>
+		<ul>
+			<li><a href="#">待付款</a><span>2</span></li>
+			<li><a href="#">待收货</a></li>
+			<li><a href="#">待评价</a></li>
+		</ul>
+	</nav>
+	<div class="order_list">
+		<ul>
+			<li>
+				<div class="order">
+					<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
+					<div class="order_detail">
+						<h3>2015年新茶正宗西湖龙井绿茶茶叶500g袋装</h3>
+						<p>订单时间：2015年6月4日</p>
+					</div>
+				</div>
+				<div class="price_number">
+					<p><span class="price">48元</span><span class="number">X1</span></p>
+				</div>
+			</li>
+			<li>
+				<div class="order">
+					<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
+					<div class="order_detail">
+						<h3>2015年新茶正宗西湖龙井绿茶茶叶500g袋装</h3>
+						<p>订单时间：2015年6月4日</p>
+					</div>
+				</div>
+				<div class="price_number">
+					<p><span class="price">48元</span><span class="number">X1</span></p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
 <style type="text/css">
 .pw,.pwt{
 height:26px; line-height:26px;
@@ -123,4 +161,4 @@ $('.oporder').live('click',function(){
 		return false;
 });
 </script>
-<?php $this->element('15/footer',array('lang'=>$lang)); ?>
+<?php $this->element('10/footer',array('lang'=>$lang)); ?>

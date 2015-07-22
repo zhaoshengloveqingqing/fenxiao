@@ -59,7 +59,7 @@
 		</div>
 		<?php } ?>
 		<?php if(!empty($rt['listsjf'])){?>
-		<div class="product points">
+		<div class="points">
 			<h3 class="title">
 				<a href="<?php echo ADMIN_URL.'exchange.php';?>">积分兑换</a>
 			</h3>
@@ -68,7 +68,9 @@
 					<?php foreach($rt['listsjf'] as $k=>$row){?>
 					<li>
 						<a href="<?php echo ADMIN_URL.'exchange.php?id='.$row['goods_id'];?>">
-							<img src="<?php echo SITE_URL.$row['goods_img'];?>"/>
+							<div class="points_img">
+								<img src="<?php echo SITE_URL.$row['goods_img'];?>"/>
+							</div>
 							<h3><?php echo $row['goods_name'];?></h3>
 						</a>
 						<p>所需积分<span class="points_light"><?php echo $row['need_jifen'];?></span></p>
