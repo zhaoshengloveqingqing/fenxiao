@@ -1,3 +1,4 @@
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/checkout_empty.css" media="all" />
 <div id="main">
 	<div class="ctop"></div>
@@ -7,6 +8,7 @@
 		<a class="button" href="<?php echo ADMIN_URL;?>">去逛逛</a>
 	</p>
 </div>
+<?php $this->element('10/footer',array('lang'=>$lang)); ?>
 
 
 

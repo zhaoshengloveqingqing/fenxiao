@@ -1,9 +1,12 @@
+body{
+	margin-bottom: 75px !important;
+}
 #main {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
 	background-image: linear-gradient(0, #FFFFFF 43%, #E6E6E6 99%);
-	padding-top: 100px;
+	padding-top: 80px;
 }
 .ctop {
 	background:url(../images/gouwuche_icon.png) center center no-repeat;
