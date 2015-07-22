@@ -10,7 +10,6 @@
 	<p class="action">
 		<a class="button" href="<?php echo ADMIN_URL;?>">去逛逛</a>
 	</p>
-</div>
 <?php $this->element('10/footer',array('lang'=>$lang)); ?>
 
 
