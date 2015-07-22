@@ -6,13 +6,10 @@ body{
 	margin: 0 auto;
 	text-align: center;
 	background-image: linear-gradient(0, #FFFFFF 43%, #E6E6E6 99%);
-	padding-top: 80px;
+	padding-top: 70px;
 }
-.ctop {
-	background:url(../images/gouwuche_icon.png) center center no-repeat;
-	margin: 0 auto 40px;
-	width: 207px;
-	height: 210px;
+.ctop img{
+	max-width: 180px;
 }
 p {
 	font-size: 18px;
