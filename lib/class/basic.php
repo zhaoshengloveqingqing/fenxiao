@@ -930,7 +930,7 @@ class Basic{
            $p=@eregi_replace('page='.$_GET['page'],'page=',$get);
         }else{
            $ss=$_SERVER["QUERY_STRING"];
-           $p= (empty($ss)) ? $get.'?page=' : ($type ? $get.'&type='.$type.'&page=' : $get.'&page=');
+           $p= (empty($ss)) ? $get.'?page=' : (!eregi('type',$get) && $type ? $get.'&type='.$type.'&page=' : $get.'&page=');
         }
 
         $fpage=($page-5 > 0 )? $page-5 : 1;
