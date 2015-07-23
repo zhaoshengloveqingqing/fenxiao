@@ -1248,7 +1248,7 @@ class UserController extends Controller{
 		$sql= "SELECT * FROM `{$this->App->prefix()}goods_order` WHERE order_id='$orderid' ORDER BY goods_id";
 		$rt['goodslist'] = $this->App->find($sql);
 		
-		$sql = "SELECT tb1.*,tb2.region_name AS province,tb3.region_name AS city,tb4.region_name AS district FROM `{$this->App->prefix()}goods_order_info` AS tb1";
+		$sql = "SELECT tb1.*,tb2.region_name AS province,tb3.region_name AS city,tb4.region_name AS district, add_time  FROM `{$this->App->prefix()}goods_order_info` AS tb1";
 		$sql .=" LEFT JOIN `{$this->App->prefix()}region` AS tb2 ON tb2.region_id = tb1.province";
 		$sql .=" LEFT JOIN `{$this->App->prefix()}region` AS tb3 ON tb3.region_id = tb1.city";
 		$sql .=" LEFT JOIN `{$this->App->prefix()}region` AS tb4 ON tb4.region_id = tb1.district";
@@ -1257,8 +1257,6 @@ class UserController extends Controller{
 		
 		$status = $this->get_status($rt['orderinfo']['order_status'],$rt['orderinfo']['pay_status'],$rt['orderinfo']['shipping_status']);
 		$rt['status'] = explode(',',$status);
-		
-				
 		if(!defined(NAVNAME)) define('NAVNAME', "订单详情");
 		$this->set('rt',$rt);
 		//$this->template('user_orderinfo2014');
