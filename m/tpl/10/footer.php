@@ -20,7 +20,13 @@
 	</div>
 </div>
 
-
+<?php
+$nums = 0;
+$thiscart = $this->Session->read('cart');
+if(!empty($thiscart))foreach($thiscart as $row){
+	$nums +=$row['number'];
+}
+?>
 <div id="footer">
 	<nav>
 		<ul id="menu" class="top_menu">
@@ -29,7 +35,7 @@
 			<li><a href="<?php echo ADMIN_URL.'user.php';?>"><i class="user"></i><label>我的地盘</label></a></li>
 			<li>
 				<a href="<?php echo ADMIN_URL;?>mycart.php" style="height:56px; padding:0px; border:none">
-				<span class="shop_num">1</span>
+				<span class="shop_num"><?php echo $nums;?></span>
 				<i class="shopping"></i>
 				<label>购物车</label>
 				</a>
