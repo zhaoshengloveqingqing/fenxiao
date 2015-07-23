@@ -61,8 +61,35 @@ body{
 	line-height: 22px;
 	margin-left: 5px;
 }
-.way .pay_way span {
-	margin-right: 0;
-	font-size: 14px;
-
+.way .pay_way,.way .deliver_way {
+	font-size: 13px !important;
+	display: inline-block;
+	width: 47%;
+	text-align: center;
+}
+.way .pay_way {
+	text-align: left;
+}
+.way,.action{
+	width: 94%;
+}
+.action{
+	background: transparent !important;
+}
+.way .pay_way span,.way .deliver_way span {
+	margin-right: 0 !important;
+}
+.way .the_way label{
+	color: #898989;
+}
+.pay,.another_pay {
+	width: 47%;
+	font-size: 20px;
+	color: #FFFFFF;
+	line-height: 28px;
+	padding: 8px 0;
+	background: #EB5566;
+}
+.another_pay {
+	background: #FF7F00;
 }
