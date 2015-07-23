@@ -1,8 +1,13 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/goods_index.css" media="all" />
 <style type="text/css">
 body{ background:#FFF !important;}
 #main .goods_desc table,#main .goods_desc table td,#main .goods_desc img,#main .goods_desc div img,#main .goods_desc p img,#main .goods_desc table td img{ max-width:100%;}
 .pages a{ padding:1px 5px 1px 5px; border-bottom:2px solid #ccc; border-right:2px solid #ccc; border-left:1px solid #ededed; border-top:1px solid #ededed; margin-left:3px; background:#fafafa}
+
+.spec_p label{
+    margin-left: 15px;
+}
 </style>
 <?php //$this->element('guanzhu',array('shareinfo'=>$lang['shareinfo']));?>
 <!--<div id="home">
@@ -15,21 +20,20 @@ body{ background:#FFF !important;}
 			</p>
 		</div>
 	</div>
-</div>	
+</div>
 
 <p style="height:30px; line-height:30px; font-size:16px; text-align:left; padding-left:5px; padding-right:5px; position:fixed; z-index:9999; top:0px; left:0px; right:0px; width:100%;background:rgba(230,230,230,0.8); overflow:hidden">产品名称:<?php echo $rt['goodsinfo']['goods_name'];?></p>-->
 
-<!--顶栏焦点图--> 
+<!--顶栏焦点图-->
 <div class="flexslider" style="margin-bottom:0px;">
 	 <ul class="slides">
-	 <?php if(!empty($rt['gallery']))foreach($rt['gallery'] as $ks=>$row){?>		 
+	 <?php if(!empty($rt['gallery']))foreach($rt['gallery'] as $ks=>$row){?>
 		<li><img<?php echo $ks=='0' ? ' class="ggimg"' :'';?> src="<?php echo $row['goods_img'];?>" width="100%" alt="<?php echo $row['img_desc'];?>"/></li>
-	  <?php } ?>					
+	  <?php } ?>
 	  </ul>
 </div>
 
-<div style="height:34px; line-height:34px; padding-left:10px; padding-right:10px; background:#F08125; font-size:16px; color:#FFF">基本信息</div>
-		
+
 <div id="main">
 	<div class="mainhead" style="padding:5px; border-top:1px solid #ededed;border-bottom:1px solid #ededed;background:#FFF">
         <form id="ECS_FORMBUY" name="ECS_FORMBUY" method="post" action="">
@@ -37,11 +41,11 @@ body{ background:#FFF !important;}
 		<h1 style="font-size:16px"><?php echo $rt['goodsinfo']['goods_name'];?></h1>
 		<?php if(!empty($rt['goodsinfo']['sort_desc'])){?><p><?php echo $rt['goodsinfo']['sort_desc'];?></p><?php } ?>
 		<p style="font-size:16px;">市场价:<font class="spirce"><del>￥<?php echo str_replace('.00','',$rt['goodsinfo']['shop_price']);?></del></font>&nbsp;&nbsp;<span class="vippfont">促销价:</span><span class="price">￥<?php echo str_replace('.00','',$rt['goodsinfo']['pifa_price']);?></span></p>
-		<p style="font-size:16px;"><span class="vippfont">重&nbsp;&nbsp;&nbsp;量:</span><span class="price"><?php echo str_replace('.000','',$rt['goodsinfo']['goods_weight']);?>克</span></p>
+        <p style="font-size:16px;"><span class="vippfont">重&nbsp;&nbsp;&nbsp;量:</span><span class="price"><?php echo str_replace('.000','',$rt['goodsinfo']['goods_weight']);?>克</span></p>
 		<?php if($rt['config']['address2off']!='100'){
 		$unt = !empty($rt['goodsinfo']['goods_unit']) ? $rt['goodsinfo']['goods_unit'] : '件';
 		?>
-		<p class="gdesc" style="padding-top:5px; font-size:16px; font-weight:bold; padding-top:5px;">两<?php echo $unt.$rt['config']['address2off']/10;?>折,三<?php echo $unt;?>起<?php echo ($rt['config']['address2off']/10)*($rt['config']['address3off']/100);?>折,还会有更多折扣哦！</p><?php } ?>	 
+		<p class="gdesc" style="padding-top:5px; font-size:16px; font-weight:bold; padding-top:5px;">两<?php echo $unt.$rt['config']['address2off']/10;?>折,三<?php echo $unt;?>起<?php echo ($rt['config']['address2off']/10)*($rt['config']['address3off']/100);?>折,还会有更多折扣哦！</p><?php } ?>
 		<p style="height:24px; line-height:24px; padding-top:8px;"><a class="gjian" style="cursor:pointer; display:block; float:left; width:35px; height:22px;line-height:22px;text-align:center; font-size:18px; font-weight:bold; border:1px solid #e8e8e8; background:#ededed;border-radius:5px 0px 0px 5px">-</a><input readonly="" id="<?php echo $k;?>" name="number" value="1" class="inputBg" style="float:left;text-align: center; width:20px; height:22px; line-height:22px;border-bottom:1px solid #e8e8e8; border-top:1px solid #e8e8e8" type="text"> <a class="gjia" style="cursor:pointer; display:block; float:left; width:35px; height:22px;line-height:22px;text-align:center; font-size:18px; font-weight:bold; border:1px solid #e8e8e8; background:#ededed;border-radius:0px 5px 5px 0px">+</a><b style="margin-left:3px;"><?php  echo $row['goods_unit'];?></b></p>
 		<?php
 			  if(!empty($rt['spec'])){
@@ -58,7 +62,7 @@ body{ background:#FFF !important;}
                     foreach($rt['spec'] as $row){
                     if(empty($row)||!is_array($row) || $row[0]['is_show_cart']==0) continue;
 
-		  ?>		 
+		  ?>
                     <?php if(!empty($row[0]['attr_name'])){?>
 		    <p class="spec_p"><span><?php  echo $row[0]['attr_name'].":";?></span>
                       <?php
@@ -78,7 +82,7 @@ body{ background:#FFF !important;}
                               }
                       } //end if
                     ?>
-				
+
 		  </p><?php } ?>
                   <div class="clear"></div>
 		 <?php } // end foreach
@@ -116,30 +120,33 @@ background: url(<?php echo $this->img('haoping.png');?>) no-repeat;
 display: inline-block;
 vertical-align: text-bottom;
 }
+input[name='ranks']{
+height: 19.6px;
+}
 .icon-good {
-width: 16px;
-height: 17px;
-background-position: 0px -34px;
+width: 19.6px;
+height: 19.6px;
+background-position: 0px -40px;
 }
 .icon-bad {
-width: 17px;
-height: 17px;
-background-position: 0px 0px;
+width: 19.6px;
+height: 19.6px;
+background-position: 0px -1px;
 }
 .icon-normal {
-width: 16px;
-height: 17px;
-background-position: 0px -17px;
+width: 19.6px;
+height: 19.6px;
+background-position: 0px -21.6px;
 }
 .icon-img-upload{ float:left; margin-left:2px; display:block; width:17px; height:20px;background:url(<?php echo $this->img('imgb.png');?>) 0px center no-repeat}
 .thumbs{float:left; margin-left:5px; height:50px;}
 .thumbs img{ margin-right:5px; border:1px solid #ededed; padding:1px;}
 .guest_submit {
+float: right;
 width: 75px;
 height: 31px;
 line-height: 31px;
-background: url(<?php echo $this->img('more_bg.jpg');?>) repeat-x;
-float: left;
+background: #EB5566;
 border: none;
 cursor: pointer;
 border-radius: 3px;
@@ -184,10 +191,10 @@ margin-left:5px;
 				<div style="padding:5px;height:65px">
 					<div style="float:left; cursor:pointer;width:62px; height:22px; overflow:hidden"><iframe id="iframe_t" name="iframe_t" border="0" src="<?php echo ADMIN_URL;?>uploadajax2/" scrolling="no" width="62" frameborder="0" height="22"></iframe></div>
 					<div class="thumbs">
-					
+
 					</div>
+                    <input type="button" class="guest_submit" value="我要评论" onclick="return ajax_submit_mes()">
 				</div>
-				<input type="button" class="guest_submit" value="我要评论" onclick="return ajax_submit_mes()">
 				<div style="height:24px; line-height:24px; clear:both; text-align:center; color:#FF0000" class="returnmes"></div>
 			</form>
 	</div>
@@ -216,7 +223,7 @@ margin-left:5px;
 	$('.thumbs').append('<img src="<?php echo SITE_URL;?>'+pic+'" width="60" height="60" />');
 	picrt.push(pic);
   }
-  
+
     function ajax_submit_mes(){
   	  var goods        = new Object();
 	  createwindow();
@@ -229,7 +236,7 @@ margin-left:5px;
 	  goods.goods_id = '<?php echo $rt['goodsinfo']['goods_id'];?>';
 	  goods.content = content;
 	  goods.pics = picrt.join('|');
-	  
+
 	  $.ajax({
 		   type: "POST",
 		   url: "<?php echo ADMIN_URL;?>product.php?action=ajax_submit_mes",
@@ -242,13 +249,13 @@ margin-left:5px;
 				}else{
 					$('.returnmes').html(data.message);
 				}
-				
+
 		   }//end sucdess
 		});
   }
-</script>    
+</script>
 
-<?php 
+<?php
 	$imgurl =   SITE_URL.$rt['goodsinfo']['goods_img'];
 	$title =  $rt['goodsinfo']['goods_name'];
 	$params = array(
@@ -266,9 +273,9 @@ margin-left:5px;
 		'ajax_url' => ADMIN_URL.'product.php',
 		'ajax_params' => $params,
 	);
-   $this->element('15/wxshare',array('lang' =>  array_merge($lang, $wxshare) )); 
+   $this->element('15/wxshare',array('lang' =>  array_merge($lang, $wxshare) ));
  ?>
-    
+
 <script type="text/javascript">
 $('.mainbottombg span').click(function(){
 	$(this).parent().find('span').removeClass('ac');
@@ -276,7 +283,7 @@ $('.mainbottombg span').click(function(){
 	$('.tabs').hide();
 	art = $(this).attr('id');
 	$('.'+art).show();
-	
+
 });
 $('input[name="number"]').change(function(){
 	vall = $(this).val();
@@ -289,13 +296,13 @@ $('.spec_p a').click(function(){
 	na = $(this).attr('name');
 	vl = $(this).attr('id');
 	$('input[name="'+na+'"]').val(vl);
-	
+
 	$(this).parent().find('a').each(function(i){
 	   this.style.border='1px solid #cbcbcb';
 	});
-	
+
 	$(this).css('border','1px solid #FF0000');
-	
+
 	return false;
 });
 
@@ -309,10 +316,10 @@ $('#main .gjian').click(function(){
 	if(tnum>1){
 		$(this).parent().find('input').val(tnum-1);
 	}
-});	
-			
+});
+
 function checkcartattr(){
-	<?php 
+	<?php
 	if(!empty($rl)){
 		foreach($rl as $k=>$v){?>
 		a<?php echo $k;?> = $('.buyclass input[name="<?php echo $k;?>"]<?php echo $attr[$k]==3 ? ':checked' : "";?>').val();
@@ -326,20 +333,42 @@ function checkcartattr(){
 
 
 var dt = '<?php echo $rt['goodsinfo']['is_promote']&&$rt['goodsinfo']['promote_start_date']<mktime() ? ($rt['goodsinfo']['promote_end_date']-mktime()) : ($rt['goodsinfo']['promote_end_date']-$rt['goodsinfo']['promote_start_date']);?>';
-var st = new showTime('2', dt);  
+var st = new showTime('2', dt);
 st.desc = "促销结束";
 st.preg = "倒计时	{a}天	{b}:{c}:{d}";
 st.setid = "lefttime_";
-st.setTimeShow(); 
+st.setTimeShow();
 </script>
 <style type="text/css">
 body { padding-bottom:60px !important; }
 .top_menu li b {width: 38px;height: 20px;line-height: 17px;display: block;color: #fff;text-align: center;font-size: 12px;}
-.top_menu li b em {padding:0px 3px 0px 3px;border-radius: 100%;text-align: center;background-color: red;display: block;position: absolute;z-index: 9999;margin-top: -10px;margin-left: 22px;}
+.top_menu li b em {padding:0px 3px 0px 3px;border-radius: 100%;text-align: center;background-color: red;display: block;position: absolute;z-index: 9999;margin-left: 22px;}
 user agent stylesheeti, cite, em, var, address, dfn {font-style: italic;}
 
-.top_menu li.li2 a.butt-cart{display: inline-block;font-size: 15px;width: 90%;height: 40px;line-height: 38px;margin: 6px auto 5px auto;padding: 0;color: #FFF;border-radius: 3px;background:#32a000;}
-.top_menu li.li4 a.butt-buy {display: inline-block;font-size: 15px;width: 90%;height: 40px;line-height: 38px;margin: 6px auto 5px auto;padding: 0;color: #FFF;border-radius: 3px;background:#ff6400;}
+.top_menu li.li2 a.butt-cart {
+  display: inline-block;
+  font-size: 15px;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  /* margin: 6px auto 5px auto; */
+  padding: 0;
+  color: #FFF;
+  /* border-radius: 3px; */
+  background: #EB5566;
+}
+.top_menu li.li4 a.butt-buy {
+  display: inline-block;
+  font-size: 15px;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  /* margin: 6px auto 5px auto; */
+  padding: 0;
+  color: #FFF;
+  /* border-radius: 3px; */
+  background: #F49C20;
+}
 </style>
 <?php
 $nums = 0;
@@ -352,16 +381,17 @@ if(!empty($thiscart))foreach($thiscart as $row){
    <nav>
     <ul id="top_menu" class="top_menu">
     <li class="li11" style="width:20%"><a href="javascript:;" style="border:none" onclick="return addToColl('<?php echo $rt['goodsinfo']['goods_id'];?>')"><label>收藏</label></a></li>
-	<li class="li2" style="width:30%">
-	<a id="btnCart" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>')" class="butt-cart" style="border:none">加入购物车</a>
-	</li>
-	<li class="li4" style="width:30%">
-	<a id="btnBuy" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>','jumpshopping')" class="butt-buy" style="border:none">立即购买</a>
-	</li>
+
 	<li class="li55" style="width:20%"><a href="<?php echo ADMIN_URL;?>mycart.php" style="height:56px; padding:0px;border:none">
 	<span style="width:30px; height:32px; display:block; margin:0px auto"><b><em id="buy_price" class="mycarts" value="1" style="display:block"><?php echo $nums;?></em></b></span>
 	<label>购物车</label>
-	</a></li>    
+	</a></li>
+    <li class="li4" style="width:30%">
+	<a id="btnBuy" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>','jumpshopping')" class="butt-buy" style="border:none">立即购买</a>
+	</li>
+	<li class="li2" style="width:30%">
+	<a id="btnCart" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>')" class="butt-cart" style="border:none">加入购物车</a>
+	</li>
 	</ul>
   </nav>
 </div>
