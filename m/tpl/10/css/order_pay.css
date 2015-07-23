@@ -1,6 +1,3 @@
-body{
-	margin-bottom: 75px !important;
-}
 .tips {
 	margin-top: 35px;
 	margin-bottom: 10px;
@@ -75,6 +72,7 @@ body{
 }
 .action{
 	background: transparent !important;
+	height: 70px !important;
 }
 .way .pay_way span,.way .deliver_way span {
 	margin-right: 0 !important;
