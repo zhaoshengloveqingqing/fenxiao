@@ -1,5 +1,6 @@
 body {
 	margin-bottom: 75px !important;
+	overflow-x: hidden;
 }
 .list{
 	background: #EB5566;
