@@ -72,10 +72,17 @@
 				<ul>
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=weifu';?>">未付款订单<span><?php echo !empty($rt['pay1']) ? $rt['pay1'] : '0.00';?>元</span></a></li>
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=yifu';?>">已付款订单<span><?php echo !empty($rt['pay2']) ? $rt['pay2'] : '0.00';?>元</span></a></li>
+<<<<<<< HEAD
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=shouhuo';?>">已收货订单<span><?php echo !empty($rt['pay3']) ? $rt['pay3'] : '0.00';?>元</span></a></li>
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=quxiao';?>">已取消作废<span><?php echo !empty($rt['pay4']) ? $rt['pay4'] : '0.00';?>元</span></a></li>
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=tongguo';?>">审核通过的<span><?php echo !empty($rt['pay5']) ? $rt['pay5'] : '0.00';?>元</span></a></li>
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=postmoney';?>">申请提款<span style="background:url(<?php echo $this->img('x.png');?>) left center no-repeat"></span></a></li>
+=======
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=shouhuo';?>">已收货订单<span><?php echo !empty($rt['pay3']) ? $rt['pay3'] : '0.00';?>元</span></a></li>
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=quxiao';?>">已取消作废<span><?php echo !empty($rt['pay4']) ? $rt['pay4'] : '0.00';?>元</span></a></li>
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=tongguo';?>">审核通过的<span><?php echo !empty($rt['pay5']) ? $rt['pay5'] : '0.00';?>元</span></a></li>
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=postmoney';?>">申请提款<span style="background:url(<?php echo $this->img('x.png');?>) left center no-repeat"></span></a></li>
+>>>>>>> fd7ef119c6b5ef3e479e4cc9796e14c586de9951
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=postmoneydata';?>">提款记录<span style="background:url(<?php echo $this->img('x.png');?>) left center no-repeat"></span></a></li>
 			</ul>
 			</div>
