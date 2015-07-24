@@ -1,6 +1,5 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/mycart_checkout.css" media="all" />
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
 <?php $goodslist = $this->Session->read('cart'); ?>
 <div id="shopping-list">
 	<div class="list">
@@ -19,10 +18,8 @@
 						<span><?php echo $row['provincename'].$row['cityname'].$row['districtname'].$row['address']; ?></span>
 						<span class="name"><?php echo $row['consignee'].'&nbsp;&nbsp;'. (!empty($row['mobile']) ? $row['mobile'] : $row['tel']);?></span>
 					</div>
+					<a href="javascript:;" onclick="ressinfoop('<?php echo $row['address_id'];?>','showupdate',this)" style="">修改</a>
 				</div>
-				<p style="padding-left:26px;">
-			  		<a href="javascript:;" onclick="ressinfoop('<?php echo $row['address_id'];?>','showupdate',this)" style="border-radius:5px;display:block;background:#3d8b1d;cursor:pointer;width:60px; height:22px; line-height:22px; font-size:12px; color:#FFF; text-align:center">修改</a>
-			  	</p>
 				<?php }}?>
 			</div>
 			  <?php 
@@ -95,7 +92,12 @@
 							 </p>
 							<p class="price">零售价：<em><?php echo $row['shop_price'];?>元</em>本店价：<em><?php echo $row['price']>0 ? $row['price']  : $row['pifa_price'];?>元</em></p>
 							<div class="opreation">
-								<a class="delete delcartid" id="<?php echo $k;?>" style="cursor:pointer;">删除</a>
+								<div  class="num_opreation">
+									<a class="gjian">-</a>
+									<input readonly="" id="<?php echo $k;?>" name="number" value="1" class="inputBg" style="" type="text">
+									<a class="gjia" style="">+</a>
+								</div>
+								<a class="delete delcartid" id="<?php echo $k;?>">删除</a>
 							</div>
 						</div>
 					</li>
@@ -103,7 +105,7 @@
 				</ul>
 			</div>
 			<div class="empty clearfix">
-				<a class="empty_btn"  href="javascript:;" onclick="return ajax_clear()" style="cursor:pointer;">清空</a>
+				<a class="empty_btn"  href="javascript:;" onclick="return ajax_clear()">清空</a>
 			</div>
 			<div class="way">
 				<div class="pay_way">

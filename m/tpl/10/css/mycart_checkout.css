@@ -1,5 +1,5 @@
 body {
-	margin-bottom: 75px !important;
+	margin-bottom: 95px !important;
 	overflow-x: hidden;
 }
 .list{
@@ -80,12 +80,21 @@ body {
 	width: 92%;
 	float: right;
 }
+.am-form-group a {
+	float: right;
+	border: 1px solid #FF6A6A;
+	border-radius: 1px;
+	font-size: 14px;
+	color: #F04646;
+	height: 19px;
+	line-height: 19px;
+	padding: 4px 15px;
+}
 .am-form-group .user_info span {
 	display: block;
 	font-size: 14px;
 	line-height: 30px;
 	text-align: left;
-
 }
 .edit .am-form-group {
 	margin: 6px 10%;
@@ -206,6 +215,9 @@ body {
 .way .pay_way .am-radio,.way .deliver_way .am-radio{
 	display: inline-block;
 }
+.way .pay_way .am-radio input,.way .deliver_way .am-radio input{
+	margin-right: 5px;
+}
 .way .pay_way .am-radio label,.way .deliver_way .am-radio label{
 	font-size: 14px;
 	color: #898989;
@@ -248,4 +260,36 @@ p.action .submit {
 	color: #FFFFFF;
 	line-height: 28px;
 	background: none;
+}
+.num_opreation .gjian{
+	display:block;
+	float:left;
+	width:30px;
+	height:29px;
+	line-height:29px;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+	border:1px solid #e8e8e8;
+}
+.num_opreation .gjia {
+	cursor:pointer;
+	display:block;
+	float:left;
+	width:30px;
+	height:29px;
+	line-height:29px;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+	border:1px solid #e8e8e8;
+}
+.inputBg {
+	float:left;
+	text-align: center;
+	width:40px;
+	height:29px;
+	line-height:29px;
+	border-bottom:1px solid #e8e8e8;
+	border-top:1px solid #e8e8e8
 }
