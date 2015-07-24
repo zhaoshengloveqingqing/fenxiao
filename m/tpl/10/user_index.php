@@ -31,7 +31,6 @@
 			<li class="member">
 				<a href="#">
 					我的会员<span>2</span>
-
 				</a>
 			</li>
 			<div class="sub-menu clearfix">
@@ -40,13 +39,73 @@
 						<a href="#">一级会员<span>2</span></a>
 					</li>
 					<li>
-						<a href="#">一级会员<span>2</span></a>
+						<a href="#">二级会员<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">三级会员<span>2</span></a>
 					</li>
 				</ul>
 			</div>
-			<li class="spread"><a href="#">我的推广<span>10</span></a> </li>
-			<li class="commision"><a href="#">我的佣金<span class="commision">10</span></a> </li>
-			<li class="info"><a href="#">我的资料</a> </li>
+			<li class="spread"><a href="#">我的推广<span>10</span></a></li>
+			<div class="sub-menu clearfix">
+				<ul>
+					<li>
+						<a href="#">点击链接<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">成功关注<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">下单购买<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">成为分销<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">我的二维码<span>2</span></a>
+					</li>
+				</ul>
+			</div>
+			<li class="commision"><a href="#">我的佣金<span class="commision">10</span></a></li>
+			<div class="sub-menu clearfix">
+				<ul>
+					<li>
+						<a href="#">未付款订单<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">已付款订单<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">已收货订单<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">已取消作废<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">审核通过的<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">申请提款<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">提款记录<span>2</span></a>
+					</li>
+				</ul>
+			</div>
+			<li class="info"><a href="#">我的资料</a></li>
+			<div class="sub-menu clearfix">
+				<ul>
+					<li>
+						<a href="#">我的账号资料<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">我的收货资料<span>2</span></a>
+					</li>
+					<li>
+						<a href="#">银行卡号资料<span>2</span></a>
+					</li>
+				</ul>
+			</div>
 			<li class="order"><a href="#">我的订单<i></i></a></li>
 			<li class="collection"><a href="#">我的收藏<i></i></a></li>
 		</ul>
