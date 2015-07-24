@@ -65,7 +65,7 @@ body{
 .tuijian p{
 	width: 96%;
 	margin: 6px auto;
-	text-align: left;
+	 text-align:center;
 }
 .tuijian marquee {
 	font-size: 14px;
@@ -74,6 +74,7 @@ body{
 	border-bottom: 1px solid #E6E6E6;
 	padding: 15px 15px 15px 50px;
 	height: auto;
+ 	cursor : pointer;
 }
 .user_details ul li span {
 	float: right;
