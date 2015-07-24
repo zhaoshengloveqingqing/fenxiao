@@ -130,7 +130,7 @@ body{
 .user_details ul .sub-menu {
 	background: #F9F9F9;
 	width: 100%;
-	/*display:none;*/
+	display:none;
 }
 .user_details ul .sub-menu ul {
 	width: 96%;
