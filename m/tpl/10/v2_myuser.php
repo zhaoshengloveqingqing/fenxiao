@@ -1,25 +1,41 @@
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
-<?php //$this->element('15/top',array('lang'=>$lang)); ?>
-<div id="header" style="background:#4C3C22; line-height:46px; font-size:16px; text-align:center; border-bottom:none">
-		<?php echo NAVNAME;?>
-</div>
-	
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
+<?php $this->element('10/top',array('lang'=>$lang)); ?>
 <style type="text/css">
 #main li:hover{ background:#ededed}
+#search {
+	height: 60px;
+	line-height: 60px;
+	width: 96%;
+	margin: 0 auto;
+	position: relative;
+}
+#search input[type='text']{
+	border: 1px solid #D3D3D3;
+	height: 35px;
+	margin: 0 auto;
+	width: 96%;
+	padding-left: 8px;
+	color: #A4A4A4;
+	font-size: 13px;
+}
+#search input.submit {
+	background:url(../m/tpl/10/images/search_icon.png)  no-repeat;
+	width: 21px;
+	height: 21px;
+	color: transparent;
+	position: absolute;
+	right:12px;
+	top:18px;
+}
 </style>
-<div style="background:#F08125; line-height:44px; padding-left:10px; padding-right:10px;">
-	<form method="post" action="<?php echo ADMIN_URL;?>daili.php?act=myuser&t=<?php echo $level;?>">
-	<div style="width:80%; float:left;height:44px; text-align:right">
-	  <input placeholder="输入昵称" type="text" name="key"  value="<?php echo $nickname;?>" style="background:#FFF; height:30px;border-radius:8px; border:1px solid #ededed; width:100%; margin-bottom:3px; line-height:normal; color:#999; text-indent:2em" />
-	</div>
-	<div style="width:20%; float:right;height:44px;">
-	  <input type="submit" name="Submit" value="搜索" style="border-radius:5px; height:30px; line-height:30px; font-size:14px; margin-bottom:3px;  margin-left:10px; padding-left:3px; padding-right:3px; background:#FFF; cursor:pointer" />
-	</div>
-	<div class="clear"></div>
+<div style="line-height:44px; padding-left:10px; padding-right:10px;">
+	<form id='search'method="post" action="<?php echo ADMIN_URL;?>daili.php?act=myuser&t=<?php echo $level;?>">
+		<input type="text" placeholder="输入昵称"  name="key" id="title" value=" <?php echo $nickname;?>"/>
+		<input type="submit" value="submit" class="submit"/>
 	</form>
 </div>
 
-<div id="main" style="min-height:300px;margin-bottom:20px;">
+<div id="main" style="min-height:300px;margin-bottom:78px;">
 	<ul class="v12_ul">
 	<?php if(!empty($rt['lists']))foreach($rt['lists'] as $k=>$row){?>
 		<li style="padding:5px; border-bottom:1px solid #d8d8d8; position:relative">
@@ -33,7 +49,7 @@
 			</div>
 			<div class="clear"></div>
 			</a>
-			<span style="border-radius:50%; height:22px; line-height:22px; width:22px; float:right; display:block;background:#B70000; text-align:center; font-size:12px; font-weight:bold; color:#FFF; cursor:pointer; position:absolute;right:5px; top:17px; z-index:99" id="62"><i style="font-style:normal"><?php echo ++$k;?></i></span>
+			<span style="border-radius:50%; height:22px; line-height:22px; width:22px; float:right; display:block;background:#EF7783; text-align:center; font-size:12px; font-weight:bold; color:#FFF; cursor:pointer; position:absolute;right:5px; top:17px; z-index:99" id="62"><i style="font-style:normal"><?php echo ++$k;?></i></span>
 		</li>
 	<?php }else{
 	?>
@@ -46,7 +62,7 @@
 	</ul>
 	<div class="clear10"></div>
 	<div class="loadsss" style="text-align:center">
-	
+
 	</div>
 </div>
 <script type="text/javascript">
@@ -57,47 +73,47 @@ function page_init(){
 	hh = $('.v12_ul').height();
 	tops = parseInt(hh);
 }
-//获取滚动条当前的位置 
-function getScrollTop() { 
-var scrollTop = 0; 
-if (document.documentElement && document.documentElement.scrollTop) { 
-scrollTop = document.documentElement.scrollTop; 
-} 
-else if (document.body) { 
-scrollTop = document.body.scrollTop; 
-} 
-return scrollTop; 
-} 
+//获取滚动条当前的位置
+function getScrollTop() {
+var scrollTop = 0;
+if (document.documentElement && document.documentElement.scrollTop) {
+scrollTop = document.documentElement.scrollTop;
+}
+else if (document.body) {
+scrollTop = document.body.scrollTop;
+}
+return scrollTop;
+}
 
-//获取当前可是范围的高度 
-function getClientHeight() { 
-var clientHeight = 0; 
-if (document.body.clientHeight && document.documentElement.clientHeight) { 
-clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight); 
-} 
-else { 
-clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight); 
-} 
-return clientHeight; 
-} 
+//获取当前可是范围的高度
+function getClientHeight() {
+var clientHeight = 0;
+if (document.body.clientHeight && document.documentElement.clientHeight) {
+clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+}
+else {
+clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+}
+return clientHeight;
+}
 
-//获取文档完整的高度 
-function getScrollHeight() { 
-return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight); 
+//获取文档完整的高度
+function getScrollHeight() {
+return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
 }
 
 window.onscroll = function () {
 
-if (getScrollTop() + getClientHeight() == getScrollHeight()) { 
+if (getScrollTop() + getClientHeight() == getScrollHeight()) {
 	//tops = getScrollHeight();
-	
+
 	$('.loadsss').html('<img src="<?php echo $this->img('loadings.gif');?>" style="width:16px!important; height:16px;" />加载中');
 	setTimeout(function(){
 		isrun = true;
 	},15000);
 	if(isrun==true){
 		isrun = false;
-		$.post('<?php echo ADMIN_URL;?>daili.php',{action:'ajax_myuser_page',tops:tops,hh:hh,level:'<?php echo $level;?>'},function(data){ 
+		$.post('<?php echo ADMIN_URL;?>daili.php',{action:'ajax_myuser_page',tops:tops,hh:hh,level:'<?php echo $level;?>'},function(data){
 			$('.loadsss').html("");
 			if(data!=""){
 				tops += hh;
@@ -106,11 +122,11 @@ if (getScrollTop() + getClientHeight() == getScrollHeight()) {
 			}
 		})
 	}
-} 
+}
 }
 
 $(document).ready(function(){
 	page_init();
 });
 </script>
-<?php $this->element('15/footer',array('lang'=>$lang)); ?>
+<?php $this->element('10/footer',array('lang'=>$lang)); ?>

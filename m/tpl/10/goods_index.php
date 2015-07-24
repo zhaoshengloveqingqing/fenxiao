@@ -264,10 +264,14 @@ margin-left:5px;
 		'thisurl' => $thisurl,
 		'imgurl' => $imgurl
 	);
+	
+	$desc =  !empty($rt['goodsinfo']['sort_desc']) ? $rt['goodsinfo']['sort_desc'] : $rt['goodsinfo']['goods_name'];
+	$desc = str_replace(array("\r\n", "\n", "\r"), '', $desc);
+	
 	$wxshare = array(
 		'title' => $title,
 		'imgUrl' =>  $imgurl,
-		'desc' =>  !empty($rt['goodsinfo']['sort_desc']) ? $rt['goodsinfo']['sort_desc'] : $rt['goodsinfo']['goods_name'],
+		'desc' => $desc,
 		'link' => $thisurl,
 		'is_record' => 1,
 		'ajax_url' => ADMIN_URL.'product.php',
