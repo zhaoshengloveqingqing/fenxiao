@@ -104,7 +104,7 @@ body{ background:#FFF !important;}
 	</div>
 	<div class="tabs tab2" style="display:none; text-align:center; min-height:200px;">
 	<div style="min-height:50px; border-bottom:1px solid #ededed; padding-bottom:5px" class="GOODSCOMMENT">
-	<?php $this->element('ajax_comment',array('rt'=>$rt));?>
+	<?php $this->element('ajax_comment_10',array('rt'=>$rt));?>
 	</div>
 <style type="text/css">
 .rate-control{ padding-top:5px;}
@@ -156,7 +156,7 @@ color: #FFF;
 margin-left:5px;
 }
 </style>
-						<form name="MESSAGE" id="MESSAGE" action="" method="post">
+			<form name="MESSAGE" id="MESSAGE" action="" method="post">
 				<div class="rate-control">
 					<ul>
 						<li class="good rate-checked">
@@ -193,7 +193,7 @@ margin-left:5px;
 					<div class="thumbs">
 
 					</div>
-                    <input type="button" class="guest_submit" value="我要评论" onclick="return ajax_submit_mes()">
+                    <input type="button" class="guest_submit" value="我要评论" onclick="return ajax_submit_mes();">
 				</div>
 				<div style="height:24px; line-height:24px; clear:both; text-align:center; color:#FF0000" class="returnmes"></div>
 			</form>
@@ -224,7 +224,7 @@ margin-left:5px;
 	picrt.push(pic);
   }
 
-    function ajax_submit_mes(){
+	function ajax_submit_mes(){
   	  var goods        = new Object();
 	  createwindow();
 	  goods.ranks = $('input[name="ranks"]:checked').val();

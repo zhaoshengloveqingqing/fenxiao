@@ -2,7 +2,7 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/user_index.css<?php echo '?'.time();?>" media="all" />
 <div class="main">
 	<div class="user">
-		<img src="<?php echo ADMIN_URL;?>tpl/10/images/user.png"/>
+		<a href="<?php echo ADMIN_URL;?>user.php?act=myinfos" data-ajax="false"><img src="<?php echo !empty($rt['userinfo']['headimgurl']) ? $rt['userinfo']['headimgurl'] : (!empty($rt['userinfo']['avatar']) ? SITE_URL.$rt['userinfo']['avatar'] : $this->img('noavatar_big.jpg'));?>"></a>
 		<div class="user_info">
 			<p><span class="name"><?php echo empty($rt['userinfo']['nickname']) ? '未知' : $rt['userinfo']['nickname'];?></span></p>
 			<p>会员ID:<span class="huiyuan">100<?php echo $rt['userinfo']['user_id'];?></span></p>
@@ -15,7 +15,7 @@
 			</p>
 			<p>
 				东家:<span class="dongjia">
-				<?php echo $rt['userinfo']['user_rank']=='1' ? '否' : '是'; if($rt['userinfo']['user_rank']=='1'){?>(<a href="<?php echo ADMIN_URL.'in.php';?>">点此购买成为东家</a>)<?php } ?>
+				<?php echo $rt['userinfo']['user_rank']=='1' ? '否' : '是'; if($rt['userinfo']['user_rank']=='1'){?><a href="<?php echo ADMIN_URL.'in.php';?>">(点此购买成为东家)</a><?php } ?>
 				</span>
 			</p>
 		</div>
