@@ -1,4 +1,3 @@
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
 <?php $this->element('10/top',array('lang'=>$lang)); ?>
 <style type="text/css">
@@ -31,7 +30,7 @@
 </style>
 <div style="line-height:44px; padding-left:10px; padding-right:10px;">
 	<form id='search'method="post" action="<?php echo ADMIN_URL;?>daili.php?act=myuser&t=<?php echo $level;?>">
-		<input type="text" placeholder="输入商品关键字"  name="keyword" id="title" value="<?php echo !empty($keyword)&&!in_array($keyword,array('is_promote','is_qianggou','is_hot','is_best','is_new')) ? $keyword : "输入商品关键字";?>"  onfocus="if(this.value=='输入商品关键字'){this.value='';}" onblur="if(this.value==''){this.value='输入商品关键字';}"/>
+		<input type="text" placeholder="输入昵称"  name="key" id="title" value=" <?php echo $nickname;?>"/>
 		<input type="submit" value="submit" class="submit"/>
 	</form>
 </div>

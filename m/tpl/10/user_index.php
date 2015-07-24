@@ -61,8 +61,8 @@
 					<li><a href="<?php echo ADMIN_URL.'user.php?act=myshare';?>">点击链接<span><?php echo empty($rt['userinfo']['share_ucount']) ? '0' : $rt['userinfo']['share_ucount'];?>人</span></a></li>
 					<li><a href="<?php echo ADMIN_URL.'user.php?act=myuser';?>">成功关注<span><?php echo empty($rt['userinfo']['guanzhu_ucount']) ? '0' : $rt['userinfo']['guanzhu_ucount'];?>人</span></a></li>
 					<li><a href="javascript:void(0)"><i></i>下单购买<span><?php echo empty($rt['userinfo']['ordercount']) ? '0' : $rt['userinfo']['ordercount'];?>单</span></a></li>
-					<li><a href="<?php echo ADMIN_URL.'daili.php?act=my_is_daili';?>">成为分销<span><?php echo empty($rt['userinfo']['fxcount']) ? '0' : $rt['userinfo']['fxcount'];?>人</span></a></li>	
-					<li><a href="<?php echo ADMIN_URL.'user.php?act=myerweima';?>">我的二维码</a></li>	
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=my_is_daili';?>">成为分销<span><?php echo empty($rt['userinfo']['fxcount']) ? '0' : $rt['userinfo']['fxcount'];?>人</span></a></li>
+					<li><a href="<?php echo ADMIN_URL.'user.php?act=myerweima';?>">我的二维码</a></li>
 				</ul>
 			</div>
 			<li class="commision">
@@ -72,11 +72,11 @@
 				<ul>
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=weifu';?>">未付款订单<span><?php echo !empty($rt['pay1']) ? $rt['pay1'] : '0.00';?>元</span></a></li>
 					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=yifu';?>">已付款订单<span><?php echo !empty($rt['pay2']) ? $rt['pay2'] : '0.00';?>元</span></a></li>
-					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=shouhuo';?>">已收货订单<span><?php echo !empty($rt['pay3']) ? $rt['pay3'] : '0.00';?>元</span></a></li>		
-					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=quxiao';?>">已取消作废<span><?php echo !empty($rt['pay4']) ? $rt['pay4'] : '0.00';?>元</span></a></li>		
-					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=tongguo';?>">审核通过的<span><?php echo !empty($rt['pay5']) ? $rt['pay5'] : '0.00';?>元</span></a></li>		
-					<li><a href="<?php echo ADMIN_URL.'daili.php?act=postmoney';?>">申请提款<span style="background:url(<?php echo $this->img('x.png');?>) left center no-repeat"></span></a></li>	
-					<li><a href="<?php echo ADMIN_URL.'daili.php?act=postmoneydata';?>">提款记录<span style="background:url(<?php echo $this->img('x.png');?>) left center no-repeat"></span></a></li>
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=shouhuo';?>">已收货订单<span><?php echo !empty($rt['pay3']) ? $rt['pay3'] : '0.00';?>元</span></a></li>
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=quxiao';?>">已取消作废<span><?php echo !empty($rt['pay4']) ? $rt['pay4'] : '0.00';?>元</span></a></li>
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=mymoneydata&status=tongguo';?>">审核通过的<span><?php echo !empty($rt['pay5']) ? $rt['pay5'] : '0.00';?>元</span></a></li>
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=postmoney';?>">申请提款</a></li>
+					<li><a href="<?php echo ADMIN_URL.'daili.php?act=postmoneydata';?>">提款记录</a></li>
 			</ul>
 			</div>
 			<li class="info"><a href="javascript:;" onclick="ajax_show_sub(4,this);">我的资料</a> </li>
