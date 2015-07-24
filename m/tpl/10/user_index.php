@@ -1,10 +1,5 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/user_index.css<?php echo '?'.time();?>" media="all" />
-<style>
-    .sub-menu{
-    display:none;
-}
-</style>
 <div class="main">
 	<div class="user">
 		<img src="<?php echo ADMIN_URL;?>tpl/10/images/user.png"/>
