@@ -104,7 +104,7 @@ body{ background:#FFF !important;}
 	</div>
 	<div class="tabs tab2" style="display:none; text-align:center; min-height:200px;">
 	<div style="min-height:50px; border-bottom:1px solid #ededed; padding-bottom:5px" class="GOODSCOMMENT">
-	<?php $this->element('ajax_comment_10',array('rt'=>$rt));?>
+	<?php $this->element('ajax_comment',array('rt'=>$rt));?>
 	</div>
 <style type="text/css">
 .rate-control{ padding-top:5px;}
