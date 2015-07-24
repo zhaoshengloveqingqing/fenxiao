@@ -62,8 +62,8 @@
 						<input type="password" id="doc-ipt-pwd-2" placeholder="输入11位电话号码"  value="" name="mobile" >
 					</div>
 				</div>
+				<p class="title"><a style="cursor:pointer" onclick="ressinfoop('0','add','CONSIGNEE_ADDRESS')">添加</a></p>
 			</div>
-			<p class="title"><a style="cursor:pointer" onclick="ressinfoop('0','add','CONSIGNEE_ADDRESS')">添加</a></p>
 			<div class="product">
 				<ul>
 				 	<?php 
@@ -95,53 +95,55 @@
 							 </p>
 							<p class="price">零售价：<em><?php echo $row['shop_price'];?>元</em>本店价：<em><?php echo $row['price']>0 ? $row['price']  : $row['pifa_price'];?>元</em></p>
 							<div class="opreation">
-								<a class="delete" href="#">删除</a>
+								<a class="delete delcartid" id="<?php echo $k;?>" style="cursor:pointer;">删除</a>
 							</div>
 						</div>
 					</li>
 					<?php }}?>
-					<li class="clearfix">
-						<img src="<?php echo ADMIN_URL;?>tpl/10/images/product.png"/>
-						<div class="product_detail">
-							<h3>2015年新茶正宗西湖龙井绿茶茶叶500g袋装</h3>
-							<p class="price">零售价：<em>86元</em>本店价：<em>48元</em></p>
-							<div class="opreation">
-
-								<a class="delete" href="#">删除</a>
-							</div>
-						</div>
-					</li>
 				</ul>
 			</div>
 			<div class="empty clearfix">
-				<a class="empty_btn">清空</a>
+				<a class="empty_btn"  href="javascript:;" onclick="return ajax_clear()" style="cursor:pointer;">清空</a>
 			</div>
 			<div class="way">
 				<div class="pay_way">
 					<span>支付方式</span>
 					<div class="am-radio">
-						<label>
-							<input type="radio" name="doc-radio-1" value="option1">
-							微信支付
-						</label>
+						  <?php 
+							if(!empty($rt['paymentlist'])){
+								foreach($rt['paymentlist'] as $k=>$row){
+						?>
+						<label><input type="radio"  name="pay_id"  id="pay_id"<?php if($k=='0'){ echo ' checked="checked"';}?> value="<?php echo $row['pay_id'];?>" type="radio"><?php echo $row['pay_name'];?></label>
+						<?php } }?>
 					</div>
 				</div>
 				<div class="deliver_way">
 					<span>配送方式</span>
 					<div class="am-radio">
+					<?php 
+						$free = array();
+						if(!empty($rt['shippinglist'])){
+						foreach($rt['shippinglist'] as $k=>$row){
+					?>
 						<label>
-							<input type="radio" name="doc-radio-2" value="option2">
-							快递配送
+							<input onclick="return jisuan_shopping('<?php echo $row['shipping_id'];?>')"<?php echo $k=='0' ? ' checked="checked"':'';?> name="shipping_id" id="shipping_id" value="<?php echo $row['shipping_id'];?>" type="radio" /><?php echo $row['shipping_name'];?>
 						</label>
+					<?php 
+						$f = $this->action('shopping','ajax_jisuan_shopping',array('shopping_id'=>$row['shipping_id'],'userress_id'=>($userress_id > 0 ? $userress_id : '5')),'cart');
+						$f = $f>0 ? $f : '0.00';
+						$free[] = $f;
+						}}	?>
 					</div>
 				</div>
 			</div>
+			<?php $free[0] = empty($free[0]) ? '0.00' : $free[0]; ?>
+			<p style=" display:none;line-height:22px; color:#222; font-size:14px; font-weight:bold; color:#9A0000; padding-top:5px;">产品金额:￥<span class="ztotals"><?php echo $zp = $total;if($rt['discount']<100){?>&nbsp;X&nbsp;<?php echo str_replace('.00','',format_price($rt['discount']/10));?>折&nbsp;=&nbsp;<font class="ppzprice"><?php echo $zp = format_price($total*($rt['discount']/100));} ?></font></span>元</p>
 			<p class="total">实付金额:
-				<span class="ztotals">￥<?php echo $zp;?>ss</span>
+				<span class="ztotals">￥<?php echo $zp;?></span>
 				<span class="freeshopp">+￥<?php echo $free[0];?>(邮费)=</span><span class="freeshoppandprice"><?php echo ($zp+$free[0]);?>元</span>
 			</p>
 			<p class="action">
-				<input class="submit" value="提交订单" type="submit" onclick="return checkvar()"/>
+				<input class="submit" value="提交订单" type="submit" onclick="return checkvar()" style="cursor:pointer;"/>
 			</p>
 		</form>
 	</div>
@@ -158,7 +160,7 @@ function toDecimal(x) {
 } 
 
 function ajax_clear(){
-	if(confirm('确定吗')){
+	if(confirm('确定清空购物车吗？')){
 		window.location.href='<?php echo ADMIN_URL;?>mycart.php?type=clear';
 		return true;
 	}
