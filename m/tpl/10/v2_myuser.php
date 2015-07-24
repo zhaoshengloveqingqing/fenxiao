@@ -36,7 +36,7 @@
 	</form>
 </div>
 
-<div id="main" style="min-height:300px;margin-bottom:20px;">
+<div id="main" style="min-height:300px;margin-bottom:78px;">
 	<ul class="v12_ul">
 	<?php if(!empty($rt['lists']))foreach($rt['lists'] as $k=>$row){?>
 		<li style="padding:5px; border-bottom:1px solid #d8d8d8; position:relative">
