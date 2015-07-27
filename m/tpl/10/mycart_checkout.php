@@ -93,9 +93,9 @@
 							<p class="price">零售价：<em><?php echo $row['shop_price'];?>元</em>本店价：<em><?php echo $row['price']>0 ? $row['price']  : $row['pifa_price'];?>元</em></p>
 							<div class="opreation">
 								<div  class="num_opreation">
-									<a class="gjian">-</a>
-									<input readonly="" id="<?php echo $k;?>" name="number" value="1" class="inputBg" style="" type="text">
-									<a class="gjia" style="">+</a>
+									<a class="gjian jian">-</a>
+									<input readonly="" id="<?php echo $k;?>"  name="goods_number" value="<?php echo $row['number'];?>"  class="inputBg" style="" type="text">
+									<a class="gjia jia" >+</a>
 								</div>
 								<a class="delete delcartid" id="<?php echo $k;?>">删除</a>
 							</div>
@@ -140,9 +140,9 @@
 			</div>
 			<?php $free[0] = empty($free[0]) ? '0.00' : $free[0]; ?>
 			<p style=" display:none;line-height:22px; color:#222; font-size:14px; font-weight:bold; color:#9A0000; padding-top:5px;">产品金额:￥<span class="ztotals"><?php echo $zp = $total;if($rt['discount']<100){?>&nbsp;X&nbsp;<?php echo str_replace('.00','',format_price($rt['discount']/10));?>折&nbsp;=&nbsp;<font class="ppzprice"><?php echo $zp = format_price($total*($rt['discount']/100));} ?></font></span>元</p>
-			<p class="total">实付金额:
-				<span class="ztotals">￥<?php echo $zp;?></span>
-				<span class="freeshopp">+￥<?php echo $free[0];?>(邮费)=</span><span class="freeshoppandprice"><?php echo ($zp+$free[0]);?>元</span>
+			<p class="total">实付金额:￥
+				<span class="ztotals"><?php echo $zp;?></span>+￥
+				<span class="freeshopp"><?php echo $free[0];?></span>(邮费)=<span class="freeshoppandprice"><?php echo ($zp+$free[0]);?></span>元
 			</p>
 			<p class="action">
 				<input class="submit" value="提交订单" type="submit" onclick="return checkvar()" style="cursor:pointer;"/>
@@ -157,7 +157,7 @@ function toDecimal(x) {
 	if (isNaN(f)) {  
 		return;  
 	}  
-	f = Math.round(x*100)/100;  
+	f = Math.round(x*100)/100; 
 	return f;  
 } 
 
@@ -344,8 +344,12 @@ function change_number(obj){
 			$('.gprice'+id).html('￥'+data.thisprice);
 			$('.gzprice'+id).html('￥'+toDecimal(data.thisprice * numbers));
 			ff = data.freemoney;
-			$('.freeshopp').html(ff);
-			$('.freeshoppandprice').html(toDecimal(toDecimal(data.prices)+toDecimal(ff)));
+			$('.freeshopp').html(toDecimal(ff));
+			console.log(toDecimal(toDecimal(data.prices)+toDecimal(ff)));
+			console.log(toDecimal(data.prices));
+			console.log(toDecimal(ff));
+			console.log(toDecimal(data.prices)+toDecimal(ff));
+			$('.freeshoppandprice').html(toDecimal(toDecimal(data.prices) + toDecimal(ff)));
 		}else{
 			alert(data.message);
 		}

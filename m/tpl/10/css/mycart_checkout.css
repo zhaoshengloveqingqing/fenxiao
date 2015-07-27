@@ -273,6 +273,7 @@ p.action .submit {
 	font-size:18px;
 	font-weight:bold;
 	border:1px solid #e8e8e8;
+	cursor:pointer; 
 }
 .num_opreation .gjia {
 	cursor:pointer;
@@ -285,6 +286,7 @@ p.action .submit {
 	font-size:18px;
 	font-weight:bold;
 	border:1px solid #e8e8e8;
+	cursor:pointer; 
 }
 .inputBg {
 	float:left;

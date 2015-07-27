@@ -35,7 +35,7 @@ if(!empty($thiscart))foreach($thiscart as $row){
 			<li><a href="<?php echo ADMIN_URL.'user.php';?>"><i class="user"></i><label>我的地盘</label></a></li>
 			<li>
 				<a href="<?php echo ADMIN_URL;?>mycart.php" style="height:56px; padding:0px; border:none">
-				<span class="shop_num"><?php echo $nums;?></span>
+				<span class="shop_num mycarts"><?php echo $nums;?></span>
 				<i class="shopping"></i>
 				<label>购物车</label>
 				</a>
