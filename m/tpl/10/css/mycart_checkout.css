@@ -97,8 +97,8 @@ body {
 	text-align: left;
 }
 .edit .am-form-group {
-	margin: 6px 10%;
-	width: 78%;
+	margin: 6px auto;
+	width: 90%;
 	height: 38px;
 	line-height: 38px;
 }
@@ -119,14 +119,16 @@ body {
 	height: 38px;
 	line-height: 38px;
 }
-.edit .am-form-group select{
+.edit .am-form-group select {
 	background: #FFFFFF;
 	border: 1px solid #CDCDCD;
 	padding-left: 10px;
 	height: 38px;
 	line-height: 38px;
 	border-radius: 0;
+	width: 78px;
 }
+
 .product ul {
 	width: 100%;
 }
