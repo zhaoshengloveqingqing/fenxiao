@@ -1489,7 +1489,7 @@ class UserController extends Controller{
 		$type = $_GET['type'] ? $_GET['type']  : '1';
 		$rt['type'] = $type;
 		if ($type == '1') {
-			$w_rt[] = "tb1.`order_status` = '2' AND tb1.`pay_status` = '0'  AND tb1.`shipping_status` = '0'";
+			$w_rt[] = "(tb1.`order_status` = '0' OR  tb1.`order_status` = '2' ) AND tb1.`pay_status` = '0'  AND tb1.`shipping_status` = '0'";
 		}else if($type == '2'){
 			$w_rt[] = "tb1.`order_status` = '2' AND tb1.`pay_status` = '1'  AND tb1.`shipping_status` = '2'";
 		}
