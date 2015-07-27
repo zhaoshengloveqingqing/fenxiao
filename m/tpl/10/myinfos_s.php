@@ -36,7 +36,7 @@
 				<div class="am-form-group">
 					<label for="doc-ipt-3" class="am-u-sm-2 am-form-label">姓名：</label>
 					<div class="am-u-sm-10">
-						<input type="text" id="doc-ipt-3" placeholder="输入你的姓名" value="" name="consignee"  >
+						<input type="text" id="doc-ipt-3" placeholder="输入你的姓名"  value="" name="consignee"  >
 					</div>
 				</div>
 
@@ -48,7 +48,7 @@
 				<div class="am-form-group">
 					<label for="doc-ipt-3" class="am-u-sm-2 am-form-label">地址：</label>
 					<div class="am-u-sm-10">
-						<input type="email" id="doc-ipt-3" placeholder="输入详细地址"  value="" name="address" >
+						<input type="text" id="doc-ipt-3" placeholder="输入详细地址"  value="" name="address" >
 					</div>
 				</div>
 
@@ -57,10 +57,10 @@
 						电话：
 					</label>
 					<div class="am-u-sm-10">
-						<input type="password" id="doc-ipt-pwd-2" placeholder="输入11位电话号码"  value="" name="mobile" >
+						<input type="text" id="doc-ipt-pwd-2" placeholder="输入11位电话号码"  value="" name="mobile" >
 					</div>
 				</div>
-				<p class="action"><input value="提交" type="button" id="submit"  onclick="return submit_login_data()">
+				<p class="action"><input value="提交" type="button" id="submit"  onclick="ressinfoop('0','add','CONSIGNEE_ADDRESS');">
 			</div>
 		</form>
 	</div>
