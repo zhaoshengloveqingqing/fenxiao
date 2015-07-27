@@ -18,4 +18,19 @@
 		<input value="确认修改" type="button" id="submit"  onclick="return submit_login_data()">
 	</form>
 </div>
+<script type="text/javascript">
+	$('input').click(function(){
+		alert(1);
+		$(this).parent().addClass('border-bottom','1px solid #ff0000');
+	})
+//	function ajax_show_sub(k,obj){
+//		$(".gg"+k).toggle();
+//		ll = $(".gg"+k).css('display');
+//		/*if(ll=='none'){
+//		 $(obj).find('i').css('background','url(<?php //echo $this->img('+h.png');?>//) 10% center no-repeat');
+//		 }else{
+//		 $(obj).find('i').css('background','url(<?php //echo $this->img('-h.png');?>//) 10% center no-repeat');
+//		 }*/
+//	}
+</script>
 <?php $this->element('10/footer',array('lang'=>$lang)); ?>
