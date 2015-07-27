@@ -256,7 +256,8 @@ function update_user_info(t){
 					location.href=SITE_URL+'user.php';	
 				}else{
 					//JqueryDialog.Open('系统提醒你',data.message,250,50);
-					$('table .returnmes').html(data.message);
+					//$('table .returnmes').html(data.message);
+					alert(data.message);
 				}
 		   }
 		});

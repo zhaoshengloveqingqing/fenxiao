@@ -107,10 +107,10 @@ window.onscroll = function () {
 if (getScrollTop() + getClientHeight() == getScrollHeight()) {
 	//tops = getScrollHeight();
 
-	$('.loadsss').html('<img src="<?php echo $this->img('loadings.gif');?>" style="width:16px!important; height:16px;" />加载中');
+	$('.loadsss').html('<img src="<?php echo $this->img('loadings.gif');?>" style="width:16px!important; height:16px;" />加载中...');
 	setTimeout(function(){
 		isrun = true;
-	},15000);
+	},6000);
 	if(isrun==true){
 		isrun = false;
 		$.post('<?php echo ADMIN_URL;?>daili.php',{action:'ajax_myuser_page',tops:tops,hh:hh,level:'<?php echo $level;?>'},function(data){
@@ -121,6 +121,8 @@ if (getScrollTop() + getClientHeight() == getScrollHeight()) {
 				isrun = true;
 			}
 		})
+	}else{
+		$('.loadsss').html("");
 	}
 }
 }
