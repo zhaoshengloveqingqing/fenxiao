@@ -2,7 +2,7 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/myinfos_u.css<?php echo '?'.time();?>" media="all" />
 <?php $this->element('10/top',array('lang'=>$lang)); ?>
 <div class="main">
-	<form name="USERINFO" id="USERINFO" action="" method="post">
+	<form name="USERINFO" id="register" action="" method="post">
 		<div class="am-form-group">
 			<label for="doc-ipt-email-1">手机号码:</label>
 			<input type="text" class="" id="doc-ipt-email-1" placeholder="手机号码为登录帐号"  value="<?php echo isset($rt['userinfo']['mobile_phone'])&&!empty($rt['userinfo']['mobile_phone']) ? $rt['userinfo']['mobile_phone'] : "";?>" name="mobile_phone" >

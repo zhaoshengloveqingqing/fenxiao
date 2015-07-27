@@ -3,7 +3,7 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/myinfos_b.css<?php echo '?'.time();?>" media="all" />
 <?php $this->element('10/top',array('lang'=>$lang)); ?>
 <div class="main">
-	<form name="USERINFO2" id="USERINFO2"  method="post">
+	<form name="USERINFO2" id="register"  method="post">
 		<div class="am-form-group">
 			<label for="doc-ipt-email-1">开户银行:</label>
 			<input type="text" class="" id="doc-ipt-email-1" placeholder="开户银行"  value="<?php echo isset($rts['bankname']) ? $rts['bankname'] : '';?>" name="bankname"  >
