@@ -139,19 +139,19 @@
 	margin: 8px 0.5%;
 	display: inline-block;
 	border: 1px solid #E2E2E2;
-	height: 240px;
+	height: 209px;
 	vertical-align: top;
 }
 .points_list .points li a .points_img {
-	min-width: 176px;
-	min-height: 176px;
+	min-width: 144px;
+	min-height: 144px;
 	align-items: center;
 	justify-content: center;
 	display: flex;
 }
 .points_list .points li a img {
 	width: 100%;
-	max-height: 176px;
+	max-height: 144px;
 }
 
 .points_list .points li a h3 {
