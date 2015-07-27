@@ -19,5 +19,16 @@
 		<input value="同意协议并注册" type="button" id="submit"  onclick="return submit_register_data('REGISTER1');"/>
 	</form>
 </div>
+<script type="text/javascript">
+	$('input').each(function (index) {
+		$(this).click(function(){
+			$(this).parent().addClass('am-form');
+		});
+		$(this).blur(function(){
+			$(this).parent().removeClass('am-form');
+		});
+
+	});
+</script>
 <?php $this->element('10/footer',array('lang'=>$lang)); ?>
 

@@ -19,18 +19,14 @@
 	</form>
 </div>
 <script type="text/javascript">
-	$('input').click(function(){
-		alert(1);
-		$(this).parent().addClass('border-bottom','1px solid #ff0000');
-	})
-//	function ajax_show_sub(k,obj){
-//		$(".gg"+k).toggle();
-//		ll = $(".gg"+k).css('display');
-//		/*if(ll=='none'){
-//		 $(obj).find('i').css('background','url(<?php //echo $this->img('+h.png');?>//) 10% center no-repeat');
-//		 }else{
-//		 $(obj).find('i').css('background','url(<?php //echo $this->img('-h.png');?>//) 10% center no-repeat');
-//		 }*/
-//	}
+	$('input').each(function (index) {
+		$(this).click(function(){
+			$(this).parent().addClass('am-form');
+		});
+		$(this).blur(function(){
+			$(this).parent().removeClass('am-form');
+		});
+
+	});
 </script>
 <?php $this->element('10/footer',array('lang'=>$lang)); ?>
