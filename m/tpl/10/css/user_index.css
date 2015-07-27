@@ -1,8 +1,10 @@
 body{
 	margin-bottom: 105px !important;
 }
+
 .main .user {
-	background-image: linear-gradient( #B5192A 0%, #FF6577 99%);
+	background: linear-gradient( #B5192A 0%, #FF6577 99%);
+	background: -webkit-linear-gradient( #B5192A 0%, #FF6577 99%);
 	width: 92%;
 	padding: 0 4%;
 	display: table;
@@ -115,6 +117,15 @@ body{
 .user_details ul li.collection {
 	background:url(../images/collection_icon.png) 15px 10px no-repeat;
 	position: relative;
+}
+.user_details ul li.plute {
+	background:url(../images/plute_icon.png) 15px 10px no-repeat;
+}
+.user_details ul li.refund {
+	background:url(../images/refund_icon.png) 15px 10px no-repeat;
+}
+.user_details ul li.drawings {
+	background:url(../images/drawings_icon.png) 15px 10px no-repeat;
 }
 .user_details ul li a i {
 	background:url(../images/ahead_icon.png)  no-repeat;
