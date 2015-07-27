@@ -33,7 +33,7 @@
 	</div>
 	<div class="user_details">
 		<ul>
-			<li class="member">
+			<li class="spread">
 				<a  href="javascript:;" onclick="ajax_show_sub(1,this);">
 					他的一级客户<span><?php echo empty($rt['zcount1']) ? '0' : $rt['zcount1'];?>人</span>
 				</a>
@@ -53,7 +53,7 @@
 					<li><a href="javascript:;">贡献佣金<span>￥<?php echo empty($rt['yj2']) ? '0' : $rt['yj2'];?></span></a></li>
 				</ul>
 			</div>
-			<li class="commision">
+			<li class="spread">
 				<a href="javascript:;" onclick="ajax_show_sub(3,this);">他的三级客户<span><?php echo empty($rt['zcount3']) ? '0' : $rt['zcount3'];?>人</span></a>
 			</li>
 			<div class="sub-menu clearfix gg3">
