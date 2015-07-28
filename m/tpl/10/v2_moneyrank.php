@@ -1,9 +1,9 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/v2_moneyrank.css<?php echo '?'.time();?>" media="all" />
-<!--<link type="text/css" rel="stylesheet" href="--><?php //echo ADMIN_URL;?><!--tpl/15/css.css" media="all" />-->
 <?php $this->element('10/top',array('lang'=>$lang)); ?>
 <div id="main">
 	<div class="money">
+		<i></i>
 		<p><span class="title">我的资金</span><span>￥293.50</span></p>
 		<p><span class="title">我的排名</span><span>5</span></p>
 	</div>

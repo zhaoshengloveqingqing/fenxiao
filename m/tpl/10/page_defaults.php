@@ -1,5 +1,8 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
 <style type="text/css">
+body{
+	margin-bottom: 105px !important;
+}
 .indexcon{ text-align:center}
 .indexcon img{ max-width:100%;}
 .footffont{ line-height:24px; position:relative}
@@ -85,15 +88,16 @@ if($rt['uinfo']['is_subscribe']=='0'){
 if($true=="true"){
 ?>
 <div style="position:fixed; bottom:48px; right:5px; z-index:99; width:100px">
-<input type="button" id="cart" class="addcar" value="我要购买" style="cursor:pointer; width:100%; background:#32a000" onclick="return addToCart('<?php echo $rt['tj']['goods_id'];?>','jumpshopping')">
+<input type="button" id="cart" class="addcar" value="我要购买" style="cursor:pointer; width:100%; background:#EB5566" onclick="return addToCart('<?php echo $rt['tj']['goods_id'];?>','jumpshopping')">
 </div>
 <?php
 }
 ?>
-<div style=" position:relative;height:44px; line-height:44px; background:#3B0313;  position:fixed; bottom:0px; left:0px; width:100%; z-index:9999;opacity:0.8;filter:alpha(opacity=80);">
-	<img src="<?php echo $rt['uinfo']['headimgurl'];?>" height="40" style="margin:2px 8px 2px 10px; float:left" />
-	<p style=" padding-top:2px; padding-bottom:2px; line-height:20px; color:#FFF; font-weight:bold">
-	来自好友<font color="#148430"><?php echo $rt['tjr']['nickname'];?></font>的推荐<br/><?php echo $desc;?>
+<div style=" position:relative;height:76px; line-height:76px; background:#F7F7F7;  position:fixed; bottom:0px; left:0px; width:100%; z-index:9999;">
+	<img src="<?php echo $rt['uinfo']['headimgurl'];?>" height="65" style="margin:6px 8px 2px 10px; float:left;vertical-align: middle" />
+	<p style=" padding-top:10px; padding-bottom:2px; line-height:30px; color:#333; font-weight:bold">
+	来自好友<font color="#EB5566"><?php echo $rt['tjr']['nickname'];?></font>的推荐<br/><?php echo $desc;?>
 	</p>
-	<a href="<?php echo $urls;?>" style=" position:absolute; right:10px; top:10px; z-index:99; cursor:pointer; height:25px; line-height:25px; width:60px; border:1px solid #FFF;border-radius: 5px; text-align:center; color:#FFF"<?php echo $sub;?>><?php echo $but;?></a>
+	<a href="<?php echo $urls;?>" style=" position:absolute; right:10px; top:10px; z-index:99; cursor:pointer; height:25px; line-height:25px;
+	 width:60px; border:1px solid #FFF;border-radius: 1px; text-align:center; color:#FFF;background: #EB5566"<?php echo $sub;?>><?php echo $but;?></a>
 </div>
