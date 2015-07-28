@@ -1,0 +1,150 @@
+body{
+	background:#ffffff;
+	font-size:13px;
+	font-family: "Lantinghei TC";
+	overflow-x: hidden;
+}
+#home {
+	position: relative;
+	z-index: 100;
+}
+#header {
+	background:#EB5664;
+	height: 57px;
+	text-align: center;
+}
+#header .back {
+	background:url(../images/back_icon.png) 0 center no-repeat;
+	width:14px;
+	height:22px;
+	position: absolute;
+	top: 16px;
+	left:20px;
+}
+
+#header .title {
+	font-size: 20px;
+	text-shadow:none;
+	line-height: 57px;
+}
+#footer {
+	background:#F7F7F7;
+	position: fixed;
+	z-index: 900;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height:76px;
+	border-top:2px solid #E1E1E1;
+
+}
+#footer ul{
+	height:76px;
+}
+#footer ul li{
+	cursor:pointer;
+	width:25%;
+	float:left;
+	height:76px;
+}
+#footer ul li a {
+	display:block;
+	text-align:center;
+	border: none;
+	color: #000000;
+	font-size: 13px;
+}
+#footer ul li a:hover {
+	color: #EB5566;
+}
+#footer ul li a.active {
+	color: #EB5566;
+}
+#footer ul li a{
+	display:block;
+	height:76px;
+}
+#footer ul li a label{
+	padding-top: 10px;
+}
+#footer ul li a i.home{
+	display:block;
+	background:url(../images/home_icon.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a:hover i.home{
+	display:block;
+	background:url(../images/home_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a.active i.home{
+	display:block;
+	background:url(../images/home_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a i.category{
+	display:block;
+	background:url(../images/category_icon.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a:hover i.category{
+	display:block;
+	background:url(../images/category_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a.active i.category{
+	display:block;
+	background:url(../images/category_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a i.user{
+	display:block;
+	background:url(../images/user_icon.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a:hover i.user{
+	display:block;
+	background:url(../images/user_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a.active i.user{
+	display:block;
+	background:url(../images/user_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a i.shopping{
+	display:block;
+	background:url(../images/shopping_icon.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a:hover i.shopping{
+	display:block;
+	background:url(../images/shopping_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a.active i.shopping{
+	display:block;
+	background:url(../images/shopping_icon_hover.png) center 10px no-repeat;
+	height: 35px;
+}
+#footer ul li a span{
+	width:16px;
+	height:16px;
+	position:absolute;
+	display:block;
+	margin:0px auto;
+	text-align: center;
+	background: #FC3939;
+	border-radius: 50%;
+	line-height: 16px;
+	color: #ffffff;
+	text-shadow: none;
+	font-size: 11px;
+	left:58%;
+	top:5px;
+}
+.mb {
+	margin-bottom: 0 !important;
+}
+

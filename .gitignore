@@ -1,9 +1,16 @@
+npm-debug.log
+.DS_Store
 .buildpath
 .project
 .settings/
+.idea/
 
 sess/
 cache/
 photos/
 data/basic_config.php
+
+
+sync.sh
+
 

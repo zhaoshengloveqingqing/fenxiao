@@ -6,7 +6,7 @@ class UserController extends Controller{
 	
  	function  __construct() {
 		$this->css(array('jquery_dialog.css','user2015.css'));
-		$this->js(array('jquery.json-1.3.js','jquery_dialog.js','common.js','user.js?v=v1'));
+		$this->js(array('jquery.json-1.3.js','jquery_dialog.js', 'user.js?v=v1'));
 	}
 	
 	/*************/
@@ -322,20 +322,21 @@ class UserController extends Controller{
 	
 	//用户登录
 	function login(){
-		$this->css('login.css');
-		if(($this->is_login())){ $this->jump(ADMIN_URL.'user.php'); exit;} //
+		//$this->css('login.css');  //remark
+		if(($this->is_login())){ $this->jump(ADMIN_URL.'user.php'); exit;} 
 		$this->title("用户登录".' - '.$GLOBALS['LANG']['site_name']);
 	
 		$rt['hear'][] = '<a href="'.ADMIN_URL.'">首页</a>&nbsp;&gt;&nbsp;';
 		$rt['hear'][] = '用户登录';
-			
+		
 		//地区
 		$sql = "SELECT * FROM `{$this->App->prefix()}region` WHERE parent_id='76' AND region_type='3' ORDER BY region_id ASC";
 		$rt['diqucate'] = $this->App->find($sql);
-		
+
 		//店铺分类
 		$sql = "SELECT * FROM `{$this->App->prefix()}user_cate` WHERE parent_id='0' AND is_show='1' ORDER BY sort_order ASC,cat_id ASC";
 		$rt['shopcate'] = $this->App->find($sql);
+		
 			
 		if(!defined(NAVNAME)) define('NAVNAME', "用户登录");
 		$this->set('rt',$rt);
@@ -976,8 +977,6 @@ class UserController extends Controller{
 		
 		if(!defined(NAVNAME)) define('NAVNAME', "我的邀请");
 		$this->set('rt',$rt);
-		$this->template('myshare');
-		
 		$mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
 		$this->template($mb.'/myshare');
 	}
@@ -1179,7 +1178,7 @@ class UserController extends Controller{
 				$orderlist[$k]['shipping_code'] = $this->App->findvar("SELECT shipping_code FROM `{$this->App->prefix()}shipping_name` WHERE shipping_id = '$sid' LIMIT 1");
 				$orderlist[$k]['status'] = $this->get_status($row['order_status'],$row['pay_status'],$row['shipping_status']);
 				$orderlist[$k]['op'] = $this->get_option($row['order_id'],$row['order_status'],$row['pay_status'],$row['shipping_status']);
-				$sql= "SELECT goods_id,goods_name,goods_bianhao,market_price,goods_price,goods_thumb FROM `{$this->App->prefix()}goods_order` WHERE order_id='$row[order_id]' ORDER BY goods_id";
+				$sql= "SELECT goods_id,goods_name,goods_bianhao,market_price,goods_price,goods_thumb, goods_number FROM `{$this->App->prefix()}goods_order` WHERE order_id='$row[order_id]' ORDER BY goods_id";
 				$orderlist[$k]['goods'] = $this->App->find($sql);
 				
 				$oid = $row['order_id'];
@@ -1249,7 +1248,7 @@ class UserController extends Controller{
 		$sql= "SELECT * FROM `{$this->App->prefix()}goods_order` WHERE order_id='$orderid' ORDER BY goods_id";
 		$rt['goodslist'] = $this->App->find($sql);
 		
-		$sql = "SELECT tb1.*,tb2.region_name AS province,tb3.region_name AS city,tb4.region_name AS district FROM `{$this->App->prefix()}goods_order_info` AS tb1";
+		$sql = "SELECT tb1.*,tb2.region_name AS province,tb3.region_name AS city,tb4.region_name AS district, add_time  FROM `{$this->App->prefix()}goods_order_info` AS tb1";
 		$sql .=" LEFT JOIN `{$this->App->prefix()}region` AS tb2 ON tb2.region_id = tb1.province";
 		$sql .=" LEFT JOIN `{$this->App->prefix()}region` AS tb3 ON tb3.region_id = tb1.city";
 		$sql .=" LEFT JOIN `{$this->App->prefix()}region` AS tb4 ON tb4.region_id = tb1.district";
@@ -1258,8 +1257,6 @@ class UserController extends Controller{
 		
 		$status = $this->get_status($rt['orderinfo']['order_status'],$rt['orderinfo']['pay_status'],$rt['orderinfo']['shipping_status']);
 		$rt['status'] = explode(',',$status);
-		
-				
 		if(!defined(NAVNAME)) define('NAVNAME', "订单详情");
 		$this->set('rt',$rt);
 		//$this->template('user_orderinfo2014');
@@ -1488,15 +1485,26 @@ class UserController extends Controller{
 			$w_rt[] = "(tb2.goods_name LIKE '%".$keyword."%' OR tb1.order_sn LIKE '%".$keyword."%')";
 		}
 		
+		//type=1 待付款 2 待收货 3 全部
+		$type = $_GET['type'] ? $_GET['type']  : '1';
+		$rt['type'] = $type;
+		if ($type == '1') {
+			$w_rt[] = "(tb1.`order_status` = '0' OR  tb1.`order_status` = '2' ) AND tb1.`pay_status` = '0'  AND tb1.`shipping_status` = '0'";
+		}else if($type == '2'){
+			$w_rt[] = "tb1.`order_status` = '2' AND tb1.`pay_status` = '1'  AND tb1.`shipping_status` = '2'";
+		}
+		
 		$page = isset($_GET['page']) ?  intval($_GET['page']) : 1;
 		if(!($page>0)) $page = 1;
-		$list = 5;
+		$list = 8;
 		$tt = $this->__order_list_count($w_rt); //获取商品的数量
 		$rt['order_count'] = $tt;
 		
-		$rt['orderpage'] = Import::basic()->getpage($tt,$list,$page,'?page=',true);
-
+		$rt['orderpage'] = Import::basic()->getpage($tt,$list,$page,'?page=',true, '1');
 		$rt['orderlist'] = $this->__order_list($w_rt,$page,$list);
+//		echo '<pre>';
+//		print_r($rt['orderlist']);die;
+		
 		$rt['status'] = $status;
 		
 		$rt['userinfo']['user_id'] = $this->Session->read('User.uid');

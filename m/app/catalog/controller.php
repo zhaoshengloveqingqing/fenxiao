@@ -19,8 +19,8 @@ class CatalogController extends Controller{
 		$this->action('common','checkjump');
 		//$this->layout('catalog');
 		
-		$this->js('slide.js');
-		$this->css('slide-3.css');
+		//$this->js('slide.js');
+		//$this->css('slide-3.css');
 		$rt = $this->Cache->read(3600);
 	 	if(is_null($rt)) {
 			if (empty($_GET['encode']))

@@ -528,7 +528,8 @@ class DailiController extends Controller{
 		
 		if(!defined(NAVNAME)) define('NAVNAME', "修改提款密码");
 		$this->set('rts',$rts);
-		$this->template('v2_setpasspay');
+		$mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
+		$this->template($mb.'/v2_setpasspay');
 	}
 	function postmoney(){
 		$this->checked_login();

@@ -1,0 +1,181 @@
+#main .user {
+	background: #EB5566;
+	height: 80px;
+	padding: 0 2%;
+}
+#main .user .user_info {
+	width: 70%;
+	float: left;
+}
+#main .user .focus {
+	/*display: none;*/
+}
+#main .user .user_info img {
+	float: left;
+	padding-top: 8px;
+	margin-right: 6px;
+	vertical-align: middle;
+}
+#main .user .user_info p {
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 22px;
+	padding-top: 20px;
+
+}
+#main .user .user_info p em {
+	color: #FFF310;
+	font-style: normal;
+}
+#main .user a {
+	margin-top:15px;
+	background: #FF9514;
+	float: right;
+	border-radius: 4px;
+	box-shadow: 0 4px 0 #D63547;
+	display: inline-block;
+	font-size: 15px;
+	height: 50px;
+	color: #ffffff;
+	width: 29%;
+	text-align: center;
+}
+#main .user a span {
+	vertical-align: top;
+	line-height: 56px;
+}
+#main .user a i.select {
+	display:inline-block;
+	background:url(../images/select.png) 5px 15px no-repeat;
+	width: 26px;
+	height: 36px;
+}
+#main .menu {
+	background: #ffffff;
+	margin: 15px 0;
+}
+
+#main .menu ul {
+	width: 100%;
+	margin: 0 auto;
+}
+#main .menu ul li {
+	width: 32%;
+	display: inline-block;
+	text-align: center;
+}
+#main .menu ul li a{
+	color:#1E1E1E;
+	font-size: 12px;
+}
+
+#main .menu ul li a img{
+	vertical-align: middle;
+	width: 38px;
+}
+#main .menu ul li a label {
+	display: inline-block;
+	margin-left: 4px;
+}
+#main .product_list {
+	border-top: 10px solid #F3F3F3;
+}
+#main .product_list h3.title{
+	height: 26px;
+	padding-left: 12px;
+	margin:12px 0;
+	color: #E84658;
+	font-size: 18px;
+	border-left:8px solid #EB5566;
+}
+#main .product_list .product {
+	width: 100%;
+}
+#main .product_list .product img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+#main .product_list .product .product_detail p{
+	background: #E5E5E5;
+	height: 60px;
+	line-height: 60px;
+	font-size: 18px;
+	width: 100%;
+	position: relative;
+}
+
+#main .product_list .product .product_detail p span.names{
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	width: 58%;
+}
+#main .product_list .product .product_detail p span {
+	padding: 0 10px;
+}
+#main .product_list .product .product_detail p span.price{
+	font-size: 26px;
+	color: #FF5200;
+	position: absolute;
+	top:0;
+	right:10px;
+	height: 60px;
+}
+#main .product_list .product .product_detail p i.discount_price{
+	font-size: 16px;
+	color: #919191;
+	text-decoration: line-through;
+	font-style: normal;
+	margin-left: 15px;
+}
+.points_list .points {
+	text-align: left;
+}
+.points_list .points li{
+	width: 47%;
+	margin: 8px 0.5%;
+	display: inline-block;
+	border: 1px solid #E2E2E2;
+	height: 209px;
+	vertical-align: top;
+}
+.points_list .points li a .points_img {
+	min-width: 144px;
+	min-height: 144px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+.points_list .points li a img {
+	width: 100%;
+	max-height: 144px;
+}
+
+.points_list .points li a h3 {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	margin: 5px;
+}
+.points_list .points li p{
+	text-align: center;
+	background: #E5E5E5;
+}
+.points_list .points li p .points_light{
+	font-size: 14px;
+	color: #FF5200;
+	line-height: 36px;
+}
+.copyright {
+	background: #F7F7F7;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	margin-top: 8px;
+}

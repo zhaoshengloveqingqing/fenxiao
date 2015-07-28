@@ -15,7 +15,7 @@
 			</div>
 		</div>
 	</div>
-</div>	
+</div>
 <script type="text/javascript">
 function ajax_show_menu(){
 	$(".showmenu").toggle();

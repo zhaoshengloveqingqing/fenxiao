@@ -75,7 +75,6 @@ class PageController extends Controller{
 		//轮播js css
 		$this->css(array("flexslider.css"));
 		$this->js(array("jquery.flexslider-min.js","main.js"));
-		
 		$this->title($GLOBALS['LANG']['site_title']);
 		$this->meta("title",$GLOBALS['LANG']['metatitle']);
 		$this->meta("keywords",$GLOBALS['LANG']['metakeyword']);
@@ -117,17 +116,6 @@ class PageController extends Controller{
 		$is_subscribe = $this->App->findvar($sql);
 		$rt['shareinfo']['is_subscribe'] = empty($is_subscribe) ? '0' : $is_subscribe;
 		
-		$sql = "SELECT `goods_id`, `goods_number` FROM `{$this->App->prefix()}goods_order` gdorder
-			INNER JOIN `{$this->App->prefix()}goods_order_info` info ON gdorder.order_id = info.order_id
-			WHERE info.order_sn = '$order_sn'";
-		$order = $this->App->findrow($sql);
-
-		if ($order && $order['goods_id'] > 0) {
-			$sql = "UPDATE `{$this->App->prefix()}goods` SET `sale_count` = `sale_count`+1 , `goods_number` = `goods_number`- '$num' WHERE goods_id = '$gid'";
-			$this->App->query($sql);
-		}
-		
-
 		//品牌列表
 		$sql = "SELECT distinct brand_name, brand_id,brand_name,brand_banner,brand_logo FROM `{$this->App->prefix()}brand` WHERE is_show='1' AND is_promote='1' ORDER BY sort_order ASC,brand_id LIMIT 7";
 		$rt['blist'] =  $this->App->find($sql);

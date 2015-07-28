@@ -8,9 +8,9 @@
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 <meta name="format-detection" content="telephone=no"/>
 <title><?php echo $this->title();?></title><?php echo $this->meta();?>
-<?php echo $this->css(array('comman.css','jquery_dialog.css','style.css?v=v18'));?>
+<?php echo $this->css(array('comman.css','jquery_dialog.css','style.css'));?>
 <?php echo '<script> var SITE_URL="'.ADMIN_URL.'";</script>'."\n";?>
-<?php echo $this->js(array('jquery.min.js','jquery_dialog.js','common.js?v=21'));?>
+<?php echo $this->js(array('jquery.min.js','jquery_dialog.js','common.js'));?>
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
 </head>
 <body>

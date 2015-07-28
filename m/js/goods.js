@@ -8,20 +8,20 @@ function pload(){
  * obj:
  */
 function addToCart(goodsid,tt)
-{ 
+{
  if(tt=="jifen_cartlist" || tt=="jifen"){
 	if(confirm("你确定兑换吗？兑换后你的积分将会相应减少！")){}else{ return false;}
  }
 
 //判断js函数是否存在
- try{  
-  if(typeof(eval('checkcartattr'))=="function"){ 
+ try{
+  if(typeof(eval('checkcartattr'))=="function"){
 	  if(checkcartattr()==false){
 		  return false;
 	  }
   }
  }catch(e){
-	   //alert("not function"); 
+	   //alert("not function");
  }
 
   var goods        = new Object();  //一个商品的所有属性
@@ -29,7 +29,7 @@ function addToCart(goodsid,tt)
   var number       = 1;  //购买数据
   var formBuy      = document.forms['ECS_FORMBUY']; //表单
 
-  // 检查是否有商品规格 
+  // 检查是否有商品规格
   if (formBuy)
   {
     spec_arr = getSelectedAttributes(formBuy);
@@ -40,7 +40,7 @@ function addToCart(goodsid,tt)
     }
 
   }
-  
+
   goods.spec     = spec_arr;
   goods.goods_id = goodsid;
   goods.number   = number;
@@ -64,7 +64,7 @@ function addToCart(goodsid,tt)
 					window.location.href = SITE_URL+'vgoods.php?type=checkout&gid='+goodsid;
 					return false;
 			}
-			
+
 			if(tt!="jumpshopping"){
 					var flyElm = $('.ggimg').clone().css('opacity','0.7');
 					flyElm.css({
@@ -77,24 +77,27 @@ function addToCart(goodsid,tt)
 						'height': $('.ggimg').height() +'px'
 					});
 					$('body').append(flyElm);
-					hw = getPageSize();
+                    function getPageSize(){
+                        return window.screen.width;
+                    };
+                    var hw = getPageSize();
 					flyElm.animate({
 						top:$('#collectBox').offset().top,
-						left:(hw[0]-30)+'px',
+						left:(hw/4)+'px',
 						width:30,
 						height:30,
 					},'2500', function (){
 						flyElm.animate({opacity: 'hide'}, 1000);
 					});
-					
+
 			  }
-  
+
 			 if(tt=='cartlist'){ //购物车列表页面
 				if(data.error==4){JqueryDialog.Open('官方系统提醒你','<br />'+data.message,300,50); return false; }
 				else if(data.error==5){ //存在商品属性
 					  JqueryDialog.Open('官方系统提醒你',data.message,300,200);
 				}
-				 
+
 				createwindow();
 				$.post(SITE_URL+"mycart.php",{action:'delcartid',id:0},function(data){
 						$('.cart1 .MYCART').hide();
@@ -142,7 +145,7 @@ function addToCart(goodsid,tt)
 					  JqueryDialog.Open('官方系统提醒你',data.message,300,200);
 				 }else{
 					//pload();
-					
+
 					if(data.error==0){
 						if(tt=='jumpshopping'){ //jump shopping cart
 							window.location.href = SITE_URL+'mycart.php?type=checkout';
@@ -159,7 +162,7 @@ function addToCart(goodsid,tt)
 					}
 				 }
 			 }
-			
+
 	   }//end sucdess
 	});
   return false;
@@ -167,16 +170,16 @@ function addToCart(goodsid,tt)
 
 //积分兑换
 function addToCartJifen(goodsid)
-{ 
+{
 //判断js函数是否存在
- try{  
-  if(typeof(eval('checkcartattr'))=="function"){ 
+ try{
+  if(typeof(eval('checkcartattr'))=="function"){
 	  if(checkcartattr()==false){
 		  return false;
 	  }
   }
  }catch(e){
-	   //alert("not function"); 
+	   //alert("not function");
  }
 
   var goods        = new Object();  //一个商品的所有属性
@@ -184,7 +187,7 @@ function addToCartJifen(goodsid)
   var number       = 1;  //购买数据
   var formBuy      = document.forms['ECS_FORMBUY']; //表单
 
-  // 检查是否有商品规格 
+  // 检查是否有商品规格
   if (formBuy)
   {
     spec_arr = getSelectedAttributes(formBuy);
@@ -219,7 +222,7 @@ function addToCartJifen(goodsid)
 			 }else{
 				 window.location.href = SITE_URL+'excart.php?type=checkout';
 			 }
-			
+
 	   }//end sucdess
 	});
   return false;
@@ -240,7 +243,7 @@ function getSelectedAttributes(formBuy)
       spec_arr[j] = formBuy.elements[i].name+'---'+formBuy.elements[i].value;
       j++ ;
     }
-	  
+
   }
 
   return spec_arr;
@@ -252,8 +255,8 @@ function getSelectedAttributes(formBuy)
 */
 function addToColl(gid){
 	if(gid==""||typeof(gid)=='undefined') return false;
-	
-	$.post(SITE_URL+'ajax.php',{action:'addtocoll',goods_id:gid},function(data){ 
+
+	$.post(SITE_URL+'ajax.php',{action:'addtocoll',goods_id:gid},function(data){
 		//这里有4个返回值
 		/*
 		* return 1 =>商品id为空
@@ -264,29 +267,29 @@ function addToColl(gid){
 		*/
 		data = parseInt(data);
 		if(data==1){
-			
+
 			str = '添加失败！！传送ID为空！<br /><p class="opitem"><a href="href="'+SITE_URL+'user.php?act=mycoll" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;" class="collcolse" onclick="JqueryDialog.Close();">关闭</a></p>';
-			//meswindow(str,'官方系统提醒你',300,110);	
+			//meswindow(str,'官方系统提醒你',300,110);
 			JqueryDialog.Open('官方系统提醒你',str,280,70);
-			pload(); 
+			pload();
 		}else if(data==2){
-			
+
 			JqueryDialog.Open('登录系统',return_login_string('coll',gid),300,100);
-			//meswindow(return_login_string('coll',gid),'登录系统',300,150);	
+			//meswindow(return_login_string('coll',gid),'登录系统',300,150);
 		}else if(data==3){
-			
+
 			str = '恭喜你！已成功添加到你的收藏夹！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;" onclick="JqueryDialog.Close();" class="collcolse">关闭</a></p>';
-			//meswindow(str,'官方系统提醒你',300,110);	
+			//meswindow(str,'官方系统提醒你',300,110);
 			JqueryDialog.Open('官方系统提醒你',str,280,70);
 			pload();
 		}else if(data==5){
-			
+
 			str = '该商品已经存在收藏夹中！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">立即查看</a>&nbsp;<a href="javascript:;"  onclick="JqueryDialog.Close();" class="collcolse">关闭</a></p>';
 			 JqueryDialog.Open('官方系统提醒你',str,280,70);
 			 //meswindow(str,'官方系统提醒你',300,110);
 			 pload();
 		}else{
-			
+
 			str = '添加失败，意外错误！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;" onclick="JqueryDialog.Close();" class="collcolse">关闭</a></p>';
 			JqueryDialog.Open('官方系统提醒你',str,280,70);
 			//meswindow(str,'官方系统提醒你',300,110);
@@ -300,8 +303,8 @@ function addToColl(gid){
 */
 function addToShopColl(gid){
 	if(gid==""||typeof(gid)=='undefined') return false;
-	
-	$.post(SITE_URL+'ajaxfile/shop.php',{action:'addtocoll',shop_id:gid},function(data){ 
+
+	$.post(SITE_URL+'ajaxfile/shop.php',{action:'addtocoll',shop_id:gid},function(data){
 		//这里有4个返回值
 		/*
 		* return 1 =>商品id为空
@@ -312,31 +315,31 @@ function addToShopColl(gid){
 		*/
 		data = parseInt(data);
 		if(data==1){
-			
+
 			str = '<br />添加失败！！传送ID为空！<br /><p class="opitem"><a href="'+SITE_URL+'user.php?act=mycoll" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;"  onclick="closewindow(this);" class="collcolse">关闭</a></p>';
-			meswindow(str,'官方系统提醒你',300,110);	
+			meswindow(str,'官方系统提醒你',300,110);
 			//JqueryDialog.Open('官方系统提醒你',str,300,40);
-			 
+
 		}else if(data==2){
-			
+
 			//JqueryDialog.Open('登录系统',return_login_string('coll',gid),300,50);
 			meswindow(return_login_string('coll',gid),'登录系统',300,150);
 		}else if(data==3){
-			
+
 			str = '<br />恭喜你！已成功添加到你的收藏夹！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;" onclick="closewindow(this);" class="collcolse">关闭</a></p>';
-			meswindow(str,'官方系统提醒你',300,110);	
+			meswindow(str,'官方系统提醒你',300,110);
 			//JqueryDialog.Open('官方系统提醒你',str,300,50);
-			 
+
 		}else if(data==5){
-			
+
 			str = '<br />该店铺已经存在收藏夹中！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">立即查看</a>&nbsp;<a href="javascript:;"  onclick="closewindow(this);" class="collcolse">关闭</a></p>';
 			 //JqueryDialog.Open('官方系统提醒你',str,300,50);
-			 meswindow(str,'官方系统提醒你',300,110);	
+			 meswindow(str,'官方系统提醒你',300,110);
 		}else{
-			
+
 			str = '<br />添加失败，意外错误！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;" onclick="closewindow(this);" class="collcolse">关闭</a></p>';
 			//JqueryDialog.Open('官方系统提醒你',str,300,40);
-			meswindow(str,'官方系统提醒你',300,110);	 
+			meswindow(str,'官方系统提醒你',300,110);
 		}
 	});
 }
@@ -373,7 +376,7 @@ function submit_comment(goods_id){
 		   url: SITE_URL+"ajaxfile/shop.php?action=comment",
 		   data: "comments=" + $.toJSON(comments),
 		   dataType: "json",
-		   success: function(data){ 
+		   success: function(data){
 				removewindow();
 				if(data.error=="" || data.error==0){
 					$('.comment_con textarea[name="comment"]').val("");
@@ -385,8 +388,8 @@ function submit_comment(goods_id){
 						window.parent.ajax_set_comtent(data.message);
 						window.parent.JqueryDialog.Close();
 					//}
-					
-					//$('.GOODSCOMMENT').html(data.message);	
+
+					//$('.GOODSCOMMENT').html(data.message);
 				}else if(parseInt(data.error)==4){ //需要先登录
 					JqueryDialog.Open('登录系统',return_login_string('comment',goods_id),300,50);
 				}else if(parseInt(data.error)==1){ //需要先登录
@@ -410,9 +413,9 @@ function submit_message(goods_id){
 			JqueryDialog.Open('官方系统提醒你','不存在留言表单对象！',300,50);
 			return false;
 		}
-		
+
 		mesobj.goods_id = goods_id;
-		
+
 		$.ajax({
 		   type: "POST",
 		   url: SITE_URL+"ajaxfile/feedback.php",
@@ -421,7 +424,7 @@ function submit_message(goods_id){
 		   success: function(data){
 				if(data.error==0){
 					JqueryDialog.Open('官方系统提醒你','提问成功，我们会很快回复你提出的问题！',300,50);
-					$('.GOODSMESSAGE').html(data.message);	
+					$('.GOODSMESSAGE').html(data.message);
 				}else if(data.error==2){
 					$('.message_mes').html(data.message);
 				}else{
@@ -430,7 +433,7 @@ function submit_message(goods_id){
 		   } //end sucdess
 		}); //end ajax
 } // end function
-		
+
 /**
  * 获得评论属性
  */
@@ -441,7 +444,7 @@ function getCommentAttributes(formComment)
   var j = 0;
 
   for (i = 0; i < formComment.elements.length; i ++ )
-  { 
+  {
     if(((formComment.elements[i].type == 'radio' || formComment.elements[i].type == 'checkbox') && formComment.elements[i].checked) || formComment.elements[i].tagName == 'SELECT' || formComment.elements[i].type=='text' || formComment.elements[i].type=='textarea' || formComment.elements[i].type=='hidden')
     {
 	  obj[formComment.elements[i].name] = formComment.elements[i].value;
@@ -467,11 +470,11 @@ function get_comment_page(page,goods_id){
 
 function ajax_check_comment(gid){
 	var uid = 0;
-	$.post(SITE_URL+"user.php",{action:"getuid"},function(data){ 
+	$.post(SITE_URL+"user.php",{action:"getuid"},function(data){
 		if(typeof(data)=='string'){
 			uid = parseInt(data)>0 ? parseInt(data) : 0;
 		}else{
-			uid = 0;	
+			uid = 0;
 		}
 		if(uid>0){
 			JqueryDialog.Open('评论系统',return_comment_string(gid),450,300);
@@ -496,11 +499,11 @@ function get_message_page(page,goods_id){
 
 function ajax_check_message(gid,gname){
 	var uid = 0;
-	$.post(SITE_URL+"user.php",{action:"getuid"},function(data){ 
+	$.post(SITE_URL+"user.php",{action:"getuid"},function(data){
 		if(typeof(data)=='string'){
 			uid = parseInt(data)>0 ? parseInt(data) : 0;
 		}else{
-			uid = 0;	
+			uid = 0;
 		}
 		if(uid>0){
 			JqueryDialog.Open('商品提问系统',return_message_string(gid),405,270);
@@ -517,7 +520,7 @@ function get_buyhistory_page(page){
 //商品详情页面的分类商品
 function get_categoods_page(page,cid){
 	$.post(SITE_URL+"ajaxfile/goods.php",{action:"categoods",page:page,cid:cid},function(data){
-		alert(data);	//还代做									   
+		alert(data);	//还代做
 	});
 }
 
@@ -540,7 +543,7 @@ function get_categoods_page_list(page,cid,bid,price,order,sorts,limit){
 	arr.limit = limit;
 	if(keyword==""||typeof(keyword)=='undefined') keyword = "";
 	arr.keyword = keyword;
-	
+
 	createwindow();
 	$.ajax({
 		   type: "POST",
