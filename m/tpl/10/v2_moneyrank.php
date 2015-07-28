@@ -1,50 +1,58 @@
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
-<?php $this->element('15/top',array('lang'=>$lang)); ?>
-<table  width="100%" border="0" cellpadding="0" cellspacing="0" style="height:50px; border:1px solid #d8d8d8">
-	<tr>
-		<td align="center" width="50%">
-		<p><font color="#FF0000">￥<?php echo empty($rt['userinfo']['money_ucount']) ? '0' : $rt['userinfo']['money_ucount'];?></font></p>
-		<p style="font-size:14px; padding-top:2px">我的资金</p>
-		</td>
-		<td align="center" style="border-left:1px solid #d8d8d8">
-		<p><font color="#FF0000"><?php echo $rt['userinfo']['thisrank'];?></font></p>
-		<p style="font-size:14px; padding-top:2px">我的排名</p>
-		</td>
-	</tr>
-</table>
-<style type="text/css">
-#main li{ background:#FFF}
-#main li:hover{ background:#ededed}
-</style>
-<div id="main" style=" min-height:200px;margin-bottom:20px;">
-<ul class="v12_ul">
-<?php if(!empty($rt['ulist']))foreach($rt['ulist'] as $k=>$row){
-?>
-	<li style="padding:5px; border-bottom:1px solid #d8d8d8; position:relative">
-		<a href="javascript:void(0)" style="display:block">
-		<div style="position:relative; width:20%;float:left;"><img src="<?php echo !empty($row['headimgurl']) ? $row['headimgurl'] : $this->img('noavatar_big.jpg');?>" width="100%" style="margin-right:5px; padding:1px; border:1px solid #fafafa" />
-		<?php if($row['is_subscribe']=='1'){?><img src="<?php echo $this->img('dui2.png');?>" style="position:absolute; bottom:5px; right:-2px; z-index:7" /><?php } ?>
-		</div>
-		<div style="float:right; width:78%;">
-		<p style="line-height:23px"><?php echo $row['nickname'];?>&nbsp;&nbsp;<?php echo !empty($row['subscribe_time']) ? date('Y-m-d H:i:s',$row['subscribe_time']) : date('Y-m-d H:i:s',$row['reg_time']);?></p>
-		<p style="line-height:23px">资金&nbsp;<font color="#FF0000">￥<?php echo $row['money_ucount'];?></font>&nbsp;|&nbsp;邀请&nbsp;<font color="#FF0000"><?php echo $row['share_ucount'];?></font></p>
-		</div>
-		<div class="clear"></div>
-		</a>
-		<?php if($k<3){
-		$s = $k==0 ? 'mmexport1417022423647.png' : ($k==1?'mmexport1417022426972.png':'mmexport1417022429974.png')
-		?>
-		<img src="<?php echo $this->img('icon/'.$s);?>" height="40" style=" position:absolute; right:5px; top:8px; z-index:99" />
-		<?php } else{?>
-		<span style="border-radius:50%; padding:3px;float:right; display:block;background:#B70000; text-align:center; font-size:12px; font-weight:bold; color:#FFF; cursor:pointer; position:absolute;right:10px; top:17px; z-index:99" id="62"><i style="font-style:normal"><?php echo ++$k;?></i></span>
-		<?php } ?>
-	</li>
-<?php } ?>
-</ul>
-	<div class="clear10"></div>
-	<div class="loadsss" style="text-align:center">
-	
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/v2_moneyrank.css<?php echo '?'.time();?>" media="all" />
+<!--<link type="text/css" rel="stylesheet" href="--><?php //echo ADMIN_URL;?><!--tpl/15/css.css" media="all" />-->
+<?php $this->element('10/top',array('lang'=>$lang)); ?>
+<div id="main">
+	<div class="money">
+		<p><span class="title">我的资金</span><span>￥293.50</span></p>
+		<p><span class="title">我的排名</span><span>5</span></p>
 	</div>
+	<ul class="ranking">
+		<li>
+			<a href="">
+				<img src="<?php echo !empty($row['headimgurl']) ? $row['headimgurl'] : $this->img('noavatar_big.jpg');?>">
+				<div class="info">
+					<p>J ason</p>
+					<p> 2015-06-19 11:03:26</p>
+					<p>资金<span>2097.43</span>邀请<span>12</span></p>
+				</div>
+			</a>
+			<img src="<?php echo ADMIN_URL;?>tpl/10/images/gold_medal.png"/>
+		</li>
+		<li>
+			<a href="">
+				<img src="<?php echo !empty($row['headimgurl']) ? $row['headimgurl'] : $this->img('noavatar_big.jpg');?>">
+				<div class="info">
+					<p>Jason</p>
+					<p> 2015-06-19 11:03:26</p>
+					<p>资金<span>2097.43</span>邀请<span>12</span></p>
+				</div>
+			</a>
+			<img src="<?php echo ADMIN_URL;?>tpl/10/images/silver_medal.png"/>
+		</li>
+		<li>
+			<a href="">
+				<img src="<?php echo !empty($row['headimgurl']) ? $row['headimgurl'] : $this->img('noavatar_big.jpg');?>">
+				<div class="info">
+					<p>Jason</p>
+					<p> 2015-06-19 11:03:26</p>
+					<p>资金<span>2097.43</span>邀请<span>12</span></p>
+				</div>
+			</a>
+			<img src="<?php echo ADMIN_URL;?>tpl/10/images/bronze_medal.png"/>
+		</li>
+		<li>
+			<a href="">
+				<img src="<?php echo !empty($row['headimgurl']) ? $row['headimgurl'] : $this->img('noavatar_big.jpg');?>">
+				<div class="info">
+					<p>Jason</p>
+					<p>2015-06-19 11:03:26</p>
+					<p>资金<span>2097.43</span>邀请<span>12</span></p>
+				</div>
+			</a>
+			<span>4</span>
+		</li>
+	</ul>
 </div>
 <script type="text/javascript">
 var hh = 0;
@@ -111,4 +119,4 @@ $(document).ready(function(){
 	page_init();
 });
 </script>
-<?php $this->element('15/footer',array('lang'=>$lang)); ?>
+<?php $this->element('10/footer',array('lang'=>$lang)); ?>

@@ -1,3 +1,4 @@
+
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
 <?php $this->element('15/top',array('lang'=>$lang)); ?>
 
