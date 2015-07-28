@@ -345,10 +345,6 @@ function change_number(obj){
 			$('.gzprice'+id).html('￥'+toDecimal(data.thisprice * numbers));
 			ff = data.freemoney;
 			$('.freeshopp').html(toDecimal(ff));
-			console.log(toDecimal(toDecimal(data.prices)+toDecimal(ff)));
-			console.log(toDecimal(data.prices));
-			console.log(toDecimal(ff));
-			console.log(toDecimal(data.prices)+toDecimal(ff));
 			$('.freeshoppandprice').html(toDecimal(toDecimal(data.prices) + toDecimal(ff)));
 		}else{
 			alert(data.message);
