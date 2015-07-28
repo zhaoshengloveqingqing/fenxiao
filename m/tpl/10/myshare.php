@@ -1,6 +1,4 @@
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
-
 <?php $this->element('10/top',array('lang'=>$lang)); ?>
 <style type="text/css">
 #main li:hover{ background:#ededed}
@@ -95,6 +93,8 @@ if (getScrollTop() + getClientHeight() == getScrollHeight()) {
 				$('.loadsss').html("加载完毕");
 			}
 		})
+	}else{
+
 	}
 }
 }

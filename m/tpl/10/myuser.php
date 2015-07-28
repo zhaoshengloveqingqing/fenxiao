@@ -1,5 +1,5 @@
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
-<?php $this->element('15/top',array('lang'=>$lang)); ?>
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
+<?php $this->element('10/top',array('lang'=>$lang)); ?>
 <style type="text/css">
 #main li:hover{ background:#ededed}
 </style>
@@ -91,6 +91,8 @@ if (getScrollTop() + getClientHeight() == getScrollHeight()) {
 				$('.loadsss').html("加载完毕");
 			}
 		})
+	}else{
+		$('.loadsss').html("");
 	}
 } 
 }
@@ -99,4 +101,4 @@ $(document).ready(function(){
 	page_init();
 });
 </script>
-<?php $this->element('15/footer',array('lang'=>$lang)); ?>
+<?php $this->element('10/footer',array('lang'=>$lang)); ?>
