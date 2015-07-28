@@ -87,8 +87,9 @@ if($rt['uinfo']['is_subscribe']=='0'){
 <?php
 if($true=="true"){
 ?>
-<div style="position:fixed; bottom:48px; right:5px; z-index:99; width:100px">
-<input type="button" id="cart" class="addcar" value="我要购买" style="cursor:pointer; width:100%; background:#EB5566" onclick="return addToCart('<?php echo $rt['tj']['goods_id'];?>','jumpshopping')">
+<div style="position:fixed; bottom: 85px; right:5px; z-index:99; width:100px">
+<input type="button" id="cart" class="addcar" value="我要购买"
+       style="cursor:pointer; width:100%; border-radius:1px;line-height: 30px;background:#EB5566" onclick="return addToCart('<?php echo $rt['tj']['goods_id'];?>','jumpshopping')">
 </div>
 <?php
 }
