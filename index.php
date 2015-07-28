@@ -1,4 +1,6 @@
 <?php
+header('Location:http://'.$_SERVER['SERVER_NAME'].'/m');
+die;
 define('DS', DIRECTORY_SEPARATOR);
 error_reporting(0);
 if(extension_loaded('zlib')) {

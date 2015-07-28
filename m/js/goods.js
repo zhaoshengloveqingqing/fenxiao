@@ -81,7 +81,6 @@ function addToCart(goodsid,tt)
                         return window.screen.width;
                     };
                     var hw = getPageSize();
-                    console.log(hw/4);
 					flyElm.animate({
 						top:$('#collectBox').offset().top,
 						left:(hw/4)+'px',
