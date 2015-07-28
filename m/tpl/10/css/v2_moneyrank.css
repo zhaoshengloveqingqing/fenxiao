@@ -50,8 +50,16 @@ body {
 	display: inline-block;
 }
 .ranking li a img {
+	max-width: 70px;
 	max-height: 70px;
-	max-height: 70px;
+}
+.ranking li a.ranking-list {
+	position: relative;
+}
+.ranking li a img.biaozhu {
+    position: absolute;
+	left: 52px;
+	top:52px;
 }
 .ranking li .info {
 	float: right;

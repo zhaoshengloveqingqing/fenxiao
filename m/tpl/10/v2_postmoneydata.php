@@ -1,7 +1,5 @@
-
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
-<?php $this->element('15/top',array('lang'=>$lang)); ?>
-
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
+<?php $this->element('10/top',array('lang'=>$lang)); ?>
 <style type="text/css">
 table td:hover{ background:#ededed;}
 </style>
@@ -11,7 +9,7 @@ table td:hover{ background:#ededed;}
 ?>
 <tr>
 	<td align="left">
-		<div style="padding:10px;border-bottom:1px solid #d5d5d5"> 
+		<div style="padding:10px;border-bottom:1px solid #d5d5d5">
 		申请时间:<?php echo !empty($row['addtime']) ? date('Y-m-d H:i:s',$row['addtime']) : '无知';?>
 		<p style="line-height:26px; height:26px; position:relative;"><span style="float:left">金额:<font color="#FF0000">￥<?php echo $row['money'];?></font></span><span style="float:right">状态:<font color="#FF0000"><?php echo $row['state']=='0' ? '审核中' : '已结算';?></font></span></p>
 		<p style="line-height:26px;">姓名:<?php echo $row['uname'];?>&nbsp;&nbsp;&nbsp;&nbsp;手机:<?php echo $row['mobile'];?></p>
@@ -44,6 +42,5 @@ echo $rt['pages']['previ'];?>
 </td>
 </tr>
 </table>
-
 </div>
-<?php $this->element('15/footer',array('lang'=>$lang)); ?>
+<?php $this->element('10/footer',array('lang'=>$lang)); ?>
