@@ -35,8 +35,6 @@
  $thisurl = $rr[0].'?'.(!empty($dd) ? implode('&',$dd) : 'tid=0');
 ?>
 <script type="text/javascript">
-alert(js);
-
 function show_zhuan(){
 	$('.show_zhuan').show();
 	$('body,html').animate({scrollTop:0},500);

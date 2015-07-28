@@ -1,13 +1,31 @@
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/15/css.css" media="all" />
-<?php $this->element('15/top',array('lang'=>$lang)); ?>
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
+<?php $this->element('10/top',array('lang'=>$lang)); ?>
 <style type="text/css">
 #main table td{ background:#fff}
 #main table td:hover{ background:#ededed;}
-.radiustibox{ margin-left:5px;}
+.radiustibox{
+    width: 100%;
+    background-color: #FAF3D2;
+    text-align: right;
+    height: 50px;
+    font-size: 20px;
+    color: #D98235;
+    margin-right: 34px;
+    line-height: 50px;
+ }
+.radiusti{
+    background: initial;
+    border: none;
+    margin-right: 20px;
+}
+.radiustibox span {
+    text-shadow: none;
+}
 </style>
 <div id="main" style="min-height:300px; background:#FFF">
-<div class="clear10"></div>
-<p class="radiustibox"><span class="radiusti"><font color="#FF0000">￥<?php echo empty($rt['zmoney']) ? '0.00' : $rt['zmoney'];?></font></span></p>
+<p class="radiustibox">
+<span style='float:left;margin-left:20px;color:black;'>佣金合计：</span>
+<span class="radiusti"><font><?php echo empty($rt['zmoney']) ? '0.00' : $rt['zmoney'];?>元</font></span></p>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <?php if(!empty($rt['lists']))foreach($rt['lists'] as $k=>$row){
 ?>
@@ -17,18 +35,18 @@
 			<div style="position:relative; width:20%;float:left;"><img src="<?php echo !empty($row['headimgurl']) ? $row['headimgurl'] : $this->img('noavatar_big.jpg');?>" width="100%" style="margin-right:5px; padding:1px; border:1px solid #fafafa" />
 			</div>
 			<div style="float:right; width:78%; position:relative">
-			<p style="line-height:21px"><?php $gname = $this->action('daili','_return_goods_name',$row['order_sn']); ?>
+			<p style="line-height:24px;padding-left: 10px;"><?php $gname = $this->action('daili','_return_goods_name',$row['order_sn']); ?>
 			<?php echo empty($gname) ? $row['changedesc'] : $gname;?>
 			</p>
 			<?php if(!empty($row['nickname'])){?>
-			<p style="line-height:21px">
+			<p style="line-height:24px;padding-left: 10px;">
 			<?php echo  '购买用户:'.$row['nickname'];?>
 			</p>
 			<?php } ?>
-			<p style="line-height:21px">
+			<p style="line-height:29px;color: #adadad;padding-left: 10px;">
 			<?php echo !empty($row['time']) ? date('Y-m-d H:i:s',$row['time']) : '无知';?>
 			</p>
-			<font style=" position:absolute; right:10px; bottom:5px; z-index:99;font-size:18px; font-weight:bold"><?php if($row['money']>0){ echo '<font color="#3333FF">+￥'.$row['money'].'</font>'; }else{ echo '<font color="#fe0000">-￥'.abs($row['money']).'</font>'; }?></font>
+            <font style=" position:absolute; right:10px; bottom:5px; z-index:99;font-size:18px; font-weight:bold"><?php if($row['money']>0){ echo '<font color="#D98235">+'.$row['money'].'元</font>'; }else{ echo '<font color="#fe0000">-￥'.abs($row['money']).'</font>'; }?> </font>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -53,4 +71,4 @@ echo $rt['pages']['previ'];?>
 </table>
 
 </div>
-<?php $this->element('15/footer',array('lang'=>$lang)); ?>
+<?php $this->element('10/footer',array('lang'=>$lang)); ?>
