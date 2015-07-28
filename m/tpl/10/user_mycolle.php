@@ -17,8 +17,7 @@
 					} ?>
 					<p class="price">市场价：<em><?php echo $row['market_price'];?>元</em>本店价：<em><?php echo $row['shop_price']>0 ? $row['shop_price']  : $row['pifa_price'];?>元</em></p>
 					<div class="opreation">
-						<a href="<?php echo ADMIN_URL.'product.php?id='.$row['goods_id'];?>" class="shoping" >加入购物车</a> 
-						<!-- <a href="javascript:void(0);" class="shoping" onclick="return addToCart('<?php echo $row['goods_id'];?>')">加入购物车</a> -->
+						<a href="javascript:void(0);" class="shoping" onclick="return addToCart('<?php echo $row['goods_id'];?>', 'jumpshopping')">加入购物车</a>
 						<a href="javascript:void(0);" class="delete delcartid"  onclick="delmycoll('<?php echo $row['rec_id'];?>',this)">删除</a>
 					</div>
 				</div>
