@@ -19,15 +19,15 @@
 					<p>资金<span>￥<?php echo $row['money_ucount'];?></span>邀请<span><?php echo $row['share_ucount'];?></span></p>
 				</div>
 			</a>
-			<span>4</span>
 			<?php if($k<3){
-
-			$s = $k==0 ? 'gold_medal.png' : ($k==1?'silver_medal.png':'bronze_medal.png');
+				$s = $k==0 ? 'gold_medal.png' : ($k==1?'silver_medal.png':'bronze_medal.png');
 			?>
 			<img src="<?php echo ADMIN_URL;?>tpl/10/images/<?php echo $s; ?>"/>
+			<?php }else{ ?>
+				<span><?php echo $k + 1; ?></span>
 			<?php }?>
 		</li>
-		<?php } ?>
+		<?php }?>
 	</ul>
 </div>
 <script type="text/javascript">

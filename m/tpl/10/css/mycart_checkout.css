@@ -1,6 +1,6 @@
 body {
 	margin-bottom: 95px !important;
-	overflow-x: hidden;
+	overflow-x: hidden  !important;
 }
 .list{
 	background: #EB5566;
