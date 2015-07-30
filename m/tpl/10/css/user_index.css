@@ -5,7 +5,7 @@ body{
 .main .user {
 	background: linear-gradient( #B5192A 0%, #FF6577 99%);
 	background: -webkit-linear-gradient( #B5192A 0%, #FF6577 99%);
-	width: 92%;
+	width: 100%;
 	padding: 0 4%;
 	display: table;
 	height: 150px;
