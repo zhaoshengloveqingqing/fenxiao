@@ -304,7 +304,7 @@ function addToColl(gid){
 function addToShopColl(gid){
 	if(gid==""||typeof(gid)=='undefined') return false;
 
-	$.post(SITE_URL+'ajaxfile/shop.php',{action:'addtocoll',shop_id:gid},function(data){
+	$.post(SITE_URL+'ajax.php',{action:'addtocoll',goods_id:gid},function(data){
 		//这里有4个返回值
 		/*
 		* return 1 =>商品id为空
@@ -315,31 +315,29 @@ function addToShopColl(gid){
 		*/
 		data = parseInt(data);
 		if(data==1){
-
 			str = '<br />添加失败！！传送ID为空！<br /><p class="opitem"><a href="'+SITE_URL+'user.php?act=mycoll" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;"  onclick="closewindow(this);" class="collcolse">关闭</a></p>';
-			meswindow(str,'官方系统提醒你',300,110);
-			//JqueryDialog.Open('官方系统提醒你',str,300,40);
+			//meswindow(str,'官方系统提醒你',300,110);
+			JqueryDialog.Open('官方系统提醒你',str,300,40);
 
 		}else if(data==2){
 
-			//JqueryDialog.Open('登录系统',return_login_string('coll',gid),300,50);
-			meswindow(return_login_string('coll',gid),'登录系统',300,150);
+			JqueryDialog.Open('登录系统',return_login_string('coll',gid),300,50);
+			//meswindow(return_login_string('coll',gid),'登录系统',300,150);
 		}else if(data==3){
 
 			str = '<br />恭喜你！已成功添加到你的收藏夹！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;" onclick="closewindow(this);" class="collcolse">关闭</a></p>';
-			meswindow(str,'官方系统提醒你',300,110);
-			//JqueryDialog.Open('官方系统提醒你',str,300,50);
-
+			//meswindow(str,'官方系统提醒你',300,110);
+			JqueryDialog.Open('官方系统提醒你',str,300,50);
 		}else if(data==5){
-
+			JqueryDialog.Close();
 			str = '<br />该店铺已经存在收藏夹中！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">立即查看</a>&nbsp;<a href="javascript:;"  onclick="closewindow(this);" class="collcolse">关闭</a></p>';
-			 //JqueryDialog.Open('官方系统提醒你',str,300,50);
-			 meswindow(str,'官方系统提醒你',300,110);
+			 JqueryDialog.Open('官方系统提醒你',str,300,50);
+			 //meswindow(str,'官方系统提醒你',300,110);
 		}else{
 
 			str = '<br />添加失败，意外错误！<br /><p class="opitem"><a href="javascript:;" onclick="location.href=\''+SITE_URL+'user.php?act=mycoll\'" class="collview">查看收藏</a>&nbsp;<a href="javascript:;" onclick="closewindow(this);" class="collcolse">关闭</a></p>';
-			//JqueryDialog.Open('官方系统提醒你',str,300,40);
-			meswindow(str,'官方系统提醒你',300,110);
+			JqueryDialog.Open('官方系统提醒你',str,300,40);
+			//meswindow(str,'官方系统提醒你',300,110);
 		}
 	});
 }

@@ -15,6 +15,8 @@
 	padding-top: 8px;
 	margin-right: 6px;
 	vertical-align: middle;
+	max-width: 65px;
+	max-height: 65px;
 }
 #main .user .user_info p {
 	color: #ffffff;

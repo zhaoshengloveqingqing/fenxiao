@@ -198,8 +198,9 @@ function getPageSize() {
 
 //关闭窗口
 function closewindow(obj){
-	$(obj).parent().parent().hide("slow");
-	$(obj).parent().parent().remove();
+	//$(obj).parent().parent().hide("slow");
+	//$(obj).parent().parent().remove();
+	JqueryDialog.Close();
 }
 
 function return_message_string(gid){
@@ -218,7 +219,7 @@ function return_comment_string(gid){
 function return_login_string(type,gid){
 	if(typeof(type)=='undefined') type="";
 	if(typeof(gid)=='undefined') gid=0;
-	return '<div class="login_con"><p class="login_mes"></p><p class="login_p"><span class="span1">用户名：</span><input type="text" class="user_name" style="width:150px;"/></p><p class="login_p"><span class="span2">&nbsp;&nbsp;密&nbsp;&nbsp;码：</span><input type="password" class="pass" style="width:150px;"/></p><p class="login_boxs"><input type="button" class="loginbut" value="登录"  onclick="ajax_user_login(this,\''+type+'\',\''+gid+'\')"/>&nbsp;&nbsp;<input type="button" class="loginbut" value="取消" onclick="closewindow($(this).parent());"/></p><p style="margin-top:10px; font-size:12px;"><a href="'+SITE_URL+'user.php?act=register" style=" background:url('+SITE_URL+'theme/images/dian.jpg) left center no-repeat">&nbsp;&nbsp;注册新会员</a>&nbsp;&nbsp;<a href="'+SITE_URL+'user.php?act=forgetpass" style="background:url('+SITE_URL+'theme/images/dian.jpg) left center no-repeat">&nbsp;&nbsp;忘记密码？</a></p></div>';
+	return '<div class="login_con"><p class="login_mes"></p><p class="login_p"><span class="span1">用户名：</span><input type="text" class="user_name" style="width:150px;"/></p><p class="login_p"><span class="span2">&nbsp;&nbsp;密&nbsp;&nbsp;码：</span><input type="password" class="pass" style="width:150px;"/></p><p class="login_boxs"><input type="button" class="loginbut" value="登录"  onclick="ajax_user_login(this,\''+type+'\',\''+gid+'\')"/>&nbsp;&nbsp;<input type="button" class="loginbut" value="取消" onclick="closewindow($(this).parent());"/></p><p style="margin-top:10px; font-size:12px;"><a href="'+SITE_URL+'user.php?act=register" style=" background:url('+SITE_URL+'theme/images/dian.jpg) left center no-repeat">&nbsp;&nbsp;注册新会员</a>';
 }
 
 //用户简单登录 ajax登录
@@ -227,7 +228,8 @@ function ajax_user_login(obj,type,gid){
 	username = objpa.find('.user_name').val();
 	password = objpa.find('.pass').val();
 	if(typeof(username)!='defined'&&username!=""&&typeof(password)!='defined'&&password!=""){
-		$.post(SITE_URL+'user.php',{action:'login',username:username,password:password},function(data){ 
+		//$.post(SITE_URL+'user.php',{action:'login',username:username,password:password},function(data){ 
+		$.post(SITE_URL+'user.php',{action:'ajax_user_login',username:username,password:password},function(data){ 
 				if(data != ""){
 					objpa.find('.login_mes').html('<font color=red>'+data+'</font><br />');
 				}else{

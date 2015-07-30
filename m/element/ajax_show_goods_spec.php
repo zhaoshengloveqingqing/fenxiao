@@ -46,23 +46,23 @@
 			<?php } // end foreach
 	  } //end if?>
 	<p style="padding-top:5px;">
-	<img src="<?php echo ADMIN_URL.'images/addcart.jpg';?>" height="30" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>')" style="cursor:pointer"/>                      
+	<img src="<?php echo ADMIN_URL.'images/addcart.jpg';?>" height="30" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>', 'jumpshopping')" style="cursor:pointer"/>                      
 	</p>
 	</form>
 </div>
 <script type="text/javascript">
-/*function checkcartattr(){
+function checkcartattr(){
 	<?php 
 	if(!empty($rl)){
 		foreach($rl as $k=>$v){?>
-		a<?php echo $k;?> = $('.buyclass input[name="<?php echo $k;?>"]<?php echo $attr[$k]==3 ? ':checked' : "";?>').val();
+		a<?php echo $k;?> = $('.ajaxshowgoodsspec input[name="<?php echo $k;?>"]<?php echo $attr[$k]==3 ? ':checked' : "";?>').val();
 		if(a<?php echo $k;?> ==""||typeof(a<?php echo $k;?>)=='undefined'){
 		  alert("必须选择<?php echo $v;?>");
 		  return false;
 		}
 	<?php } }?>
 	return true;
-}*/
+}
 function spec_p_a(obj){
 	na = $(obj).attr('name');
 	vl = $(obj).attr('id');
