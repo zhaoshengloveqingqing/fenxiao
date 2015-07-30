@@ -81,7 +81,7 @@
 							  $total +=$row['price']*$row['number'];
 				   ?>
 					<li class="clearfix">
-						<img src="<?php echo SITE_URL.$row['goods_thumb'];?>" title="<?php echo $row['goods_name'];?>"/>
+						<a href="<?php echo ADMIN_URL.'product.php'.$row['goods_id'] ;?>" ><img src="<?php echo SITE_URL.$row['goods_thumb'];?>" title="<?php echo $row['goods_name'];?>"/></a>
 						<div class="product_detail">
 							<h3><?php echo $row['goods_name'];?></h3>
 							<?php if(!empty($row['spec'])){
