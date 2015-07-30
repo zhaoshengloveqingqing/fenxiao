@@ -63,7 +63,17 @@
 		<?php } ?>
 	</form>
 </div>
-<div class="show_zhuan" style=" display:none;width:100%; height:100%; position:absolute; top:0px; right:0px; z-index:9999999;filter:alpha(opacity=90);-moz-opacity:0.9;opacity:0.9; background:url(<?php echo $this->img('gz/121.png');?>) right top no-repeat #000;background-size:100% auto;" onclick="$(this).hide();"></div>
+<div class="show_zhuan"
+     style=" display:none;width:100%; height:100%; position:absolute; top:0px; right:0px; z-index:9999999;
+		     filter:alpha(opacity=90);-moz-opacity:0.9;opacity:0.9; background:url(<?php echo $this->img('gz/121.png');?>) right top no-repeat #000;
+		     background-size:100% auto;" onclick="$(this).hide();">
+
+</div>
+<script type="text/javascript">
+	$('.another_pay').click(function (){
+		$('body').addClass('hiden');
+	});
+</script>
 <?php
  $thisurl = Import::basic()->thisurl();
  $rr = explode('?',$thisurl);
