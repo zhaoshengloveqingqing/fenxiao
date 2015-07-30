@@ -306,7 +306,12 @@ class ShoppingController extends Controller{
 			
 			$prices += format_price($row['pifa_price'] * $off)*$row['number'];
 		}
-		echo format_price($prices);
+		
+		
+		$fee = $this->ajax_jisuan_shopping(array('shopping_id'=>$data['shipping_id'],'userress_id'=>$data['userress_id']),'cart');
+		$fee = format_price($fee ? $fee : 0.00);
+		$total = format_price($prices + $fee);
+		echo json_encode(array('total' => $total, 'shipping' => $fee, 'price' =>  format_price($prices)));
 	}
 	
 	/////////////////////////////////////////////////////////////////////////
