@@ -77,7 +77,10 @@ function addToCart(goodsid,tt)
 						'height': $('.ggimg').height() +'px'
 					});
 					$('body').append(flyElm);
-                    var hw = window.screen.width;
+                    function getPageSize(){
+                        return window.screen.width;
+                    };
+                    var hw = getPageSize();
 					flyElm.animate({
 						top:$('#collectBox').offset().top,
 						left:(hw/4)+'px',
@@ -85,7 +88,7 @@ function addToCart(goodsid,tt)
 						height:30,
 					},'2500', function (){
 						flyElm.animate({opacity: 'hide'}, 1000);
-					},"slow");
+					});
 
 			  }
 
