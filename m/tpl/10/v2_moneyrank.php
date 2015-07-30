@@ -10,7 +10,7 @@
 	<ul class="ranking">
 		<?php if(!empty($rt['ulist']))foreach($rt['ulist'] as $k=>$row){ ?>
 		<li>
-			<a class="ranking-list" href="">
+			<a class="ranking-list" href="javascript:void(0);">
 				<img src="<?php echo !empty($row['headimgurl']) ? $row['headimgurl'] : $this->img('noavatar_big.jpg');?>">
 				<?php if($row['is_subscribe']=='1'){?><img class="biaozhu" src="<?php echo $this->img('dui2.png');?>"/><?php } ?>
 				<div class="info">

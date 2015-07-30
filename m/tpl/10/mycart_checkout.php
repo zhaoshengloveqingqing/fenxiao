@@ -47,7 +47,7 @@
 				<div class="am-form-group">
 					<label for="doc-ipt-3" class="am-u-sm-2 am-form-label">地址：</label>
 					<div class="am-u-sm-10">
-						<input type="email" id="doc-ipt-3" placeholder="输入详细地址"  value="" name="address" >
+						<input type="text" id="doc-ipt-3" placeholder="输入详细地址"  value="" name="address" >
 					</div>
 				</div>
 
@@ -56,7 +56,7 @@
 						电话：
 					</label>
 					<div class="am-u-sm-10">
-						<input type="password" id="doc-ipt-pwd-2" placeholder="输入11位电话号码"  value="" name="mobile" >
+						<input type="text" id="doc-ipt-pwd-2" placeholder="输入11位电话号码"  value="" name="mobile" >
 					</div>
 				</div>
 				<p class="title"><a style="cursor:pointer" onclick="ressinfoop('0','add','CONSIGNEE_ADDRESS')">添加</a></p>
@@ -81,7 +81,7 @@
 							  $total +=$row['price']*$row['number'];
 				   ?>
 					<li class="clearfix">
-						<a href="<?php echo ADMIN_URL.'product.php'.$row['goods_id'] ;?>" ><img src="<?php echo SITE_URL.$row['goods_thumb'];?>" title="<?php echo $row['goods_name'];?>"/></a>
+						<a href="<?php echo ADMIN_URL.'product.php?id='.$row['goods_id'] ;?>" ><img src="<?php echo SITE_URL.$row['goods_thumb'];?>" title="<?php echo $row['goods_name'];?>"/></a>
 						<div class="product_detail">
 							<h3><?php echo $row['goods_name'];?></h3>
 							<?php if(!empty($row['spec'])){
@@ -150,6 +150,7 @@
 		</form>
 	</div>
 </div>
+<?php  $thisurl = ADMIN_URL.'mycart.php'; ?> 
 <script language="javascript" type="text/javascript">
 //2位小数
 function toDecimal(x) {  
@@ -240,10 +241,15 @@ function checkvar(){
 $('.delcartid').click(function(){
 	if(confirm("确定移除吗")){
 		gid = $(this).attr('id');
+		shipping_id = $('input[name="shipping_id"]:checked').val(); 
+		userress_id = "<?php echo $userress_id; ?>";
 		$(this).parent().parent().parent().remove();
 		obj = $(this);
-		$.post('<?php echo $thisurl;?>',{action:'ajax_remove_cargoods',gid:gid},function(prices){
-			$('.ztotals').html(prices);
+		$.post('<?php echo $thisurl;?>',{action:'ajax_remove_cargoods',gid:gid, shipping_id : shipping_id, userress_id : userress_id},function(data){
+			var res = $.parseJSON(data);
+			$('.ztotals').html(res.price);
+			$('.freeshopp').html(res.shipping);
+			$('.freeshoppandprice').html(res.total);
 			nn = $('.mycarts').html();
 			number = $(obj).parent().parent().find('input[name="goods_number"]').val();
 			$('.mycarts').html(parseInt(nn)-parseInt(number));
