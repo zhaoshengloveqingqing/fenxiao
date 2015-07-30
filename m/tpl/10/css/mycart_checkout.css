@@ -1,6 +1,5 @@
 body {
 	margin-bottom: 95px !important;
-	overflow-x: hidden  !important;
 }
 .list{
 	background: #EB5566;
@@ -46,6 +45,7 @@ body {
 
 .am-form-group {
 	margin: 0 3%;
+	width: 94%;
 }
 
 .am-form-group label{
