@@ -69,4 +69,22 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+$('.clickorder').live('click',function(){
+		if(confirm("确定操作吗？")){
+			createwindow();
+			id = $(this).attr('id');
+			na = $(this).attr('name');
+			$.post('<?php echo ADMIN_URL.'user.php';?>',{action:'ajax_order_op_user',id:id,type:na},function(data){
+				removewindow();
+				if(data == ""){
+					window.location.href = '<?php echo Import::basic()->thisurl();?>';
+				}else{
+					alert(data);
+				}
+			});
+		}
+		return false;
+});
+</script>
 <?php $this->element('10/footer',array('lang'=>$lang)); ?>

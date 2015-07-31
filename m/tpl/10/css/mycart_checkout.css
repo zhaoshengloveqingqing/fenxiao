@@ -1,5 +1,5 @@
-body {
-	margin-bottom: 95px !important;
+.hiden {
+	overflow: hidden;
 }
 .list{
 	background: #EB5566;
@@ -255,6 +255,7 @@ p.action {
 	height: 60px;
 	line-height: 60px;
 	background: #EB5566;
+	margin-bottom: 70px;
 }
 p.action .submit {
 	font-size: 20px;
