@@ -46,11 +46,20 @@
 			<?php } // end foreach
 	  } //end if?>
 	<p style="padding-top:5px;">
-	<img src="<?php echo ADMIN_URL.'images/addcart.jpg';?>" height="30" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>', 'jumpshopping')" style="cursor:pointer"/>                      
+	<img src="<?php echo ADMIN_URL.'images/addcart.jpg';?>" height="30" onclick="return check_add_cart()" style="cursor:pointer"/>                      
 	</p>
 	</form>
 </div>
 <script type="text/javascript">
+function check_add_cart(){
+	if(checkcartattr()){
+		addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>', 'jumpshopping');
+	}else{
+		return false;
+	}
+}
+
+
 function checkcartattr(){
 	<?php 
 	if(!empty($rl)){

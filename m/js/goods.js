@@ -12,7 +12,7 @@ function addToCart(goodsid,tt)
  if(tt=="jifen_cartlist" || tt=="jifen"){
 	if(confirm("你确定兑换吗？兑换后你的积分将会相应减少！")){}else{ return false;}
  }
-//判断js函数是否存在
+////判断js函数是否存在
 // try{
 //  if(typeof(eval('checkcartattr'))=="function"){
 //	  if(checkcartattr()==false){
