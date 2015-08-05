@@ -602,6 +602,17 @@ class ProductController extends Controller{
 			die($json->encode($result));
 		}
 		
+		$goods_nums = 0;
+		$thiscart = $this->Session->read('cart');
+		if(!empty($thiscart)) foreach($thiscart as $row){
+			$goods_nums +=$row['number'];
+		}
+		if($cart['goods_number']<$number + $goods_nums){ //不能购买大于库存数量
+			$result['error'] = 1;
+			$result['message'] = '购买数量不能大于库存数量！';
+			die($json->encode($result));
+		}
+		
 		//是否是赠品，如果是赠品，那么只能添加一件，不能重复添加
 		if($is_alone_sale=='0'){
 			$is_gift = $this->Session->read("cart.{$goods_id}");
