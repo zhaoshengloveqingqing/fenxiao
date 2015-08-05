@@ -1858,7 +1858,7 @@ class UserController extends Controller{
    		if(empty($ids)) die("非法删除，删除ID为空！");
 		$id_arr = @explode('+',$ids);
 		foreach($id_arr as $id){
-		  if(Import::basic()->int_preg($id)) $this->App->delete('shop_collect','rec_id',$id);
+		  if(Import::basic()->int_preg($id)) $this->App->delete('goods_collect','rec_id',$id);
 		}
    }
    
