@@ -15,7 +15,9 @@
 				</a>
 				<p><span class="price"><?php echo str_replace('.00','',$row['pifa_price']);?>元<i class="discount_price">￥<?php echo str_replace('.00','',$row['shop_price']);?>元</i></span></p>
 			</li>
-			<?php } ?>
+			<?php } else {
+				echo '<li style="border: 0px solid #e2e2e2;padding-top:60px; padding-bottom:60px; font-size:16px; text-align:center;width:100%;height:50px;">目前数据为空的</li>';
+			}?>
 		</ul>
 	</div>
 	<div class="clear10"></div>
