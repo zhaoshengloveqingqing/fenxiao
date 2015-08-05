@@ -2764,11 +2764,16 @@ class UserController extends Controller{
 				//$dd['tel'] = $attrbul->tel; 
 				if(empty($dd['mobile']) && empty($dd['tel'])){
 					$result['error'] = 1;
-					$result['message'] = "电话或者手机必须填写一个！";
+					$result['message'] = "请填写手机号码！";
+					die($json->encode($result));
+				}
+				if(!empty($dd['mobile']) && !preg_match('/^1(3|5|8)[0-9]{9}$/', $dd['mobile'])){
+					$result['error'] = 1;
+					$result['message'] = "请填写11位手机号码！";
 					die($json->encode($result));
 				}
 				$dd['is_default'] = '1';
-					
+				
 				if(!($id>0)&&$type=='add'){ //添加
 					$this->App->update('user_address',array('is_default'=>'0'),'user_id',$uid);
 					$this->App->insert('user_address',$dd);
