@@ -513,6 +513,17 @@ class PageController extends Controller{
 							}//end if
 						} //end if
 					} //end if
+					else{
+						if ($uid > 0) {
+							$purt = $this->App->findrow("SELECT ut.parent_uid  FROM `{$this->App->prefix()}user_tuijian` AS ut LEFT JOIN `{$this->App->prefix()}user` AS u ON u.user_id = ut.parent_uid WHERE ut.uid='$uid' LIMIT 1");
+							$puid = isset($purt['parent_uid']) ? $purt['parent_uid'] : '0';
+							if ($puid > 0) {
+								$sql = "UPDATE `{$this->App->prefix()}user` SET `guanzhu_ucount` = `guanzhu_ucount`+1 WHERE user_id = '$puid' ";
+								$this->App->query($sql);
+							}
+						}
+					}
+					
 					/**********************************************/
 				
 					$token = $this->token;
