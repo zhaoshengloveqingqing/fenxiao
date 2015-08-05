@@ -233,6 +233,10 @@ function checkvar(){
 				alert("请输入手机或者电话号码！");
 				return false;
 			}
+			if(!isMobile(mobile)){
+				alert("请输入11位手机号码！");
+				return false;
+			}
 	}	
 
 	return true;
