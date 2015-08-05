@@ -357,6 +357,12 @@ function change_number(obj){
 			$('.freeshopp').html(toDecimal(ff));
 			$('.freeshoppandprice').html(toDecimal(toDecimal(data.prices) + toDecimal(ff)));
 		}else{
+			var ob = $('.jia').parent(),
+				   numobj = ob.find('input[name="goods_number"]'),
+				   vall = $(numobj).val();
+			$(numobj).val((parseInt(vall)-1));
+			nn = $('.mycarts').html();
+			$('.mycarts').html(parseInt(nn)-1);
 			alert(data.message);
 		}
 	}, "json");
