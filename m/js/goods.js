@@ -12,17 +12,16 @@ function addToCart(goodsid,tt)
  if(tt=="jifen_cartlist" || tt=="jifen"){
 	if(confirm("你确定兑换吗？兑换后你的积分将会相应减少！")){}else{ return false;}
  }
-
 //判断js函数是否存在
- try{
-  if(typeof(eval('checkcartattr'))=="function"){
-	  if(checkcartattr()==false){
-		  return false;
-	  }
-  }
- }catch(e){
-	   //alert("not function");
- }
+// try{
+//  if(typeof(eval('checkcartattr'))=="function"){
+//	  if(checkcartattr()==false){
+//		  return false;
+//	  }
+//  }
+// }catch(e){
+//	   //alert("not function");
+// }
 
   var goods        = new Object();  //一个商品的所有属性
   var spec_arr     = new Array(); //获取过来的商品属性
@@ -91,7 +90,6 @@ function addToCart(goodsid,tt)
 //						flyElm.animate({opacity: 'hide'}, 1000);
 //					});
 			  }
-
 			 if(tt=='cartlist'){ //购物车列表页面
 				if(data.error==4){JqueryDialog.Open('官方系统提醒你','<br />'+data.message,300,50); return false; }
 				else if(data.error==5){ //存在商品属性
@@ -145,7 +143,6 @@ function addToCart(goodsid,tt)
 					  JqueryDialog.Open('官方系统提醒你',data.message,300,200);
 				 }else{
 					//pload();
-
 					if(data.error==0){
 						if(tt=='jumpshopping'){ //jump shopping cart
 							window.location.href = SITE_URL+'mycart.php?type=checkout';
