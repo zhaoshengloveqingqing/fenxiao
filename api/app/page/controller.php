@@ -612,13 +612,13 @@ class PageController extends Controller{
 							$tuijiannum = intval(-$tuijiannum);
 							$sql = "UPDATE `{$this->App->prefix()}user` SET `mypoints` = `mypoints`+$tuijiannum,`points_ucount` = `points_ucount`+$tuijiannum,`guanzhu_ucount` = `guanzhu_ucount`-1 WHERE user_id = '$puid'";
 							$this->App->query($sql);
-							
-							
 							//$this->send(array('openid'=>$pwecha_id),'guanzhu');
 							//信息推送
-
 						}
 					}
+				}else{
+					$sql = "UPDATE `{$this->App->prefix()}user` SET `guanzhu_ucount` = `guanzhu_ucount`-1 WHERE user_id = '$puid'";
+					$this->App->query($sql);
 				}
 							
 				
