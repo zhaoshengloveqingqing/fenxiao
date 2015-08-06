@@ -825,14 +825,14 @@ class ProductController extends Controller{
 			$result['message'] = '抱歉，你还没有购买当前商品，不能评论哦！';
 			die($json->encode($result));
 		}
-		//检查该商品是否已经评论过
-		$sql = "SELECT comment_id FROM `{$this->App->prefix()}comment` WHERE id_value='$goodsid' AND user_id='$uid' LIMIT 1";
-		$comment_id = $this->App->findvar($sql);
-		if($comment_id>0){ //存在该记录！
-			$result['error'] = 1;
-			$result['message'] = '抱歉，你已经评论过该商品，不能再评论哦！';
-			die($json->encode($result));
-		}
+//		//检查该商品是否已经评论过
+//		$sql = "SELECT comment_id FROM `{$this->App->prefix()}comment` WHERE id_value='$goodsid' AND user_id='$uid' LIMIT 1";
+//		$comment_id = $this->App->findvar($sql);
+//		if($comment_id>0){ //存在该记录！
+//			$result['error'] = 1;
+//			$result['message'] = '抱歉，你已经评论过该商品，不能再评论哦！';
+//			die($json->encode($result));
+//		}
 		 
 		 if (empty($content))
 		 {
