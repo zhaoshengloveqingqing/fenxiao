@@ -795,9 +795,8 @@ class ProductController extends Controller{
 		$result = array('error' => $err, 'message' => '');
 		$json = Import::json();
 		
-		$username = $this->Session->read('User.username');
 		$uid = $this->Session->read('User.uid');
-		if(empty($username) || !($uid>0)){ //需要登录
+		if( !($uid>0)){ //需要登录
 			$result['error'] = 1;
 			$result['message'] = '你还没有登录！请你先登录！';
 			die($json->encode($result));
