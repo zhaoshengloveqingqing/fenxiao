@@ -335,6 +335,13 @@ function checkcartattr(){
 	return true;
 }
 
+function check_add_cart(goods_id, type){
+	if(checkcartattr()){
+		type == '1' ? addToCart(goods_id, 'jumpshopping') : addToCart(goods_id);
+	}else{
+		return false;
+	}
+}
 
 var dt = '<?php echo $rt['goodsinfo']['is_promote']&&$rt['goodsinfo']['promote_start_date']<mktime() ? ($rt['goodsinfo']['promote_end_date']-mktime()) : ($rt['goodsinfo']['promote_end_date']-$rt['goodsinfo']['promote_start_date']);?>';
 var st = new showTime('2', dt);
@@ -391,10 +398,10 @@ if(!empty($thiscart))foreach($thiscart as $row){
 	<label>购物车</label>
 	</a></li>
     <li class="li4" style="width:30%">
-	<a id="btnBuy" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>','jumpshopping')" class="butt-buy" style="border:none">立即购买</a>
+	<a id="btnBuy"  onclick="return check_add_cart('<?php echo $rt['goodsinfo']['goods_id'];?>', '1')"  class="butt-buy" style="border:none">立即购买</a>
 	</li>
 	<li class="li2" style="width:30%">
-	<a id="btnCart" onclick="return addToCart('<?php echo $rt['goodsinfo']['goods_id'];?>')" class="butt-cart" style="border:none">加入购物车</a>
+	<a id="btnCart" onclick="return check_add_cart('<?php echo $rt['goodsinfo']['goods_id'];?>', '2')" class="butt-cart" style="border:none">加入购物车</a>
 	</li>
 	</ul>
   </nav>
