@@ -220,7 +220,7 @@ margin-left:5px;
 <script type="text/javascript">
   var picrt = [];
   function run(pic){
-	$('.thumbs').append('<img src="<?php echo SITE_URL;?>'+pic+'" width="60" height="60" />');
+	$('.thumbs').append('<img src="<?php echo SITE_URL;?>'+pic+'" width="60" height="60"/>');
 	picrt.push(pic);
   }
 
@@ -244,6 +244,8 @@ margin-left:5px;
 		   dataType: "json",
 		   success: function(data){
 				removewindow();
+				$("#MESSAGE")[0].reset(); 
+				$('.thumbs').empty();
 				if(data.error=='0'){
 					$('.GOODSCOMMENT').html(data.message);
 				}else{

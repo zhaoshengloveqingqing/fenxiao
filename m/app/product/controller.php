@@ -382,7 +382,7 @@ class ProductController extends Controller{
 			//$rt['top10'] = $this->action('catalog','top10',$rt['goodsinfo']['cat_id'],5);
 
 			//商品评论
-			$list = 3;
+			$list = 5;
 		    $start = 0;
 			$page = 1;
 		    $tt = $this->get_comment_count($gid);
@@ -794,6 +794,15 @@ class ProductController extends Controller{
 		$err = 0;
 		$result = array('error' => $err, 'message' => '');
 		$json = Import::json();
+		
+		$username = $this->Session->read('User.username');
+		$uid = $this->Session->read('User.uid');
+		if(empty($username) || !($uid>0)){ //需要登录
+			$result['error'] = 1;
+			$result['message'] = '你还没有登录！请你先登录！';
+			die($json->encode($result));
+		}
+		
 		if (empty($data['goods']))
 		{
 				$result['error'] = 1;
@@ -806,6 +815,26 @@ class ProductController extends Controller{
 		 $content = $comments->content;
 		 $pics = $comments->pics;
 		 $goodsid = $comments->goods_id;
+		 
+		//检查是否已经存在购买商品
+		$sql = "SELECT tb1.rec_id FROM `{$this->App->prefix()}goods_order` AS tb1";
+		$sql .=" LEFT JOIN `{$this->App->prefix()}goods_order_info` AS tb2 ON tb1.order_id=tb2.order_id";
+		$sql .=" WHERE tb1.goods_id='$goodsid' AND tb2.user_id='$uid' AND tb2.order_status='2' AND tb2.pay_status='1'";
+		$re_id = $this->App->findvar($sql);
+		if(!($re_id>0)){ //不存在该记录！
+			$result['error'] = 1;
+			$result['message'] = '抱歉，你还没有购买当前商品，不能评论哦！';
+			die($json->encode($result));
+		}
+		//检查该商品是否已经评论过
+		$sql = "SELECT comment_id FROM `{$this->App->prefix()}comment` WHERE id_value='$goodsid' AND user_id='$uid' LIMIT 1";
+		$comment_id = $this->App->findvar($sql);
+		if($comment_id>0){ //存在该记录！
+			$result['error'] = 1;
+			$result['message'] = '抱歉，你已经评论过该商品，不能再评论哦！';
+			die($json->encode($result));
+		}
+		 
 		 if (empty($content))
 		 {
 				$result['error'] = 1;
@@ -830,7 +859,7 @@ class ProductController extends Controller{
 		 $this->App->insert('comment',$dd);
 		 
 		 //查询评论
-		 $list = 3;
+		 $list = 5;
          $page = 1;
 		 $start = ($page-1)*$list;		 
 		 $tt = $this->get_comment_count($goodsid);
@@ -952,7 +981,7 @@ class ProductController extends Controller{
 		if(empty($data['goods_id'])||!(intval($data['goods_id'])>0)) die("获取数据失败，传送的商品id为空！");
 		if(empty($data['page'])||!(intval($data['page'])>0)) $page=1;
 		//查询评论
-		$list = 3;
+		$list = 5;
 		$page =intval($data['page']);
 		$goods_id =intval($data['goods_id']);
         $start = ($page-1)*$list;
