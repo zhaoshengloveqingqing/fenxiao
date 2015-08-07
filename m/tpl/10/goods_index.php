@@ -226,7 +226,6 @@ margin-left:5px;
 
 	function ajax_submit_mes(){
   	  var goods        = new Object();
-	  createwindow();
 	  goods.ranks = $('input[name="ranks"]:checked').val();
 	  content = $('textarea[name="content"]').val();
 	  if(content=="" || typeof(content)=="undefined"){
@@ -236,7 +235,7 @@ margin-left:5px;
 	  goods.goods_id = '<?php echo $rt['goodsinfo']['goods_id'];?>';
 	  goods.content = content;
 	  goods.pics = picrt.join('|');
-
+	  createwindow();
 	  $.ajax({
 		   type: "POST",
 		   url: "<?php echo ADMIN_URL;?>product.php?action=ajax_submit_mes",
@@ -251,7 +250,6 @@ margin-left:5px;
 				}else{
 					$('.returnmes').html(data.message);
 				}
-
 		   }//end sucdess
 		});
   }
