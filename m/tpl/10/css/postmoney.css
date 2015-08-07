@@ -4,6 +4,9 @@ body {
 .main{
 	border-top: 10px solid #F3F3F3;
 }
+#header .back {
+	display: block !important;
+}
 .action {
 	margin-top: 40px;
 }

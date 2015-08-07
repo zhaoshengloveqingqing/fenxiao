@@ -1,6 +1,6 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css<?php echo '?'.time();?>" media="all" />
-<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/user_login.css<?php echo '?'.time();?>" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/postmoney.css<?php echo '?'.time();?>" media="all" />
+<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/user_login.css<?php echo '?'.time();?>" media="all" />
 <?php $this->element('10/top',array('lang'=>$lang)); ?>
 <div class="main">
 	<form id="login">
