@@ -20,26 +20,29 @@ body{
 }
 #search input.submit {
 	background:url(../images/search_icon.png)  no-repeat;
-	width: 21px;
+	width: 22px;
 	height: 21px;
 	color: transparent;
 	position: absolute;
 	right:12px;
-	top:18px;
+	top:20px;
 }
 .catalog_list{
 	border-top:10px solid #F3F3F3;
 }
 .catalog_list .catalog {
 	text-align: left;
+	width: 98%;
+	margin: 0 auto;
 }
 .catalog_list .catalog li{
-	width: 45%;
-	margin: 8px 1.5%;
+	width: 47.2%;
+	margin: 8px 1%;
 	display: inline-block;
 	border: 1px solid #E2E2E2;
 	vertical-align: top;
 	height: 212px;
+	float: left;
 }
 .catalog_list .catalog li a .product_img{
 	min-width: 144px;

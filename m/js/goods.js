@@ -55,7 +55,10 @@ function addToCart(goodsid,tt)
 			//是否关注后才能购买处理
 			if(data.error=='22'){
 					$('.show_gz').show();
-					$('body,html').animate({scrollTop:0},500);
+					$('body,html').animate({scrollTop:0},500).addClass('ad');
+					$('*').click(function(){
+						$('body,html').animate({scrollTop:0},500).removeClass('ad');
+					});
 					return false;
 			}
 			//虚拟商品购物需跳转
