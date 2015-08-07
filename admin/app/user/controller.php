@@ -563,7 +563,7 @@ class UserController extends Controller{
 			$dd['state'] = '1';
 			if($this->App->update('user_drawmoney',$dd,'id',$id)){
 			   $row = $this->App->findrow("Select * from `{$this->App->prefix()}user_drawmoney` where id = '{$id}'");
-			   var_dump($this->action('sms','sms_yssend',array('tel'=>$row['mobile'],'name'=>$row['uname'],'price'=>$row['money'],'cardid'=>$row['banksn'],'type'=>'tmp_cash')));
+			   //var_dump($this->action('sms','sms_yssend',array('tel'=>$row['mobile'],'name'=>$row['uname'],'price'=>$row['money'],'cardid'=>$row['banksn'],'type'=>'tmp_cash')));
 			}
 		}
 	}
