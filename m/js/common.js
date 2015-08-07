@@ -49,7 +49,8 @@ function isqq(v){
 		return false;
 	}  
 
-} 
+}
+
 
 //检查是否全是中文
 function ischn(str){ 
@@ -363,15 +364,22 @@ function ajax_show_window(){
 }
 
 function ajaxopquyu(){
-	$('body,html').animate({scrollTop:0},500);
 	$("#opquyu").toggle();
 	$("#opquyubox").toggle();
 }
+
 
 jQuery(document).ready(function($){
 	$('#opquyu').click(function(){
 		$(this).hide();
 		$("#opquyubox").hide();
 	});
-
+	$('#category').toggle (
+		function(){
+			$('body,html').animate({scrollTop:0},500).addClass('hiden');
+		},
+		function(){
+			$('body,html').animate({scrollTop:0},500).removeClass('hiden');
+		}
+	);
 });

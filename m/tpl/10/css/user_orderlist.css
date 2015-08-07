@@ -1,5 +1,5 @@
 body {
-	margin-bottom: 75px !important;
+	margin-bottom: 95px !important;
 }
 nav.order_status {
 	border-top: 10px solid #F3F3F3;
@@ -61,11 +61,11 @@ nav.order_status ul li a i {
 	padding: 15px 3%;
 }
 .order_top .order {
-	width: 84%;
+	width: 76%;
 	display: inline-block;
 }
 .order_top .price_number {
-	width: 14%;
+	width: 22%;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -78,7 +78,6 @@ nav.order_status ul li a i {
 	font-size: 14px;
 	color: #222222;
 	font-weight: 600;
-	margin-top: 5px;
 }
 .order_top .price_number p .number{
 	font-size: 12px;
@@ -87,10 +86,11 @@ nav.order_status ul li a i {
 .order_top .order img {
 	width: 60px;
 	height: 60px;
+	vertical-align: top;
 	display: inline-block;
 }
 .order_top .order_detail{
-	width: 72%;
+	width: 70%;
 	padding-left: 2%;
 	display: inline-block;
 }

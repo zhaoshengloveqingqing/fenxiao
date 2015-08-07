@@ -1,6 +1,9 @@
 .hiden {
 	overflow: hidden;
 }
+body {
+	margin-bottom: 85px !important;
+}
 .list{
 	background: #EB5566;
 	color: #ffffff;
