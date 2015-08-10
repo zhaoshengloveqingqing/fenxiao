@@ -129,7 +129,7 @@ $menu[10] = array(
 	'small_mod'=>'商品管理',
 	'big_mod'=>'产品管理',
 	'sub_mod'=>array(
-		array('name'=>'积分商品','en_name'=>'1001','url'=>'exchange.php?type=lists'),
+//		array('name'=>'积分商品','en_name'=>'1001','url'=>'exchange.php?type=lists'),
 		array('name'=>'实体商品','en_name'=>'1003','url'=>'goods.php?type=goods_list'),
 //		array('name'=>'虚拟商品','en_name'=>'1004','url'=>'vgoods.php?type=lists'),
 		array('name'=>'我的回收站','en_name'=>'1005','url'=>'goods.php?type=goods_list_all'),
