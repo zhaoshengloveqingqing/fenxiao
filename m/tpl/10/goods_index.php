@@ -351,7 +351,7 @@ st.setid = "lefttime_";
 st.setTimeShow();
 </script>
 <style type="text/css">
-body { padding-bottom:60px !important; }
+/*body { padding-bottom:60px !important; }*/
 .top_menu li b {width: 38px;height: 20px;line-height: 17px;display: block;color: #fff;text-align: center;font-size: 12px;}
 .top_menu li b em {padding:0px 3px 0px 3px;border-radius: 100%;text-align: center;background-color: red;display: block;position: absolute;z-index: 9999;margin-left: 22px;}
 user agent stylesheeti, cite, em, var, address, dfn {font-style: italic;}
