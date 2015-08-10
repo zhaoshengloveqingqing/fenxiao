@@ -55,7 +55,8 @@
 		if(confirm('确认信息无误提款吗')){
 			createwindow();
 			$.post('<?php echo ADMIN_URL;?>daili.php',{action:'ajax_postmoney',money:money,id:'<?php echo $rts['id'];?>'},function(data){ 
-				$('.returnmes2').html(data);
+				//$('.returnmes2').html(data);
+				alert(data);
 				removewindow();
 			});
 		}
