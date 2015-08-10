@@ -41,7 +41,7 @@ $thisurl = ADMIN_URL.'user.php';
 	<td><?php echo $row['state']=='0' ? '申请中' : ($row['state']=='1' ? '申请成功' : '提款失败' );?></td>
 	<td>
 	<a href="<?php echo ADMIN_URL.'user.php?type=info&id='.$row['uid'];?>">查看代理</a>&nbsp;&nbsp;
-	<a href="javascript:;" onclick="return ajax_confirm_drawmoney(<?php echo $row['id'];?>);" style="cursor:pointer; color:#FF0000; padding:3px 5px 3px 5px; background:#ededed; border-bottom:2px solid #ccc; border-right:2px solid #ccc;"><?php echo $row['state']=='0' ? '同意提款' : ($row['state']=='1' ? '申请成功' : '提款失败' );?></a>
+	<a href="javascript:;" onclick="return ajax_confirm_drawmoney(<?php echo $row['id'];?>, <?php echo $row['state']; ?>);" style="cursor:pointer; color:#FF0000; padding:3px 5px 3px 5px; background:#ededed; border-bottom:2px solid #ccc; border-right:2px solid #ccc;"><?php echo $row['state']=='0' ? '同意提款' : ($row['state']=='1' ? '申请成功' : '提款失败' );?></a>
 	</td>
 	</tr>
 	<?php
@@ -51,10 +51,10 @@ $thisurl = ADMIN_URL.'user.php';
 	 <?php $this->element('page',array('pagelink'=>$pagelink));?>
 </div>
 <script type="text/javascript">
-function ajax_confirm_drawmoney(id){
-	if(confirm("确认吗")){
+function ajax_confirm_drawmoney(id, status){
+	if(status == '0' && confirm("确认吗")){
 		$.post('<?php echo $thisurl;?>',{action:'ajax_confirm_drawmoney',id:id},function(data){
-		        alert(data);
+		        //alert(data);
 				removewindow();
 				window.location.href='<?php echo ADMIN_URL.'user.php?type=drawmoney';?>';
 		 });

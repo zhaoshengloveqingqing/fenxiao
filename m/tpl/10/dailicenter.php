@@ -19,7 +19,7 @@
 			</li>
 
 			<li class="refund">
-				<a href="<?php echo ADMIN_URL.'daili.php?act=postmoney';?>">申请退款<i></i></a>
+				<a href="<?php echo ADMIN_URL.'daili.php?act=postmoney';?>">申请提款<i></i></a>
 			</li>
 			<li class="drawings">
 				<a href="<?php echo ADMIN_URL.'daili.php?act=postmoneydata';?>">提款记录<i></i></a>
