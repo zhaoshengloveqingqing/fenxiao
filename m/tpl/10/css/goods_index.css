@@ -5,6 +5,10 @@
     color: #2E2E2E;
     line-height: 28px;
 }
+body {
+	margin-bottom: 60px !important;
+}
 .ad {
 	overflow: hidden;
+	margin-bottom: 0 !important;
 }
