@@ -9,6 +9,7 @@ body{
 	padding: 0 4%;
 	display: table;
 	height: 150px;
+	box-sizing: border-box;
 }
 .main .user img {
 	max-width: 70px;
