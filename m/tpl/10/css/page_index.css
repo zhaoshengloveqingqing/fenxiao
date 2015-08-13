@@ -68,7 +68,7 @@
 }
 #main .menu ul li a{
 	color:#1E1E1E;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 #main .menu ul li a img{
@@ -95,7 +95,6 @@
 }
 #main .product_list .product img{
 	width: 100%;
-	height: 100%;
 	display: block;
 }
 #main .product_list .product .product_detail p{
