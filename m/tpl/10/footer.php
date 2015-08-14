@@ -1,5 +1,5 @@
 
-<div id="opquyubox">
+<div id="opquyubox" style="overflow-y: scroll;text-align: left;">
 	<div>
 		<h2>商品分类</h2>
 		<ul class="menu">
