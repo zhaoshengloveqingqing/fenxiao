@@ -1,5 +1,5 @@
 .hiden {
-	overflow: hidden;
+	overflow: hidden !important;
 }
 body {
 	margin-bottom: 85px !important;
@@ -140,8 +140,8 @@ body {
 	list-style: none;
 }
 .product ul li img {
-	max-height: 100px;
-	max-width: 100px;
+	max-height: 90px;
+	max-width: 90px;
 }
 .product ul li .product_detail{
 	float: right;
