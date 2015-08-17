@@ -1,8 +1,8 @@
 
-<div id="opquyubox" style="overflow-y: scroll;text-align: left;">
-	<div style="height: 100%;">
+<div id="opquyubox">
+	<div>
 		<h2>商品分类</h2>
-		<ul class="menu" style="height: 100%;">
+		<ul class="menu" style="overflow-y: scroll; text-align: left; display: block;  margin-bottom: 75px !important;">
 			<?php if(!empty($lang['menu']))foreach($lang['menu'] as $row){?>
 			<li>
 				<a href="<?php echo ADMIN_URL.'catalog.php?cid='.$row['id'];?>">
