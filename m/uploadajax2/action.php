@@ -47,7 +47,9 @@ if($action=='delimg'){
 			exit;
 		}
 		$type = strstr($picname, '.');
-		if ($type != ".gif" && $type != ".jpg" && $type != ".png") {
+		if($type == "application/octet-stream"){
+		    
+		}else 	if ($type != ".gif" && $type != ".jpg" && $type != ".png") {
 			//echo '图片格式不对！';
 			$arr = array(
 				'name'=>'图片格式不对',
