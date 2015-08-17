@@ -1,5 +1,11 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/top_bottom.css" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/mycart_checkout.css" media="all" />
+
+<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false)
+{?>
+	<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/mycart_checkout-moz.css" media="all" />
+<?php }?>
+
 <?php $goodslist = $this->Session->read('cart'); ?>
 <div id="shopping-list">
 	<div class="list">
