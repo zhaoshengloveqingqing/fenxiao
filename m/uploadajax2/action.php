@@ -47,6 +47,11 @@ if($action=='delimg'){
 			exit;
 		}
 		$type = strstr($picname, '.');
+		if($type == "application/octet-stream"){
+		    $imageMime = getimagesize($_FILES['mypic']['tmp_name']); // get temporary file REAL info
+		    $type = $imageMime['mime']; //set in our array the correct mime
+		}
+		
 		if ($type != ".gif" && $type != ".jpg" && $type != ".png") {
 			//echo '图片格式不对！';
 			$arr = array(
