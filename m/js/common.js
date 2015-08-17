@@ -376,10 +376,10 @@ jQuery(document).ready(function($){
 	});
 	$('#category').toggle (
 		function(){
-			$('body,html').animate({scrollTop:0},500).addClass('hiden');
+			$('body').animate({scrollTop:0},500).addClass('hiden');
 		},
 		function(){
-			$('body,html').animate({scrollTop:0},500).removeClass('hiden');
+			$('body').animate({scrollTop:0},500).removeClass('hiden');
 		}
 	);
 });
