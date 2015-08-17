@@ -3,6 +3,10 @@ body{
 	min-height:500px;
 	background: #ffffff;
 }
+.hiden {
+	overflow: hidden !important;
+	margin-bottom: 50px !important;
+}
 #home {
 	width: 100%;
 }
