@@ -2634,5 +2634,50 @@ class ShoppingController extends Controller{
             $this->jump(ADMIN_URL);
             exit;
         }
+        
+	//获取商品分类
+	function get_goods_cate_tree($cid = 0)
+	{
+		$three_arr = array();
+		$sql = 'SELECT count(cat_id) FROM `'.$this->App->prefix()."goods_cate` WHERE parent_id = '$cid' AND is_show = 1";
+		if ($this->App->findvar($sql) || $cid == 0)
+		{
+			$sql = 'SELECT tb1.cat_name,tb1.cat_id,tb1.parent_id,tb1.is_show,tb1.cat_title,tb1.cat_desc, tb1.keywords,tb1.show_in_nav,tb1.sort_order, COUNT(tb2.cat_id) AS goods_count FROM `'.$this->App->prefix()."goods_cate` AS tb1";
+			$sql .=" LEFT JOIN `{$this->App->prefix()}goods` AS tb2";
+			$sql .=" ON tb1.cat_id = tb2.cat_id";
+			$sql .= " WHERE tb1.parent_id = '$cid' GROUP BY tb1.cat_id ORDER BY tb1.parent_id ASC,tb1.sort_order ASC, tb1.cat_id ASC";
+			$res = $this->App->find($sql); 
+			foreach ($res as $row)
+			{
+			   $three_arr[$row['cat_id']]['id']   = $row['cat_id'];
+			   $three_arr[$row['cat_id']]['parent_id']   = $row['parent_id'];
+			   $three_arr[$row['cat_id']]['name'] = $row['cat_name'];
+			   $three_arr[$row['cat_id']]['is_show']   = $row['is_show'];
+			   $three_arr[$row['cat_id']]['show_in_nav'] = $row['show_in_nav'];
+			   $three_arr[$row['cat_id']]['cat_title']   = $row['cat_title'];
+			   $three_arr[$row['cat_id']]['sort_order'] = $row['sort_order'];
+			   $three_arr[$row['cat_id']]['goods_count'] = $row['goods_count'];
+			   $three_arr[$row['cat_id']]['keywords'] = $row['keywords'];
+			   $three_arr[$row['cat_id']]['cat_desc'] = $row['cat_desc'];
+			   $three_arr[$row['cat_id']]['url'] = ADMIN_URL."catalog.php?cid=".$row["cat_id"];
+			   
+			    if (isset($row['cat_id']) != NULL)
+				{
+					 $three_arr[$row['cat_id']]['cat_id'] = $this->get_goods_cate_tree($row['cat_id']);
+				}
+			}
+		}
+		return $three_arr;
+	}
+        
+        
+        function product_category($cid = 0){
+        	if(!defined(NAVNAME)) define('NAVNAME', "商品分类");	
+        	$category = $this->get_goods_cate_tree();
+			$this->set('rs',$category);
+        	$mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
+			$this->template($mb.'/category');
+        }
+        
 }
 

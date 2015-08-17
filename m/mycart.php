@@ -20,6 +20,9 @@ if(isset($_REQUEST['action'])){
 
 $type = !isset($_REQUEST['type'])||empty($_REQUEST['type'])? 'cartlist' : $_REQUEST['type'];
 switch($type){
+	case 'category':
+		$app->action('shopping','product_category');
+		break;
 	case 'cartlist':
 		$app->action('shopping','checkout');
 		break;

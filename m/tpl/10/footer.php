@@ -1,5 +1,4 @@
-
-<div id="opquyubox">
+<!--<div id="opquyubox">
 	<div  style="height: 100%;">
 		<h2 style="text-align: left;">商品分类</h2>
 		<ul class="menu" style="overflow-y: scroll; text-align: left; display: block; height: 100%;">
@@ -19,7 +18,7 @@
 		</ul>
 	</div>
 </div>
-
+-->
 <?php
 $nums = 0;
 $thiscart = $this->Session->read('cart');
@@ -31,7 +30,8 @@ if(!empty($thiscart))foreach($thiscart as $row){
 	<nav>
 		<ul id="menu" class="top_menu">
 			<li><a href="<?php echo ADMIN_URL;?>"><i class="home"></i><label>首页</label></a></li> <!-- class='active' --> 
-			<li><a href="javascript:void(0)" id="category" onclick="ajaxopquyu()"><i class="category"></i><label>分类</label></a></li>
+			<!-- <li><a href="javascript:void(0)" id="category" onclick="ajaxopquyu()"><i class="category"></i><label>分类</label></a></li> -->
+			<li><a href="<?php echo ADMIN_URL;?>mycart.php?type=category"><i class="category"></i><label>分类</label></a></li>
 			<li><a href="<?php echo ADMIN_URL.'user.php';?>"><i class="user"></i><label>我的地盘</label></a></li>
 			<li>
 				<a href="<?php echo ADMIN_URL;?>mycart.php" style="height:56px; padding:0px; border:none">
