@@ -9,6 +9,7 @@
 <meta name="format-detection" content="telephone=no"/>
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
 <title><?php echo $this->title();?></title><?php echo $this->meta();?>
 <?php echo $this->css(array('comman.css','jquery_dialog.css','style.css'));?>
 <?php echo '<script> var SITE_URL="'.ADMIN_URL.'";</script>'."\n";?>
