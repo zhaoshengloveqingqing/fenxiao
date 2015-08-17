@@ -7,6 +7,7 @@
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 <meta name="format-detection" content="telephone=no"/>
+ <meta name="renderer" content="webkit">
 <title><?php echo $this->title();?></title><?php echo $this->meta();?>
 <?php echo $this->css(array('comman.css','jquery_dialog.css','style.css'));?>
 <?php echo '<script> var SITE_URL="'.ADMIN_URL.'";</script>'."\n";?>
