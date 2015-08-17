@@ -4,7 +4,8 @@
 	border: 1px solid #CDCDCD;
 	padding-left: 10px;
 	height: 38px;
-	line-height: 38px;
+	line-height: 28px;
+	padding-top: 5px;
 }
 .edit .am-form-group .am-u-sm-10 input::-webkit-input-placeholder {
 	/* WebKit browsers */
