@@ -5,7 +5,6 @@ body{
 }
 .hiden {
 	overflow: hidden !important;
-	margin-bottom: 75px !important;
 }
 #home {
 	width: 100%;
