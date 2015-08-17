@@ -1,7 +1,7 @@
 
 <div id="opquyubox">
 	<div>
-		<h2>商品分类</h2>
+		<h2 style="text-align: left;">商品分类</h2>
 		<ul class="menu" style="overflow-y: scroll; text-align: left; display: block;  margin-bottom: 75px !important;">
 			<?php if(!empty($lang['menu']))foreach($lang['menu'] as $row){?>
 			<li>
