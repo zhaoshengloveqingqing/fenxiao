@@ -34,6 +34,7 @@ if($action=='delimg'){
 }else{
 	$picname = $_FILES['mypic']['name'];
 	$picsize = $_FILES['mypic']['size'];
+	$pictype = $_FILES['mypic']['type'];
 	if ($picname != "") {
 		if ($picsize > 1024000) {
 			//echo '图片大小不能超过1M';
@@ -47,10 +48,15 @@ if($action=='delimg'){
 			exit;
 		}
 		$type = strstr($picname, '.');
-		if($type == "application/octet-stream"){
-		    
-		}else 	if ($type != ".gif" && $type != ".jpg" && $type != ".png") {
-			//echo '图片格式不对！';
+		if($pictype == "application/octet-stream"){
+		    $imageMime = getimagesize($_FILES['mypic']['tmp_name']);
+		    $realMime = $imageMime['mime']; 
+		    $mimeCheck = ($realMime != "image/png" && $realMime != "image/jpeg" && $realMime != "image/jpg" && $realMime != "image/gif" );
+		}else{
+			 $mimeCheck = ($pictype != "image/png" && $pictype != "image/jpeg" && $pictype != "image/jpg" && $pictype != "image/gif" );
+		}
+		//if ($type != ".gif" && $type != ".jpg" && $type != ".png") {
+		if ($mimeCheck) {
 			$arr = array(
 				'name'=>'图片格式不对',
 				'pic'=>'',
