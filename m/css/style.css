@@ -6,6 +6,7 @@ body{
 .hiden {
 	overflow: hidden !important;
 	margin-bottom: 0px !important;
+	height: 100%;
 }
 #home {
 	width: 100%;
@@ -153,7 +154,7 @@ color:#4F4D4D;
 	position:absolute;
 	right:0;
 	top:0%;
-	bottom:0;
+	bottom:78px;
 	z-index:105;
 	overflow: hidden;
 	border-left:1px solid #ededed;
