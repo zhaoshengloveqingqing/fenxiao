@@ -2,7 +2,7 @@
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/mycart_checkout.css" media="all" />
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/category.css" media="all" />
 
-<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false)
+<?php if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile Safari/534.30 MicroMessenger') !== false)
 {?>
 	<link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL;?>tpl/10/css/mycart_checkout-moz.css" media="all" />
 <?php }?>
