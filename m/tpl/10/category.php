@@ -3,7 +3,7 @@
 <?php $this->element('10/top',array('lang'=>$lang)); ?>
 <div>
 	<div  style="height: 100%;">
-		<ul class="menu" style="overflow-y: scroll; text-align: left; display: block; height: 100%;">
+		<ul class="menu">
 			<?php if(!empty($rs))foreach($rs as $row){?>
 			<li>
 				<a href="<?php echo ADMIN_URL.'catalog.php?cid='.$row['id'];?>">
