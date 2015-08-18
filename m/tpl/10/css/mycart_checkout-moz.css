@@ -6,6 +6,7 @@
 	height: 38px;
 	line-height: 19px;
 	padding-top: 8px;
+	margin-bottom: 3px;
 }
 .edit .am-form-group .am-u-sm-10 input::-webkit-input-placeholder {
 	/* WebKit browsers */
