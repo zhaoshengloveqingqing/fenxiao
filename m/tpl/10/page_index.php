@@ -7,7 +7,13 @@
 	 <?php if(!empty($ad))foreach($ad as $row){
 	 $a = basename($row['ad_img']);
 	 ?>			 
-		<li><img src="<?php echo SITE_URL.$row['ad_img'];?>" style="width:100%" alt="<?php echo $row['ad_name'];?>"/></li>
+		<li>
+			<?php if (!empty($row['ad_url'])) { ?>
+				<a href="<?php echo $row['ad_url'];?>" style="cursor:pointer;"><img src="<?php echo SITE_URL.$row['ad_img'];?>" style="width:100%" alt="<?php echo $row['ad_name'];?>"/></a>
+			<?php } else{?>
+				<img src="<?php echo SITE_URL.$row['ad_img'];?>" style="width:100%" alt="<?php echo $row['ad_name'];?>"/>
+			 <?php } ?>			
+		</li>
 	 <?php } ?>												
 	  </ul>
 </div>
