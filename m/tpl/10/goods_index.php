@@ -70,7 +70,8 @@ body{ background:#FFF !important;}
                               foreach($row as $rows){
                                     $st .= '<label><input type="checkbox" name="'.$row[0]['attr_keys'].'" id="quanxuan" value="'.$rows['attr_value'].'" />&nbsp;'.$rows['attr_value']."</label>\n";
                               }
-                              echo $st .='<label class="quxuanall" id="ALL" style="border:1px solid #ADADAD; background-color:#E1E5E6; padding-left:3px; height:18px; line-height:18px;padding:2px;">全选</label>';
+							  echo $st;
+                              //echo $st .='<label class="quxuanall" id="ALL" style="border:1px solid #ADADAD; background-color:#E1E5E6; padding-left:3px; height:18px; line-height:18px;padding:2px;">全选</label>';
                       }else{
                               echo '<input type="hidden" name="'.$row[0]['attr_keys'].'" value="" />'."\n";
                               foreach($row as $rows){
