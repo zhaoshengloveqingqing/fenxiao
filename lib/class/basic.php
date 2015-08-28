@@ -940,7 +940,7 @@ class Basic{
                 $lpage =$tpn;
                 $fpage=$tpn-9;
         }
-        $lpage = ($fpage == 1)? 10 : $lpage ;
+        //$lpage = ($fpage == 1)? 10 : $lpage ;
 		
 		$rt['showmes'] = '<a class="pagepn">第'.$page.'/'.$tpn.'页</a>';
         $rt['first']='<a href="'.$p.'1">首页</a>';
