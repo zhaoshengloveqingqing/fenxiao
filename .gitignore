@@ -9,7 +9,7 @@ sess/
 cache/
 photos/
 data/basic_config.php
-
+certs/
 
 sync.sh
 
