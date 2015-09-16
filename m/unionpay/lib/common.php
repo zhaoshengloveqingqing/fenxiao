@@ -148,7 +148,6 @@ eot;
 		$html .= "    <input type=\"hidden\" name=\"{$key}\" id=\"{$key}\" value=\"{$value}\" />\n";
 	}
 	$html .= <<<eot
-    <input type="submit" type="hidden">
     </form>
 </body>
 </html>
