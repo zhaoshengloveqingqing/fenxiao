@@ -46,7 +46,7 @@
 	// 前台通知地址 (商户自行配置通知地址)
 	define('SDK_FRONT_NOTIFY_URL',  str_replace('/unionpay','',ADMIN_URL).'user.php?act=orderlist');
 	// 后台通知地址 (商户自行配置通知地址)
-	define('SDK_BACK_NOTIFY_URL',  str_replace('/unionpay','',ADMIN_URL).'user.php?act=orderlist');
+	define('SDK_BACK_NOTIFY_URL',  str_replace('/unionpay','',ADMIN_URL).'unionpay/notify.php');
 	
 	//文件下载目录 
 	define('SDK_FILE_DOWN_PATH',  SYS_PATH.'cache/unionpay/files');
