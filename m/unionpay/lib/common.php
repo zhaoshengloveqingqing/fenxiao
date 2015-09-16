@@ -140,8 +140,8 @@ function create_html($params, $action) {
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset={$encodeType}" />
 </head>
-<body  >
-    <form id="pay_form" name="pay_form" action="{$action}" method="post">
+<body   onload="javascript:document.pinet_form.submit();">
+    <form id="pinet_form" name="pinet_form" action="{$action}" method="post">
 	
 eot;
 	foreach ( $params as $key => $value ) {
