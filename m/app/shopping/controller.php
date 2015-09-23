@@ -1005,6 +1005,20 @@ class ShoppingController extends Controller{
 		return $rt;
 	}
 	
+	function get_order_pay_info(){
+		$order_sn = isset($_GET['order_sn']) ? $_GET['order_sn'] : '';
+		$sql = "SELECT order_id,  order_sn, order_amount,pay_status,shipping_fee FROM `{$this->App->prefix()}goods_order_info` WHERE pay_status = '0' AND order_sn='$order_sn' LIMIT 1";
+		$rt = $this->App->findrow($sql);
+		$rt['order_amount'] = $rt['order_amount']+$rt['shipping_fee'];
+		if(empty($rt)){
+			$this->jump(str_replace('/unionpay','',ADMIN_URL),0,'非法支付提交！'); exit;
+		}
+		if($rt['pay_status']=='1'){
+			$this->jump(str_replace('/unionpay','',ADMIN_URL).'user.php?act=orderlist');exit;
+		}
+		return $rt;
+	}
+	
 	function _alipayment($rt=array()){
 		$pay_id = $rt['pay_id'];
 		
@@ -1015,6 +1029,9 @@ class ShoppingController extends Controller{
 		}
 		if($pay_id=='6'){ //云支付
 			$this->jump(ADMIN_URL.'yunpay/yunpay.php?order_sn='.$order_sn);exit;	
+		}
+		if($pay_id=='7'){ //银联支付
+			$this->jump(ADMIN_URL.'unionpay/unionpay.php?order_sn='.$order_sn);exit;	
 		}
 		
 		$sql = "SELECT `pay_config` FROM `".$this->App->prefix()."payment` WHERE `pay_id`='$pay_id'";
@@ -1042,9 +1059,8 @@ class ShoppingController extends Controller{
 					aqua.submit();
 					</script>
 					";
-		echo $paypal_form;
+			echo $paypal_form;
 		}
-		
 		die();
 	}
 	
