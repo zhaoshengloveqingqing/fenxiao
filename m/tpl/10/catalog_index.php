@@ -13,7 +13,7 @@
 					<div class="product_img"><img src="<?php echo $row['goods_img'];?>"  alt="<?php echo $row['goods_name'];?>"/></div>
 					<h3><?php echo $row['goods_name'];?></h3>
 				</a>
-				<p><span class="price">￥<?php echo str_replace('.00','',$row['pifa_price']);?><i class="discount_price">￥<?php echo str_replace('.00','',$row['shop_price']);?></i></span></p>
+				<p><span class="price">￥<?php echo str_replace('.00','',$row['pifa_price']);?><!--i class="discount_price">￥<?php echo str_replace('.00','',$row['shop_price']);?></i--></span></p>
 			</li>
 			<?php } else {
 				echo '<li style="border: 0px solid #e2e2e2;padding-top:60px; padding-bottom:60px; font-size:16px; text-align:center;width:90%;height:50px;">目前数据为空的</li>';
