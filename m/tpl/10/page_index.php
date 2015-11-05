@@ -58,7 +58,7 @@
 			<div class="product_detail">
 				<a href="<?php echo ADMIN_URL.($row['is_jifen']=='1'?'exchange':'product').'.php?id='.$rows['goods_id'];?>" style="cursor:pointer;">
 				<img src="<?php echo SITE_URL.$rows['goods_img'];?>"/>
-				<p><span class="names"><?php echo $rows['goods_name'];?></span><span class="price"><?php echo str_replace('.00','',$rows['pifa_price']);?>元<i class="discount_price"><?php echo str_replace('.00','',$rows['shop_price']);?>元</i></span></p>
+				<p><span class="names"><?php echo $rows['goods_name'];?></span><span class="price"><?php echo str_replace('.00','',$rows['pifa_price']);?>元<!--i class="discount_price"><?php echo str_replace('.00','',$rows['shop_price']);?>元</i--></span></p>
 				</a>
 			</div>
 			<?php } ?>
