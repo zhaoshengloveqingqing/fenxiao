@@ -1,0 +1,89 @@
+body {
+	margin-bottom: 85px !important;
+}
+.money i {
+	background:url(../images/moneybag_icon.png) no-repeat;
+	width: 68px;
+	height: 74px;
+	position: absolute;
+	left: 12%;
+	display: inline-block;
+}
+.money {
+	background: linear-gradient(#EB5664 0%, #D93040 100%);
+	background: -webkit-linear-gradient(#EB5664 0%, #D93040 100%);
+	padding: 20px 20px;
+	text-align: center;
+	border-top:1px solid #F86666;
+}
+.money p {
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 35px;
+	text-align: left;
+	padding-left: 26%;
+}
+.money p span.title {
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 25px;
+	width: 120px;
+	width: 80px;
+	text-align: left;
+}
+.money p span {
+	font-size: 24px;
+	color: #FFFDE1;
+	padding-left: 20px;
+	line-height: 29px;
+}
+.ranking {
+	width: 100%;
+	margin: 0 auto;
+}
+.ranking li {
+	padding: 15px;
+	border-bottom: 1px solid #D7D7D7;
+}
+.ranking li a {
+	width: 90%;
+	display: inline-block;
+}
+.ranking li a img {
+	max-width: 70px;
+	max-height: 70px;
+}
+.ranking li a.ranking-list {
+	position: relative;
+}
+.ranking li a img.biaozhu {
+    position: absolute;
+	left: 52px;
+	top:52px;
+}
+.ranking li .info {
+	float: right;
+	width: 70%;
+}
+.ranking li .info p {
+	font-size: 14px;
+	color: #2E2E2E;
+	line-height: 25px;
+}
+.ranking li .info p span{
+	color: #FC2B07;
+	margin:0 15px;
+}
+.ranking li img {
+	display: inline-block;
+	vertical-align: top;
+}
+.ranking li > span {
+	background:url(../images/medal_bg.png) no-repeat;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	line-height: 25px;
+	text-align: center;
+	color: #ffffff;
+}

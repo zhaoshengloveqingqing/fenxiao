@@ -1,0 +1,15 @@
+#submit {
+	background: #EB5566;
+	width: 100%;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 15px 0;
+	text-align: center;
+}
+.action {
+	width: 96%;
+	margin: 15px auto !important;
+}
+.edit {
+	margin-top: 20px !important;
+}

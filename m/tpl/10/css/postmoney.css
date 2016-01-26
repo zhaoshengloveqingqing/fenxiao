@@ -1,0 +1,18 @@
+body {
+	margin-bottom: 95px !important;
+}
+.main{
+	border-top: 10px solid #F3F3F3;
+}
+#header .back {
+	display: block !important;
+}
+.action {
+	margin-top: 40px;
+}
+#submit {
+	margin-top: 20px;
+}
+#submit.info{
+	background: #FF7F00;
+}

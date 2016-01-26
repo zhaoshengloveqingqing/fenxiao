@@ -1,0 +1,37 @@
+#header .back {
+	display: none;
+}
+.register_main {
+	border-top: 10px solid #F3F3F3;
+}
+#register {
+	width: 92%;
+	margin: 20px auto 0;
+}
+.am-form-group {
+	height: 48px;
+	line-height: 48px;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+.am-form-group label {
+	color:#242424;
+	font-size: 14px;
+}
+.am-form-group input {
+	color:#CBCBCB;
+	font-size: 14px;
+	padding-left: 50px;
+}
+#submit {
+	background: #FF7F00;
+	width: 100%;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 15px 0;
+	margin-top: 60px;
+}
+
+.am-form{
+	border-bottom: 1px solid #EB5664;
+}

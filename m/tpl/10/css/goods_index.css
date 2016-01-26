@@ -1,0 +1,14 @@
+.text_description{
+    padding:12px;
+    height:12px;
+    font-size: 20px;
+    color: #2E2E2E;
+    line-height: 28px;
+}
+body {
+	margin-bottom: 60px !important;
+}
+.ad {
+	overflow: hidden;
+	margin-bottom: 0 !important;
+}

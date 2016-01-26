@@ -1,0 +1,18 @@
+#main {
+	border-top: 10px solid #F3F3F3;
+}
+.opreation{
+	text-align: right;
+}
+.shoping {
+	border: 1px solid #FF6A6A;
+	border-radius: 1px;
+	font-size: 14px;
+	color: #ffffff !important;
+	padding: 4px 15px;
+	background: #FF7F00;
+	margin-right: 6px;
+}
+.delete {
+	float: none !important;
+}
